@@ -16,7 +16,6 @@
 
 ![FGOpz](https://github.com/user-attachments/assets/ed5f068e-9978-4873-a3d9-b6b6357ab67f)
 
-
     https://stackoverflow.com/questions/20837673/how-to-import-a-bak-file-into-sql-server-express
 
 4. Mở dự án trong Visual Studio.
