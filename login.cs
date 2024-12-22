@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLBH;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +65,12 @@ namespace QuanLyBanHangOnline
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnDangki_Click(object sender, EventArgs e)
+        {
+            frmSignup Signupform = new frmSignup();
+            Signupform.Show();
         }
     }
 }

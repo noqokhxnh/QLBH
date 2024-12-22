@@ -24,3 +24,4 @@ C:\Users\noqok\OneDrive\Documents\VisualStudio_src\QLBH\obj\Debug\net6.0-windows
 C:\Users\noqok\OneDrive\Documents\VisualStudio_src\QLBH\obj\Debug\net6.0-windows\QLBH.genruntimeconfig.cache
 C:\Users\noqok\OneDrive\Documents\VisualStudio_src\QLBH\obj\Debug\net6.0-windows\ref\QLBH.dll
 C:\Users\noqok\OneDrive\Documents\VisualStudio_src\QLBH\obj\Debug\net6.0-windows\QLBH.csproj.Up2Date
+C:\Users\noqok\OneDrive\Documents\VisualStudio_src\QLBH\obj\Debug\net6.0-windows\QLBH.frmSignup.resources
