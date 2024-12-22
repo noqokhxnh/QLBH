@@ -69,7 +69,7 @@ namespace QuanLyBanHangOnline
 
         private void btnDangki_Click(object sender, EventArgs e)
         {
-            frmSignup Signupform = new frmSignup();
+            frmsignup Signupform = new frmsignup();
             Signupform.Show();
         }
     }
