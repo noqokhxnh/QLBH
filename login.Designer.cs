@@ -82,6 +82,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(100, 27);
             txtPassword.TabIndex = 1;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // btnDangki
             // 
