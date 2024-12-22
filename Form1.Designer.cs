@@ -40,6 +40,7 @@
             txtStock = new TextBox();
             txtId = new TextBox();
             label4 = new Label();
+            btnLogout = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 29);
-            btnAdd.TabIndex = 1;
+            btnAdd.TabIndex = 5;
             btnAdd.Text = "Thêm";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
@@ -71,7 +72,7 @@
             btnEdit.Margin = new Padding(3, 4, 3, 4);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(75, 29);
-            btnEdit.TabIndex = 2;
+            btnEdit.TabIndex = 6;
             btnEdit.Text = "Sửa";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
@@ -82,7 +83,7 @@
             btnRemove.Margin = new Padding(3, 4, 3, 4);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(75, 29);
-            btnRemove.TabIndex = 3;
+            btnRemove.TabIndex = 7;
             btnRemove.Text = "Xoá";
             btnRemove.UseVisualStyleBackColor = true;
             btnRemove.Click += btnRemove_Click;
@@ -120,7 +121,7 @@
             txtProductName.Margin = new Padding(3, 4, 3, 4);
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(100, 27);
-            txtProductName.TabIndex = 1;
+            txtProductName.TabIndex = 2;
             // 
             // txtPrice
             // 
@@ -128,7 +129,7 @@
             txtPrice.Margin = new Padding(3, 4, 3, 4);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(100, 27);
-            txtPrice.TabIndex = 2;
+            txtPrice.TabIndex = 3;
             // 
             // txtStock
             // 
@@ -136,7 +137,7 @@
             txtStock.Margin = new Padding(3, 4, 3, 4);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(100, 27);
-            txtStock.TabIndex = 3;
+            txtStock.TabIndex = 4;
             // 
             // txtId
             // 
@@ -144,7 +145,7 @@
             txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 27);
-            txtId.TabIndex = 0;
+            txtId.TabIndex = 1;
             // 
             // label4
             // 
@@ -155,12 +156,23 @@
             label4.TabIndex = 10;
             label4.Text = "Id";
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(1011, 521);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(94, 29);
+            btnLogout.TabIndex = 11;
+            btnLogout.Text = "Đăng xuất";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // frmAdminform
             // 
             AccessibleRole = AccessibleRole.None;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(686, 562);
+            ClientSize = new Size(1117, 562);
+            Controls.Add(btnLogout);
             Controls.Add(txtId);
             Controls.Add(label4);
             Controls.Add(txtStock);
@@ -197,5 +209,6 @@
         private System.Windows.Forms.TextBox txtStock;
         private TextBox txtId;
         private Label label4;
+        private Button btnLogout;
     }
 }
