@@ -28,140 +28,174 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            dgvHienThi = new DataGridView();
+            btnAdd = new Button();
+            btnEdit = new Button();
+            btnRemove = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            txtProductName = new TextBox();
+            txtPrice = new TextBox();
+            txtStock = new TextBox();
+            txtId = new TextBox();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
+            SuspendLayout();
             // 
-            // dataGridView1
+            // dgvHienThi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 180);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(362, 258);
-            this.dataGridView1.TabIndex = 0;
+            dgvHienThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHienThi.Location = new Point(12, 176);
+            dgvHienThi.Margin = new Padding(3, 4, 3, 4);
+            dgvHienThi.Name = "dgvHienThi";
+            dgvHienThi.RowHeadersWidth = 51;
+            dgvHienThi.RowTemplate.Height = 24;
+            dgvHienThi.Size = new Size(528, 373);
+            dgvHienThi.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(470, 180);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Location = new Point(599, 208);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 29);
+            btnAdd.TabIndex = 1;
+            btnAdd.Text = "Thêm";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(470, 237);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(599, 269);
+            btnEdit.Margin = new Padding(3, 4, 3, 4);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(75, 29);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Sửa";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(470, 310);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 3;
-            this.btnRemove.Text = "Xoá";
-            this.btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Location = new Point(599, 325);
+            btnRemove.Margin = new Padding(3, 4, 3, 4);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(75, 29);
+            btnRemove.TabIndex = 3;
+            btnRemove.Text = "Xoá";
+            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Tên Sản Phẩm";
+            label1.AutoSize = true;
+            label1.Location = new Point(45, 73);
+            label1.Name = "label1";
+            label1.Size = new Size(101, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Tên Sản Phẩm";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Giá Sản Phẩm";
+            label2.AutoSize = true;
+            label2.Location = new Point(363, 16);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Giá Sản Phẩm";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Số Lượng";
+            label3.AutoSize = true;
+            label3.Location = new Point(363, 73);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 20);
+            label3.TabIndex = 6;
+            label3.Text = "Số Lượng";
             // 
-            // txtName
+            // txtProductName
             // 
-            this.txtName.Location = new System.Drawing.Point(175, 13);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 22);
-            this.txtName.TabIndex = 7;
+            txtProductName.Location = new Point(166, 70);
+            txtProductName.Margin = new Padding(3, 4, 3, 4);
+            txtProductName.Name = "txtProductName";
+            txtProductName.Size = new Size(100, 27);
+            txtProductName.TabIndex = 1;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(175, 60);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 22);
-            this.txtPrice.TabIndex = 8;
+            txtPrice.Location = new Point(500, 16);
+            txtPrice.Margin = new Padding(3, 4, 3, 4);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(100, 27);
+            txtPrice.TabIndex = 2;
             // 
-            // txtQuantity
+            // txtStock
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(175, 106);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(100, 22);
-            this.txtQuantity.TabIndex = 9;
+            txtStock.Location = new Point(500, 73);
+            txtStock.Margin = new Padding(3, 4, 3, 4);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(100, 27);
+            txtStock.TabIndex = 3;
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(166, 6);
+            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(100, 27);
+            txtId.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(45, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(22, 20);
+            label4.TabIndex = 10;
+            label4.Text = "Id";
             // 
             // frmAdminform
             // 
-            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 450);
-            this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "frmAdminform";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AccessibleRole = AccessibleRole.None;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(686, 562);
+            Controls.Add(txtId);
+            Controls.Add(label4);
+            Controls.Add(txtStock);
+            Controls.Add(txtPrice);
+            Controls.Add(txtProductName);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnRemove);
+            Controls.Add(btnEdit);
+            Controls.Add(btnAdd);
+            Controls.Add(dgvHienThi);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "frmAdminform";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form1";
+            Load += frmAdminform_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvHienThi).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHienThi;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtStock;
+        private TextBox txtId;
+        private Label label4;
     }
 }
