@@ -207,11 +207,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\noqok\\OneDrive\\Documents\\VisualStudio_src\\QLBH\\QLBH.csproj",
+      "projectUniqueName": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj",
       "projectName": "QLBH",
-      "projectPath": "C:\\Users\\noqok\\OneDrive\\Documents\\VisualStudio_src\\QLBH\\QLBH.csproj",
+      "projectPath": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj",
       "packagesPath": "C:\\Users\\noqok\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\noqok\\OneDrive\\Documents\\VisualStudio_src\\QLBH\\obj\\",
+      "outputPath": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

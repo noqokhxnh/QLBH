@@ -7,7 +7,10 @@
 
     public partial class frmAdminform : Form
     {
-        internal string connectionString = "Server=LAPTOP-B6DMUJM1;Database=QuanLyBanHang;Integrated Security=True;";
+       internal string connectionString = 
+    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         public frmAdminform()
         {
@@ -187,6 +190,14 @@
             {
                 MessageBox.Show("Hãy chọn một sản phẩm để xóa!");
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            MessageBox.Show("Đăng xuất thành công!");
+            frmLogin.Show();
+            this.Close();
         }
     }
 }
