@@ -7,10 +7,11 @@
 
     public partial class frmAdminform : Form
     {
-       internal string connectionString = 
-    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+        internal string connectionString =
+     $"Server=LAPTOP-B6DMUJM1; " + 
+     $"Database=QuanLyBanHang; " +  
+     $"Integrated Security=True;";   
+
 
         public frmAdminform()
         {
@@ -155,9 +156,24 @@
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string productName = txtProductName.Text;
-            decimal price = Convert.ToDecimal(txtPrice.Text);
-            int stock = Convert.ToInt32(txtStock.Text);
+            string productName = txtProductName.Text.Trim();
+            if (string.IsNullOrEmpty(productName))
+            {
+                MessageBox.Show("Tên sản phẩm không được để trống!");
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text, out decimal price))
+            {
+                MessageBox.Show("Giá sản phẩm không hợp lệ!");
+                return;
+            }
+
+            if (!int.TryParse(txtStock.Text, out int stock))
+            {
+                MessageBox.Show("Số lượng sản phẩm không hợp lệ!");
+                return;
+            }
 
             AddProduct(productName, price, stock);
         }
@@ -181,14 +197,31 @@
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (dgvHienThi.SelectedRows.Count > 0)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                int productId = Convert.ToInt32(dgvHienThi.SelectedRows[0].Cells["ProductID"].Value);
-                DeleteProduct(productId);
-            }
-            else
-            {
-                MessageBox.Show("Hãy chọn một sản phẩm để xóa!");
+                string query = "DELETE FROM tbl_product WHERE ProductID = @ProductID";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ProductID", ProductID);
+
+                try
+                {
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Xóa sản phẩm thành công!");
+                        LoadProductData(); // Tải lại dữ liệu sau khi xóa
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xóa sản phẩm!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                }
             }
         }
 
@@ -197,7 +230,8 @@
             frmLogin frmLogin = new frmLogin();
             MessageBox.Show("Đăng xuất thành công!");
             frmLogin.Show();
-            this.Close();
+            this.Close(); // Đảm bảo đóng form Admin
+            Application.Exit();
         }
     }
 }

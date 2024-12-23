@@ -15,20 +15,26 @@ namespace QuanLyBanHangOnline
     public partial class frmLogin : Form
     {
 
-    internal string connectionString = 
-    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
-
+        internal string connectionString =
+       $"Server=LAPTOP-B6DMUJM1; " +
+       $"Database=QuanLyBanHang; " +
+       $"Integrated Security=True;";
         public frmLogin()
         {
             InitializeComponent();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
+            string dbServer = Environment.GetEnvironmentVariable("DB_SERVER");
+            string dbDatabase = Environment.GetEnvironmentVariable("DB_DATABASE");
+            string dbSecurity = Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY");
+
+            //MessageBox.Show($"Server: {dbServer}, Database: {dbDatabase}, Integrated Security: {dbSecurity}",
+            //                "Thông tin kết nối", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -36,39 +42,45 @@ namespace QuanLyBanHangOnline
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                string query = "SELECT Role FROM tbl_user WHERE Username = @username AND Password = @password";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-
-                conn.Open();
-                var role = cmd.ExecuteScalar(); // Lấy kết quả Role nếu có
-
-                if (role != null)
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    string query = "SELECT Role FROM tbl_user WHERE Username = @username AND Password = @password";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
 
-                    // Phân quyền và mở form tương ứng
-                    if (role.ToString().Trim() == "Admin")
+                    conn.Open();
+                    var role = cmd.ExecuteScalar();
+
+                    if (role != null)
                     {
-                        frmAdminform adminForm = new frmAdminform();
-                        adminForm.Show();
+                        MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+
+                        if (role.ToString().Trim() == "Admin")
+                        {
+                            frmAdminform adminForm = new frmAdminform();
+                            adminForm.Show();
+                        }
+                        else
+                        {
+                            frmUserform userForm = new frmUserform();
+                            userForm.Show();
+                        }
                     }
                     else
                     {
-                        frmUserform userForm = new frmUserform();
-                        userForm.Show();
-                        //noqok da them vao day
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnDangki_Click(object sender, EventArgs e)

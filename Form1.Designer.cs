@@ -41,12 +41,14 @@
             txtId = new TextBox();
             label4 = new Label();
             btnLogout = new Button();
+            ProductID = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
             SuspendLayout();
             // 
             // dgvHienThi
             // 
             dgvHienThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHienThi.Columns.AddRange(new DataGridViewColumn[] { ProductID });
             dgvHienThi.Location = new Point(12, 176);
             dgvHienThi.Margin = new Padding(3, 4, 3, 4);
             dgvHienThi.Name = "dgvHienThi";
@@ -166,6 +168,13 @@
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
             // 
+            // ProductID
+            // 
+            ProductID.HeaderText = "ProductID";
+            ProductID.MinimumWidth = 6;
+            ProductID.Name = "ProductID";
+            ProductID.Width = 125;
+            // 
             // frmAdminform
             // 
             AccessibleRole = AccessibleRole.None;
@@ -210,5 +219,6 @@
         private TextBox txtId;
         private Label label4;
         private Button btnLogout;
+        private DataGridViewTextBoxColumn ProductID;
     }
 }
