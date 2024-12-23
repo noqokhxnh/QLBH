@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Extensions.Configuration;
 namespace QuanLyBanHangOnline
 {
     public partial class frmUserform : Form
