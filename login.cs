@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DotNetEnv;
 
 namespace QuanLyBanHangOnline
 {
@@ -16,11 +17,12 @@ namespace QuanLyBanHangOnline
     {
 
         internal string connectionString =
-       $"Server=LAPTOP-B6DMUJM1; " +
-       $"Database=QuanLyBanHang; " +
-       $"Integrated Security=True;";
+    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
         public frmLogin()
         {
+            DotNetEnv.Env.Load();
             InitializeComponent();
 
         }

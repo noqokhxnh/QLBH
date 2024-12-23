@@ -4,17 +4,18 @@
     using System.Data;
     using System.Data.SqlClient;
     using System.Windows.Forms;
+    using DotNetEnv;
+
 
     public partial class frmAdminform : Form
     {
         internal string connectionString =
-     $"Server=LAPTOP-B6DMUJM1; " + 
-     $"Database=QuanLyBanHang; " +  
-     $"Integrated Security=True;";   
-
+     $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+     $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+     $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         public frmAdminform()
-        {
+        { DotNetEnv.Env.Load();
             InitializeComponent();
         }
 
@@ -60,8 +61,8 @@
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "INSERT INTO tbl_product (ProductName, Price, Stock) VALUES (@ProductName, @Price, @Stock)";
-
                 SqlCommand cmd = new SqlCommand(query, conn);
+
                 cmd.Parameters.AddWithValue("@ProductName", productName);
                 cmd.Parameters.AddWithValue("@Price", price);
                 cmd.Parameters.AddWithValue("@Stock", stock);
@@ -83,7 +84,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại!");
+                    Console.WriteLine(ex.ToString());
                 }
             }
         }
@@ -117,7 +119,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại!");
+                    Console.WriteLine(ex.ToString());
                 }
             }
         }
@@ -149,7 +152,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại!");
+                    Console.WriteLine(ex.ToString());
                 }
             }
         }
@@ -157,19 +161,20 @@
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string productName = txtProductName.Text.Trim();
+
             if (string.IsNullOrEmpty(productName))
             {
                 MessageBox.Show("Tên sản phẩm không được để trống!");
                 return;
             }
 
-            if (!decimal.TryParse(txtPrice.Text, out decimal price))
+            if (!decimal.TryParse(txtPrice.Text, out decimal price) || price <= 0)
             {
                 MessageBox.Show("Giá sản phẩm không hợp lệ!");
                 return;
             }
 
-            if (!int.TryParse(txtStock.Text, out int stock))
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
             {
                 MessageBox.Show("Số lượng sản phẩm không hợp lệ!");
                 return;
@@ -180,10 +185,10 @@
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvHienThi.SelectedRows.Count > 0)
+            if (dgvHienThi.SelectedRows.Count > 0 && dgvHienThi.SelectedRows[0].Cells["ProductID"] != null)
             {
                 int productId = Convert.ToInt32(dgvHienThi.SelectedRows[0].Cells["ProductID"].Value);
-                string productName = txtProductName.Text;
+                string productName = txtProductName.Text.Trim();
                 decimal price = Convert.ToDecimal(txtPrice.Text);
                 int stock = Convert.ToInt32(txtStock.Text);
 
@@ -197,31 +202,14 @@
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (dgvHienThi.SelectedRows.Count > 0 && dgvHienThi.SelectedRows[0].Cells["ProductID"] != null)
             {
-                string query = "DELETE FROM tbl_product WHERE ProductID = @ProductID";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ProductID", ProductID);
-
-                try
-                {
-                    conn.Open();
-                    int result = cmd.ExecuteNonQuery();
-
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Xóa sản phẩm thành công!");
-                        LoadProductData(); // Tải lại dữ liệu sau khi xóa
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể xóa sản phẩm!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
-                }
+                int productId = Convert.ToInt32(dgvHienThi.SelectedRows[0].Cells["ProductID"].Value);
+                DeleteProduct(productId);
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn một sản phẩm để xóa!");
             }
         }
 
@@ -231,7 +219,7 @@
             MessageBox.Show("Đăng xuất thành công!");
             frmLogin.Show();
             this.Close(); // Đảm bảo đóng form Admin
-            Application.Exit();
+         
         }
     }
 }

@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DotNetEnv;
 
 namespace QuanLyBanHangOnline
 {
     public partial class frmUserform : Form
     {
+
       internal string connectionString = 
     $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
     $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
@@ -20,6 +22,7 @@ namespace QuanLyBanHangOnline
 
         public frmUserform()
         {
+            DotNetEnv.Env.Load();
             InitializeComponent();
         }
 
