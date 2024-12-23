@@ -15,7 +15,11 @@ namespace QuanLyBanHangOnline
     public partial class frmLogin : Form
     {
 
-        string connectionString = "Server=LAPTOP-B6DMUJM1;Database=QuanLyBanHang;Integrated Security=True;";
+    internal string connectionString = 
+    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+
         public frmLogin()
         {
             InitializeComponent();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dfMVOXua1h8=",
+  "dgSpecHash": "5BPTg4UXtwk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\noqok\\OneDrive\\Documents\\VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj",
+  "projectFilePath": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\noqok\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.0\\microsoft.entityframeworkcore.tools.9.0.0.nupkg.sha512",
     "C:\\Users\\noqok\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
