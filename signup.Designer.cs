@@ -88,6 +88,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmsignup";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Kí";
             ResumeLayout(false);
             PerformLayout();

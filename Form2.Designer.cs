@@ -33,7 +33,7 @@
             cbxSanPham = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtsoluong = new TextBox();
             btbLogout = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).BeginInit();
             SuspendLayout();
@@ -58,6 +58,7 @@
             btnThem.TabIndex = 1;
             btnThem.Text = "Mua";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // cbxSanPham
             // 
@@ -86,13 +87,13 @@
             label2.TabIndex = 4;
             label2.Text = "Số Lượng";
             // 
-            // textBox1
+            // txtsoluong
             // 
-            textBox1.Location = new Point(209, 76);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 27);
-            textBox1.TabIndex = 5;
+            txtsoluong.Location = new Point(209, 76);
+            txtsoluong.Margin = new Padding(3, 4, 3, 4);
+            txtsoluong.Name = "txtsoluong";
+            txtsoluong.Size = new Size(100, 27);
+            txtsoluong.TabIndex = 5;
             // 
             // btbLogout
             // 
@@ -111,7 +112,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1214, 562);
             Controls.Add(btbLogout);
-            Controls.Add(textBox1);
+            Controls.Add(txtsoluong);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(cbxSanPham);
@@ -134,7 +135,8 @@
         private System.Windows.Forms.ComboBox cbxSanPham;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtsoluong;
         private Button btbLogout;
+
     }
 }

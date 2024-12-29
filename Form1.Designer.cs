@@ -41,14 +41,15 @@
             txtId = new TextBox();
             label4 = new Label();
             btnLogout = new Button();
-            ProductID = new DataGridViewTextBoxColumn();
+            label5 = new Label();
+            txtFind = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
             SuspendLayout();
             // 
             // dgvHienThi
             // 
             dgvHienThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHienThi.Columns.AddRange(new DataGridViewColumn[] { ProductID });
             dgvHienThi.Location = new Point(12, 176);
             dgvHienThi.Margin = new Padding(3, 4, 3, 4);
             dgvHienThi.Name = "dgvHienThi";
@@ -168,12 +169,31 @@
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
             // 
-            // ProductID
+            // label5
             // 
-            ProductID.HeaderText = "ProductID";
-            ProductID.MinimumWidth = 6;
-            ProductID.Name = "ProductID";
-            ProductID.Width = 125;
+            label5.AutoSize = true;
+            label5.Location = new Point(660, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(129, 20);
+            label5.TabIndex = 12;
+            label5.Text = "Tìm kiếm theo tên";
+            // 
+            // txtFind
+            // 
+            txtFind.Location = new Point(797, 21);
+            txtFind.Name = "txtFind";
+            txtFind.Size = new Size(125, 27);
+            txtFind.TabIndex = 13;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(948, 21);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 14;
+            button1.Text = "Tìm";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // frmAdminform
             // 
@@ -181,6 +201,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1117, 562);
+            Controls.Add(button1);
+            Controls.Add(txtFind);
+            Controls.Add(label5);
             Controls.Add(btnLogout);
             Controls.Add(txtId);
             Controls.Add(label4);
@@ -219,6 +242,8 @@
         private TextBox txtId;
         private Label label4;
         private Button btnLogout;
-        private DataGridViewTextBoxColumn ProductID;
+        private Label label5;
+        private TextBox txtFind;
+        private Button button1;
     }
 }

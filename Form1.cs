@@ -15,7 +15,8 @@
      $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         public frmAdminform()
-        { DotNetEnv.Env.Load();
+        {
+            DotNetEnv.Env.Load();
             InitializeComponent();
         }
 
@@ -158,6 +159,42 @@
             }
         }
 
+        private void SearchProduct(string keyword)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT ProductID, ProductName, Price, Stock FROM tbl_product " +
+                               "WHERE ProductName LIKE @Keyword";
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = dataAdapter.Fill(dataTable);
+
+                    if (rowsAffected > 0)
+                    {
+                        dgvHienThi.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy sản phẩm nào phù hợp.");
+                        dgvHienThi.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                }
+            }
+        }
+
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string productName = txtProductName.Text.Trim();
@@ -219,7 +256,20 @@
             MessageBox.Show("Đăng xuất thành công!");
             frmLogin.Show();
             this.Close(); // Đảm bảo đóng form Admin
-         
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string keyword = txtFind.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm!");
+                return;
+            }
+
+            SearchProduct(keyword);
         }
     }
 }
