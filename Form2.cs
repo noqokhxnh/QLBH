@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DotNetEnv;
+using QLBH;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyBanHangOnline
@@ -43,13 +44,13 @@ namespace QuanLyBanHangOnline
 
                     if (rowsAffected > 0)
                     {
-                        dgvHIenThi.DataSource = dataTable; 
+                        dgvHIenThi.DataSource = dataTable;
                         cbxSanPham.DataSource = dataTable;
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
-                    
 
-                }
+
+                    }
                     else
                     {
                         dgvHIenThi.DataSource = null;
@@ -93,7 +94,6 @@ namespace QuanLyBanHangOnline
                 return;
             }
 
-
             int requestedStock;
             if (!int.TryParse(txtsoluong.Text, out requestedStock) || requestedStock <= 0)
             {
@@ -103,7 +103,7 @@ namespace QuanLyBanHangOnline
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string getStockQuery = "SELECT Stock FROM tbl_product WHERE ProductID = @ProductID" ;
+                string getStockQuery = "SELECT Stock FROM tbl_product WHERE ProductID = @ProductID";
                 SqlCommand getStockCmd = new SqlCommand(getStockQuery, conn);
                 getStockCmd.Parameters.AddWithValue("@ProductID", productId);
 
@@ -129,6 +129,9 @@ namespace QuanLyBanHangOnline
                     {
                         MessageBox.Show("Mua sản phẩm thành công!");
                         LoadProductData(); // Tải lại dữ liệu sau khi mua
+
+                        // Hiển thị nút đánh giá sau khi mua sản phẩm
+                        btnDanhGia.Visible = true;
                     }
                     else
                     {
@@ -141,6 +144,19 @@ namespace QuanLyBanHangOnline
                     Console.WriteLine(ex.ToString());
                 }
             }
+        }
+
+        private void btnDanhGia_Click(object sender, EventArgs e)
+        {
+            if (cbxSanPham.SelectedValue == null)
+            {
+                MessageBox.Show("Không có sản phẩm nào được chọn để đánh giá!");
+                return;
+            }
+
+            int productId = Convert.ToInt32(cbxSanPham.SelectedValue); // Lấy ProductID từ combobox
+            frmDanhGia frm = new frmDanhGia(productId); // Truyền productId vào constructor
+            frm.ShowDialog(); // Hiển thị form đánh giá
         }
     }
 }

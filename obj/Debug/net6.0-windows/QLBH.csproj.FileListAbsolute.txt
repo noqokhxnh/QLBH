@@ -84,3 +84,4 @@ C:\Users\noqok\OneDrive\Documents\1.VisualStudio_src\QLBH\QLBH\bin\Debug\net6.0-
 C:\Users\noqok\OneDrive\Documents\1.VisualStudio_src\QLBH\QLBH\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\noqok\OneDrive\Documents\1.VisualStudio_src\QLBH\QLBH\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\noqok\OneDrive\Documents\1.VisualStudio_src\QLBH\QLBH\bin\Debug\net6.0-windows\Sprache.dll
+C:\Users\noqok\OneDrive\Documents\1.VisualStudio_src\QLBH\QLBH\obj\Debug\net6.0-windows\QLBH.frmDanhGia.resources

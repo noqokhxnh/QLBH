@@ -41,6 +41,7 @@
                     if (rowsAffected > 0)
                     {
                         dgvHienThi.DataSource = dataTable;
+                       
                     }
                 }
                 catch (Exception ex)
@@ -270,6 +271,20 @@
             }
 
             SearchProduct(keyword);
+        }
+
+        private void dgvHienThi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Đảm bảo không chọn tiêu đề cột
+            {
+                DataGridViewRow row = dgvHienThi.Rows[e.RowIndex];
+
+                // Gán giá trị từ hàng được chọn vào TextBox
+                txtId.Text = row.Cells["ProductID"].Value.ToString();
+                txtProductName.Text = row.Cells["ProductName"].Value.ToString();
+                txtPrice.Text = row.Cells["Price"].Value.ToString();
+                txtStock.Text = row.Cells["Stock"].Value.ToString();
+            }
         }
     }
 }

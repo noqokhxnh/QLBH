@@ -35,11 +35,14 @@
             label2 = new Label();
             txtsoluong = new TextBox();
             btbLogout = new Button();
+            btnDanhGia = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).BeginInit();
             SuspendLayout();
             // 
             // dgvHIenThi
             // 
+            dgvHIenThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHIenThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHIenThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHIenThi.Location = new Point(12, 225);
             dgvHIenThi.Margin = new Padding(3, 4, 3, 4);
@@ -106,11 +109,22 @@
             btbLogout.UseVisualStyleBackColor = true;
             btbLogout.Click += btbLogout_Click;
             // 
+            // btnDanhGia
+            // 
+            btnDanhGia.Location = new Point(714, 526);
+            btnDanhGia.Name = "btnDanhGia";
+            btnDanhGia.Size = new Size(175, 29);
+            btnDanhGia.TabIndex = 7;
+            btnDanhGia.Text = "Đánh giá sản phẩm";
+            btnDanhGia.UseVisualStyleBackColor = true;
+            btnDanhGia.Click += btnDanhGia_Click;
+            // 
             // frmUserform
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1214, 562);
+            Controls.Add(btnDanhGia);
             Controls.Add(btbLogout);
             Controls.Add(txtsoluong);
             Controls.Add(label2);
@@ -137,6 +151,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtsoluong;
         private Button btbLogout;
-
+        private Button btnDanhGia;
     }
 }
