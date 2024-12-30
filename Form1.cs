@@ -41,7 +41,7 @@
                     if (rowsAffected > 0)
                     {
                         dgvHienThi.DataSource = dataTable;
-                       
+
                     }
                 }
                 catch (Exception ex)
@@ -253,10 +253,7 @@
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
-            MessageBox.Show("Đăng xuất thành công!");
-            frmLogin.Show();
-            this.Close(); // Đảm bảo đóng form Admin
+           
 
         }
 
@@ -285,6 +282,14 @@
                 txtPrice.Text = row.Cells["Price"].Value.ToString();
                 txtStock.Text = row.Cells["Stock"].Value.ToString();
             }
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            MessageBox.Show("Đăng xuất thành công!");
+            frmLogin.Show();
+            this.Close(); // Đảm bảo đóng form Admin
         }
     }
 }

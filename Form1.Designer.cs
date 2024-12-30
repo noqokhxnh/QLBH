@@ -38,7 +38,6 @@
             txtProductName = new TextBox();
             txtPrice = new TextBox();
             txtStock = new TextBox();
-            btnLogout = new Button();
             label5 = new Label();
             txtFind = new TextBox();
             button1 = new Button();
@@ -46,6 +45,7 @@
             hệThốngToolStripMenuItem = new ToolStripMenuItem();
             xemThôngTinNgườiDùngToolStripMenuItem = new ToolStripMenuItem();
             đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
+            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             thôngTinSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             thốngKêSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             xemĐánhGiáToolStripMenuItem = new ToolStripMenuItem();
@@ -153,16 +153,6 @@
             txtStock.Size = new Size(88, 27);
             txtStock.TabIndex = 4;
             // 
-            // btnLogout
-            // 
-            btnLogout.Location = new Point(1011, 521);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(94, 29);
-            btnLogout.TabIndex = 11;
-            btnLogout.Text = "Đăng xuất";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -201,7 +191,7 @@
             // 
             // hệThốngToolStripMenuItem
             // 
-            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { xemThôngTinNgườiDùngToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem });
+            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { xemThôngTinNgườiDùngToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
             hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
             hệThốngToolStripMenuItem.Size = new Size(88, 24);
             hệThốngToolStripMenuItem.Text = "Hệ Thống";
@@ -217,6 +207,13 @@
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             đổiMậtKhẩuToolStripMenuItem.Size = new Size(267, 26);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            đăngXuấtToolStripMenuItem.Size = new Size(267, 26);
+            đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
             // thôngTinSảnPhẩmToolStripMenuItem
             // 
@@ -263,7 +260,6 @@
             Controls.Add(button1);
             Controls.Add(txtFind);
             Controls.Add(label5);
-            Controls.Add(btnLogout);
             Controls.Add(txtId);
             Controls.Add(label4);
             Controls.Add(txtStock);
@@ -302,7 +298,6 @@
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtStock;
-        private Button btnLogout;
         private Label label5;
         private TextBox txtFind;
         private Button button1;
@@ -315,5 +310,6 @@
         private ToolStripMenuItem xemĐánhGiáToolStripMenuItem;
         private TextBox txtId;
         private Label label4;
+        private ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }
