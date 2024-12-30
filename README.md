@@ -2,31 +2,57 @@
 
 ## Hướng dẫn sử dụng
 
-1. Clone dự án về máy của bạn.
-2. Phục hồi cơ sở dữ liệu `QuanLyBanHang` từ file sao lưu `QuanLyBanHang.bak`.
+1. Tải Git tại `
+    https://git-scm.com/downloads
+   ` 
+
+3. Mở CMD
+4. Nhập
+   ``` 
+    git clone https://github.com/noqokhxnh/QLBH.git
+   ```
+
+
+6. Khôi phục dữ liệu
+
+
+Bước 1: Mở SQL Server  chọn File > Open > File…
+
+![1](https://github.com/user-attachments/assets/22205684-4d3b-4f21-b7ec-f21b8686743d)
+
+
+
+Bước 2: Chọn file script.sql để mở trong SQL Server
+
+![image](https://github.com/user-attachments/assets/db073bba-d5b5-4346-8dfa-e4efa4aa4279)
+
+Chọn file .sql đã lưu về trước đó
+
+Bước 3: Chúng ta cần tạo 1 Database giống với tên của Database cũ để chứa dữ liệu sắp nhập vào.
+
+VD: Trong trường hợp này chúng ta phải tạo Database tên `QuanLyBanHang`
+![image](https://github.com/user-attachments/assets/f7e808d1-3673-48af-b1fd-ef5ddf22f13f)
 
 
 
 
- Hướng dẫn phục hồi ở đây :
-	
-![OURYV](https://github.com/user-attachments/assets/549b7c03-600a-41bb-82b4-e178eb83b68a)
+
+Bước 4: Chọn tất cả câu lệnh và nhấn Execute. Kết quả thành công sẽ hiện thông báo: Command(s) completed successfully. Mở Datbase `QuanLyBanHang` ra sẽ thấy tất cả các bảng và dữ liệu chúng ta cần.
+
+![image](https://github.com/user-attachments/assets/905291cf-03f1-4f03-a41a-bbc69eb70481)
 
 
+Chạy lệnh để hoàn tất quá trình khôi phục
 
-![FGOpz](https://github.com/user-attachments/assets/ed5f068e-9978-4873-a3d9-b6b6357ab67f)
-
-    https://stackoverflow.com/questions/20837673/how-to-import-a-bak-file-into-sql-server-express
-
-4. Mở dự án trong Visual Studio.
-5. Cập nhật chuỗi kết nối trong mã nguồn nếu cần:
-   - Mở `frmLogin.cs` và thay đổi chuỗi kết nối:
-     ```csharp
-     string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=QuanLyBanHang;Integrated Security=True;";
+5. Mở dự án trong Visual Studio.
+6. Cập nhật chuỗi kết nối trong mã nguồn nếu cần:
+   - Mở `.env` và thay đổi chuỗi kết nối:
+     ```env
+     DB_SERVER=LAPTOP-B6DMUJM1 thành tên SQL của bạn
      ```
-6. Chạy ứng dụng và đăng nhập bằng tài khoản mẫu:
+7. Chạy ứng dụng và đăng nhập bằng tài khoản mẫu:
    - ADMIN: admin, 123
    - USER: user, 123
-thử
 
 
+	

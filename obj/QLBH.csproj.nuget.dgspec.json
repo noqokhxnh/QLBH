@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj": {}
+    "C:\\Users\\noqok\\OneDrive\\Máy tính\\QLBH\\QLBH.csproj": {}
   },
   "projects": {
-    "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj": {
+    "C:\\Users\\noqok\\OneDrive\\Máy tính\\QLBH\\QLBH.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj",
+        "projectUniqueName": "C:\\Users\\noqok\\OneDrive\\Máy tính\\QLBH\\QLBH.csproj",
         "projectName": "QLBH",
-        "projectPath": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\QLBH.csproj",
+        "projectPath": "C:\\Users\\noqok\\OneDrive\\Máy tính\\QLBH\\QLBH.csproj",
         "packagesPath": "C:\\Users\\noqok\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\noqok\\OneDrive\\Documents\\1.VisualStudio_src\\QLBH\\QLBH\\obj\\",
+        "outputPath": "C:\\Users\\noqok\\OneDrive\\Máy tính\\QLBH\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
