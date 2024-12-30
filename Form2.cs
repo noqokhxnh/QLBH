@@ -158,5 +158,15 @@ namespace QuanLyBanHangOnline
             frmDanhGia frm = new frmDanhGia(productId); // Truyền productId vào constructor
             frm.ShowDialog(); // Hiển thị form đánh giá
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

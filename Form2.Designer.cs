@@ -36,7 +36,12 @@
             txtsoluong = new TextBox();
             btbLogout = new Button();
             btnDanhGia = new Button();
+            menuStrip1 = new MenuStrip();
+            thôngTinTàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
+            đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
+            giỏHàngToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvHIenThi
@@ -66,7 +71,7 @@
             // cbxSanPham
             // 
             cbxSanPham.FormattingEnabled = true;
-            cbxSanPham.Location = new Point(209, 16);
+            cbxSanPham.Location = new Point(188, 89);
             cbxSanPham.Margin = new Padding(3, 4, 3, 4);
             cbxSanPham.Name = "cbxSanPham";
             cbxSanPham.Size = new Size(121, 28);
@@ -75,16 +80,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 25);
+            label1.Location = new Point(12, 92);
             label1.Name = "label1";
             label1.Size = new Size(111, 20);
             label1.TabIndex = 3;
             label1.Text = "Chọn sản phẩm";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 85);
+            label2.Location = new Point(24, 158);
             label2.Name = "label2";
             label2.Size = new Size(72, 20);
             label2.TabIndex = 4;
@@ -92,7 +98,7 @@
             // 
             // txtsoluong
             // 
-            txtsoluong.Location = new Point(209, 76);
+            txtsoluong.Location = new Point(188, 151);
             txtsoluong.Margin = new Padding(3, 4, 3, 4);
             txtsoluong.Name = "txtsoluong";
             txtsoluong.Size = new Size(100, 27);
@@ -119,6 +125,36 @@
             btnDanhGia.UseVisualStyleBackColor = true;
             btnDanhGia.Click += btnDanhGia_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, giỏHàngToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1214, 28);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // thôngTinTàiKhoảnToolStripMenuItem
+            // 
+            thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem });
+            thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
+            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(151, 24);
+            thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
+            // 
+            // đổiMậtKhẩuToolStripMenuItem
+            // 
+            đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(224, 26);
+            đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
+            // 
+            // giỏHàngToolStripMenuItem
+            // 
+            giỏHàngToolStripMenuItem.Name = "giỏHàngToolStripMenuItem";
+            giỏHàngToolStripMenuItem.Size = new Size(83, 24);
+            giỏHàngToolStripMenuItem.Text = "Giỏ hàng";
+            // 
             // frmUserform
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -132,12 +168,16 @@
             Controls.Add(cbxSanPham);
             Controls.Add(btnThem);
             Controls.Add(dgvHIenThi);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmUserform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += frmUserform_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,5 +192,9 @@
         private System.Windows.Forms.TextBox txtsoluong;
         private Button btbLogout;
         private Button btnDanhGia;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
+        private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private ToolStripMenuItem giỏHàngToolStripMenuItem;
     }
 }
