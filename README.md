@@ -6,9 +6,9 @@
 
 2. Mở CMD
 3. Nhập
-   ````cmd
+   ```cmd
     git clone https://github.com/noqokhxnh/QLBH.git
-   ````
+   ```
 
 
 6. Khôi phục dữ liệu
