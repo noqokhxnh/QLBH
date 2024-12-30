@@ -108,7 +108,7 @@
             // 
             // btnDanhGia
             // 
-            btnDanhGia.Location = new Point(714, 526);
+            btnDanhGia.Location = new Point(699, 275);
             btnDanhGia.Name = "btnDanhGia";
             btnDanhGia.Size = new Size(175, 29);
             btnDanhGia.TabIndex = 7;
