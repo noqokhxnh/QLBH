@@ -8,7 +8,7 @@
 
 3. Mở CMD
 4. Nhập
-   ``` cmd
+   ``` terminal
     git clone https://github.com/noqokhxnh/QLBH.git
    ```
 
