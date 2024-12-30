@@ -2,11 +2,13 @@
 
 ## Hướng dẫn sử dụng
 
-1. Clone dự án về máy của bạn.
-2. Phục hồi cơ sở dữ liệu
+1. Tải GIT bằng https://git-scm.com/downloads
+
+2. Mở CMD
+3. Nhập git clone git@github.com:noqokhxnh/QLBH.git
 
 
-Khôi phục dữ liệu
+4. Khôi phục dữ liệu
 
 
 Bước 1: Mở SQL Server  chọn File > Open > File…
@@ -37,13 +39,13 @@ Bước 4: Chọn tất cả câu lệnh và nhấn Execute. Kết quả thành 
 
 Chạy lệnh để hoàn tất quá trình khôi phục
 
-4. Mở dự án trong Visual Studio.
-5. Cập nhật chuỗi kết nối trong mã nguồn nếu cần:
+5. Mở dự án trong Visual Studio.
+6. Cập nhật chuỗi kết nối trong mã nguồn nếu cần:
    - Mở `.env` và thay đổi chuỗi kết nối:
      ```env
      DB_SERVER=LAPTOP-B6DMUJM1 thành tên SQL của bạn
      ```
-6. Chạy ứng dụng và đăng nhập bằng tài khoản mẫu:
+7. Chạy ứng dụng và đăng nhập bằng tài khoản mẫu:
    - ADMIN: admin, 123
    - USER: user, 123
 
