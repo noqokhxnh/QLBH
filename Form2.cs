@@ -1,26 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DotNetEnv;
-using QLBH;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
-namespace QuanLyBanHangOnline
+﻿namespace QuanLyBanHangOnline
 {
+    using QLBH;
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Windows.Forms;
+
     public partial class frmUserform : Form
     {
-
-        internal string connectionString =
-      $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-      $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-      $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" + $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" + $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         public frmUserform()
         {
@@ -49,7 +37,6 @@ namespace QuanLyBanHangOnline
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
 
-
                     }
                     else
                     {
@@ -64,19 +51,13 @@ namespace QuanLyBanHangOnline
             }
         }
 
-
         private void frmUserform_Load(object sender, EventArgs e)
         {
             LoadProductData();
-
         }
 
         private void btbLogout_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
-            MessageBox.Show("Đăng xuất thành công!");
-            frmLogin.Show();
-            this.Close();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -128,9 +109,8 @@ namespace QuanLyBanHangOnline
                     if (result > 0)
                     {
                         MessageBox.Show("Mua sản phẩm thành công!");
-                        LoadProductData(); // Tải lại dữ liệu sau khi mua
+                        LoadProductData(); 
 
-                        // Hiển thị nút đánh giá sau khi mua sản phẩm
                         btnDanhGia.Visible = true;
                     }
                     else
@@ -154,19 +134,25 @@ namespace QuanLyBanHangOnline
                 return;
             }
 
-            int productId = Convert.ToInt32(cbxSanPham.SelectedValue); // Lấy ProductID từ combobox
-            frmDanhGia frm = new frmDanhGia(productId); // Truyền productId vào constructor
-            frm.ShowDialog(); // Hiển thị form đánh giá
+            int productId = Convert.ToInt32(cbxSanPham.SelectedValue);
+            frmDanhGia frm = new frmDanhGia(productId); 
+            frm.ShowDialog(); 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            MessageBox.Show("Đăng xuất thành công!");
+            frmLogin.Show();
+            this.Close();
         }
     }
 }

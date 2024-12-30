@@ -4,23 +4,18 @@
     using System.Data;
     using System.Data.SqlClient;
     using System.Windows.Forms;
-    using DotNetEnv;
 
-
-    public partial class frmAdminform : Form
+        public partial class frmAdminform : Form
     {
-        internal string connectionString =
-     $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-     $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-     $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+                 string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +   $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +     $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
-        public frmAdminform()
+                public frmAdminform()
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
         }
 
-        private void LoadProductData()
+                private void LoadProductData()
         {
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -52,13 +47,12 @@
             }
         }
 
-        private void frmAdminform_Load(object sender, EventArgs e)
+                private void frmAdminform_Load(object sender, EventArgs e)
         {
             LoadProductData();
         }
 
-
-        private void AddProduct(string productName, decimal price, int stock)
+                private void AddProduct(string productName, decimal price, int stock)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -77,7 +71,7 @@
                     if (result > 0)
                     {
                         MessageBox.Show("Thêm sản phẩm thành công!");
-                        LoadProductData(); // Tải lại dữ liệu sau khi thêm
+                        LoadProductData(); 
                     }
                     else
                     {
@@ -92,7 +86,7 @@
             }
         }
 
-        private void EditProduct(int productId, string productName, decimal price, int stock)
+                private void EditProduct(int productId, string productName, decimal price, int stock)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -112,7 +106,7 @@
                     if (result > 0)
                     {
                         MessageBox.Show("Sửa sản phẩm thành công!");
-                        LoadProductData(); // Tải lại dữ liệu sau khi sửa
+                        LoadProductData(); 
                     }
                     else
                     {
@@ -127,8 +121,7 @@
             }
         }
 
-
-        private void DeleteProduct(int productId)
+                private void DeleteProduct(int productId)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -145,7 +138,7 @@
                     if (result > 0)
                     {
                         MessageBox.Show("Xóa sản phẩm thành công!");
-                        LoadProductData(); // Tải lại dữ liệu sau khi xóa
+                        LoadProductData(); 
                     }
                     else
                     {
@@ -160,7 +153,7 @@
             }
         }
 
-        private void SearchProduct(string keyword)
+                private void SearchProduct(string keyword)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -194,9 +187,7 @@
             }
         }
 
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
+                private void btnAdd_Click(object sender, EventArgs e)
         {
             string productName = txtProductName.Text.Trim();
 
@@ -221,7 +212,7 @@
             AddProduct(productName, price, stock);
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+                private void btnEdit_Click(object sender, EventArgs e)
         {
             if (dgvHienThi.SelectedRows.Count > 0 && dgvHienThi.SelectedRows[0].Cells["ProductID"] != null)
             {
@@ -238,7 +229,7 @@
             }
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+                private void btnRemove_Click(object sender, EventArgs e)
         {
             if (dgvHienThi.SelectedRows.Count > 0 && dgvHienThi.SelectedRows[0].Cells["ProductID"] != null)
             {
@@ -251,13 +242,11 @@
             }
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+                private void btnLogout_Click(object sender, EventArgs e)
         {
-           
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+                private void button1_Click(object sender, EventArgs e)
         {
             string keyword = txtFind.Text.Trim();
 
@@ -270,13 +259,13 @@
             SearchProduct(keyword);
         }
 
-        private void dgvHienThi_CellClick(object sender, DataGridViewCellEventArgs e)
+                private void dgvHienThi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Đảm bảo không chọn tiêu đề cột
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = dgvHienThi.Rows[e.RowIndex];
 
-                // Gán giá trị từ hàng được chọn vào TextBox
+     
                 txtId.Text = row.Cells["ProductID"].Value.ToString();
                 txtProductName.Text = row.Cells["ProductName"].Value.ToString();
                 txtPrice.Text = row.Cells["Price"].Value.ToString();
@@ -284,12 +273,16 @@
             }
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+                private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
             MessageBox.Show("Đăng xuất thành công!");
             frmLogin.Show();
-            this.Close(); // Đảm bảo đóng form Admin
+            this.Close();
+        }
+
+                private void xemThôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

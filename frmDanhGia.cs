@@ -15,10 +15,7 @@ namespace QLBH
     public partial class frmDanhGia : Form
     {
 
-        internal string connectionString =
-     $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-     $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-     $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +  $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +  $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         private int productId;
         public frmDanhGia(int productId)

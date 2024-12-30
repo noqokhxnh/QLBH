@@ -201,6 +201,7 @@
             xemThôngTinNgườiDùngToolStripMenuItem.Name = "xemThôngTinNgườiDùngToolStripMenuItem";
             xemThôngTinNgườiDùngToolStripMenuItem.Size = new Size(267, 26);
             xemThôngTinNgườiDùngToolStripMenuItem.Text = "Xem thông tin người dùng";
+            xemThôngTinNgườiDùngToolStripMenuItem.Click += xemThôngTinNgườiDùngToolStripMenuItem_Click;
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
