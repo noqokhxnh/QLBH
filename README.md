@@ -2,11 +2,13 @@
 
 ## Hướng dẫn sử dụng
 
-1. Tải GIT bằng` https://git-scm.com/downloads` 
+1. Tải Git tại `
+    https://git-scm.com/downloads
+   ` 
 
-2. Mở CMD
-3. Nhập
-   ```cmd
+3. Mở CMD
+4. Nhập
+   ``` cmd
     git clone https://github.com/noqokhxnh/QLBH.git
    ```
 
