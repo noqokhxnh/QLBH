@@ -5,12 +5,13 @@
 1. Tải GIT bằng` https://git-scm.com/downloads` 
 
 2. Mở CMD
-3. Nhập ````cmd
+3. Nhập
+   ````cmd
     git clone https://github.com/noqokhxnh/QLBH.git
-     ````
+   ````
 
 
-5. Khôi phục dữ liệu
+6. Khôi phục dữ liệu
 
 
 Bước 1: Mở SQL Server  chọn File > Open > File…
