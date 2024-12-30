@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Extensions.Configuration;
 namespace QLBH
 {
     public partial class frmsignup : Form
     {
-        string connectionString = "Server=LAPTOP-B6DMUJM1;Database=QuanLyBanHang;Integrated Security=True;";
+       internal string connectionString = 
+    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         public frmsignup()
         {

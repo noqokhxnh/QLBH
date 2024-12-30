@@ -1,4 +1,19 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
+namespace QuanLyBanHangOnline
+=======
 ﻿namespace QuanLyBanHangOnline
+>>>>>>> ebcc5c37b7fb852372aeefbb5cf75294a508a47d
 {
     using QLBH;
     using System;
