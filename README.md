@@ -35,7 +35,7 @@ VD: Trong trường hợp này chúng ta phải tạo Database tên `QuanLyBanHa
 
 
 
-Đặt tên cho Database
+
 
 Bước 4: Chọn tất cả câu lệnh và nhấn Execute. Kết quả thành công sẽ hiện thông báo: Command(s) completed successfully. Mở Datbase `QuanLyBanHang` ra sẽ thấy tất cả các bảng và dữ liệu chúng ta cần.
 
