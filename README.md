@@ -5,7 +5,7 @@
 1. Tải GIT bằng` https://git-scm.com/downloads` 
 
 2. Mở CMD
-3. Nhập ``git clone git@github.com:noqokhxnh/QLBH.git``
+3. Nhập ``[git clone git@github.com:noqokhxnh/QLBH.git](https://github.com/noqokhxnh/QLBH.git)``
 
 
 4. Khôi phục dữ liệu
