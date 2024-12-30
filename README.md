@@ -2,7 +2,7 @@
 
 ## Hướng dẫn sử dụng
 
-1. Tải GIT bằng` https://git-scm.com/downloads` `ctrl+c`
+1. Tải GIT bằng` https://git-scm.com/downloads` 
 
 2. Mở CMD
 3. Nhập ``git clone git@github.com:noqokhxnh/QLBH.git``
