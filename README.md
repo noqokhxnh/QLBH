@@ -2,13 +2,18 @@
 
 ## Hướng dẫn sử dụng
 
-1. Tải GIT bằng https://git-scm.com/downloads
+1. Tải Git tại `
+    https://git-scm.com/downloads
+   ` 
 
-2. Mở CMD
-3. Nhập git clone git@github.com:noqokhxnh/QLBH.git
+3. Mở CMD
+4. Nhập
+   ``` 
+    git clone https://github.com/noqokhxnh/QLBH.git
+   ```
 
 
-4. Khôi phục dữ liệu
+6. Khôi phục dữ liệu
 
 
 Bước 1: Mở SQL Server  chọn File > Open > File…
@@ -30,7 +35,7 @@ VD: Trong trường hợp này chúng ta phải tạo Database tên `QuanLyBanHa
 
 
 
-Đặt tên cho Database
+
 
 Bước 4: Chọn tất cả câu lệnh và nhấn Execute. Kết quả thành công sẽ hiện thông báo: Command(s) completed successfully. Mở Datbase `QuanLyBanHang` ra sẽ thấy tất cả các bảng và dữ liệu chúng ta cần.
 
