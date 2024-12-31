@@ -57,6 +57,9 @@ Chạy lệnh để hoàn tất quá trình khôi phục
    - USER: user, 123
 
 7. Xử Lí Lỗi
+
+
+
 	![image](https://github.com/user-attachments/assets/fdd52e0d-e720-42df-af76-0c4b86eec454)
 
 	`
