@@ -34,6 +34,7 @@
             btnThanhToan = new Button();
             txtGiamGia = new TextBox();
             txtTien = new TextBox();
+            btnApDung = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
             SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             btnThanhToan.Location = new Point(484, 408);
             btnThanhToan.Name = "btnThanhToan";
             btnThanhToan.Size = new Size(94, 29);
-            btnThanhToan.TabIndex = 3;
+            btnThanhToan.TabIndex = 4;
             btnThanhToan.Text = "Thanh Toán";
             btnThanhToan.UseVisualStyleBackColor = true;
             btnThanhToan.Click += btnThanhToan_Click;
@@ -83,7 +84,7 @@
             txtGiamGia.Location = new Point(566, 314);
             txtGiamGia.Name = "txtGiamGia";
             txtGiamGia.Size = new Size(125, 27);
-            txtGiamGia.TabIndex = 4;
+            txtGiamGia.TabIndex = 2;
             // 
             // txtTien
             // 
@@ -91,13 +92,24 @@
             txtTien.Name = "txtTien";
             txtTien.ReadOnly = true;
             txtTien.Size = new Size(125, 27);
-            txtTien.TabIndex = 5;
+            txtTien.TabIndex = 1;
+            // 
+            // btnApDung
+            // 
+            btnApDung.Location = new Point(711, 314);
+            btnApDung.Name = "btnApDung";
+            btnApDung.Size = new Size(94, 29);
+            btnApDung.TabIndex = 3;
+            btnApDung.Text = "Áp dụng";
+            btnApDung.UseVisualStyleBackColor = true;
+            btnApDung.Click += btnApDung_Click;
             // 
             // GioHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(817, 450);
+            Controls.Add(btnApDung);
             Controls.Add(txtTien);
             Controls.Add(txtGiamGia);
             Controls.Add(btnThanhToan);
@@ -121,5 +133,6 @@
         private Button btnThanhToan;
         private TextBox txtGiamGia;
         private TextBox txtTien;
+        private Button btnApDung;
     }
 }

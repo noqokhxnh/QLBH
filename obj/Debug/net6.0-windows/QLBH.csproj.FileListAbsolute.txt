@@ -122,3 +122,4 @@ C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\dotenv.net.dll
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.Properties.Resources.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.GioHang.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.ProfileUser.resources
+C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.GiamGia.resources

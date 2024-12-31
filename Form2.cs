@@ -63,7 +63,7 @@
                     else
                     {
                         dgvHIenThi.DataSource = null;
-                        MessageBox.Show("Không tìm thấy sản phẩm nào trong cơ sở dữ liệu!");
+                        MessageBox.Show("Không tìm thấy sản phẩm nào trong cơ sở dữ liệu");
                     }
                 }
                 catch (Exception ex)
@@ -86,7 +86,7 @@
         {
             if (cbxSanPham.SelectedValue == null)
             {
-                MessageBox.Show("Không có sản phẩm nào được chọn!");
+                MessageBox.Show("Không có sản phẩm nào được chọn");
                 return;
             }
 
@@ -100,7 +100,7 @@
             int requestedStock;
             if (!int.TryParse(txtsoluong.Text, out requestedStock) || requestedStock <= 0)
             {
-                MessageBox.Show("Số lượng không hợp lệ!");
+                MessageBox.Show("Số lượng không hợp lệ");
                 return;
             }
 
@@ -131,11 +131,11 @@
                         };
 
                         cartItems.Add(newItem);
-                        MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng!");
+                        MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng");
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy sản phẩm trong cơ sở dữ liệu!");
+                        MessageBox.Show("Không tìm thấy sản phẩm trong cơ sở dữ liệu");
                     }
                 }
                 catch (Exception ex)
@@ -149,7 +149,7 @@
         {
             if (cbxSanPham.SelectedValue == null)
             {
-                MessageBox.Show("Không có sản phẩm nào được chọn để đánh giá!");
+                MessageBox.Show("Không có sản phẩm nào được chọn để đánh giá");
                 return;
             }
 
@@ -169,7 +169,7 @@
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
-            MessageBox.Show("Đăng xuất thành công!");
+            MessageBox.Show("Đăng xuất thành công");
             frmLogin.Show();
             this.Close();
         }

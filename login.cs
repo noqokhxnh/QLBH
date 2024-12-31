@@ -62,7 +62,7 @@ namespace QuanLyBanHangOnline
 
                     if (role != null)
                     {
-                        MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
 
                         if (role.ToString().Trim() == "Admin")

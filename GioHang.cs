@@ -114,16 +114,72 @@ namespace QLBH
                 // Cập nhật lại DataGridView
                 dgvCart.DataSource = null;
                 dgvCart.DataSource = cartItems;
-              
-                
 
-            // Cập nhật lại tổng số tiền
+
+
+                // Cập nhật lại tổng số tiền
                 decimal totalPrice = 0;
                 foreach (var item in cartItems)
                 {
                     totalPrice += item.Price * item.Stock;
                 }
                 txtTien.Text = totalPrice.ToString("#,0") + " VND";
+            }
+        }
+
+        private void btnApDung_Click(object sender, EventArgs e)
+        {
+            string maGiamGia = txtGiamGia.Text.Trim();
+
+            if (string.IsNullOrEmpty(maGiamGia))
+            {
+                MessageBox.Show("Vui lòng nhập mã giảm giá.");
+                return;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT GiamGia FROM tbl_magiamgia WHERE MaGiamGia = @MaGiamGia";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaGiamGia", maGiamGia);
+
+                try
+                {
+                    conn.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        float giamGia = Convert.ToSingle(result);
+                        if (giamGia >= 0 && giamGia <= 100)
+                        {
+
+                            string priceText = txtTien.Text.Replace("VND", "").Replace(",", "").Trim();
+                            decimal currentPrice;
+                            if (decimal.TryParse(priceText, out currentPrice))
+                            {
+                                decimal discountAmount = currentPrice * (decimal)(giamGia / 100);
+                                decimal finalPrice = currentPrice - discountAmount;
+
+
+                                txtTien.Text = finalPrice.ToString("#,0") + " VND";
+                                MessageBox.Show($"Mã giảm giá hợp lệ. Bạn được giảm {giamGia}%\nSố tiền giảm: {discountAmount:n0} VND\nTổng tiền sau giảm: {finalPrice:n0} VND");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Lỗi khi xử lý số tiền.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mã giảm giá không tồn tại.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                }
             }
         }
     }
