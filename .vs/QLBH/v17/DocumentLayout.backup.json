@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GioHang.cs",
               "DocumentMoniker": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\GioHang.cs",
               "RelativeDocumentMoniker": "GioHang.cs",
@@ -55,15 +55,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "GioHang.cs [Design]",
               "DocumentMoniker": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\GioHang.cs",
               "RelativeDocumentMoniker": "GioHang.cs",
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\GioHang.cs [Design]",
               "RelativeToolTip": "GioHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T05:52:30.996Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-31T05:52:30.996Z"
             },
             {
               "$type": "Document",
@@ -73,7 +72,7 @@
               "RelativeDocumentMoniker": "Form2.cs",
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAowEQAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T05:50:58.464Z",
               "EditorCaption": ""
@@ -87,12 +86,11 @@
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\Form2.cs [Design]",
               "RelativeToolTip": "Form2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T05:50:52.606Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-31T05:50:52.606Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAcwBkAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T12:41:29.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-22T12:41:29.768Z"
             }
           ]
         }

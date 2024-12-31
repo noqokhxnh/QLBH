@@ -44,7 +44,7 @@ using Microsoft.Extensions.Configuration;
             public int ProductID { get; set; }
             public string ProductName { get; set; }
             public int Stock { get; set; }
-            public decimal Price { get; set; } 
+            public decimal Price { get; set; }
 
         }
 
@@ -66,7 +66,7 @@ using Microsoft.Extensions.Configuration;
                     if (rowsAffected > 0)
                     {
                         dgvHIenThi.DataSource = dataTable;
-                         dgvHIenThi.Columns["Price"].DefaultCellStyle.Format = "C";
+                        dgvHIenThi.Columns["Price"].DefaultCellStyle.Format = "C";
                         cbxSanPham.DataSource = dataTable;
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
@@ -186,7 +186,7 @@ using Microsoft.Extensions.Configuration;
             this.Close();
         }
 
-        private void sảnPhẩmĐãMuaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GioHang_Click(object sender, EventArgs e)
         {
             GioHang f = new GioHang(cartItems);
             f.ShowDialog();

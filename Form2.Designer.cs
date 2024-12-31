@@ -40,7 +40,7 @@
             đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             quảnLýSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
-            sảnPhẩmĐãMuaToolStripMenuItem = new ToolStripMenuItem();
+            GioHang = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).BeginInit();
             menuStrip1.SuspendLayout();
@@ -151,17 +151,17 @@
             // 
             // quảnLýSảnPhẩmToolStripMenuItem
             // 
-            quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sảnPhẩmĐãMuaToolStripMenuItem, toolStripMenuItem1 });
+            quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { GioHang, toolStripMenuItem1 });
             quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
             quảnLýSảnPhẩmToolStripMenuItem.Size = new Size(144, 24);
             quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản Lý Sản Phẩm";
             // 
-            // sảnPhẩmĐãMuaToolStripMenuItem
+            // GioHang
             // 
-            sảnPhẩmĐãMuaToolStripMenuItem.Name = "sảnPhẩmĐãMuaToolStripMenuItem";
-            sảnPhẩmĐãMuaToolStripMenuItem.Size = new Size(224, 26);
-            sảnPhẩmĐãMuaToolStripMenuItem.Text = "Giỏ Hàng";
-            sảnPhẩmĐãMuaToolStripMenuItem.Click += sảnPhẩmĐãMuaToolStripMenuItem_Click;
+            GioHang.Name = "GioHang";
+            GioHang.Size = new Size(224, 26);
+            GioHang.Text = "Giỏ Hàng";
+            GioHang.Click += GioHang_Click;
             // 
             // toolStripMenuItem1
             // 
@@ -209,7 +209,7 @@
         private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
-        private ToolStripMenuItem sảnPhẩmĐãMuaToolStripMenuItem;
+        private ToolStripMenuItem GioHang;
         private ToolStripMenuItem toolStripMenuItem1;
     }
 }
