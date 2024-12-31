@@ -56,7 +56,7 @@ Chạy lệnh để hoàn tất quá trình khôi phục
    - ADMIN: admin, 123
    - USER: user, 123
 
-7. Xử Lí Lỗi
+7. Xử lý lỗi không chạy được
 
 
 
