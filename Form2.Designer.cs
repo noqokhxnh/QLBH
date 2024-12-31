@@ -160,7 +160,8 @@
             // 
             sảnPhẩmĐãMuaToolStripMenuItem.Name = "sảnPhẩmĐãMuaToolStripMenuItem";
             sảnPhẩmĐãMuaToolStripMenuItem.Size = new Size(224, 26);
-            sảnPhẩmĐãMuaToolStripMenuItem.Text = "Sản phẩm đã mua";
+            sảnPhẩmĐãMuaToolStripMenuItem.Text = "Giỏ Hàng";
+            sảnPhẩmĐãMuaToolStripMenuItem.Click += sảnPhẩmĐãMuaToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 

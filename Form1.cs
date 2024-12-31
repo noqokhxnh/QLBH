@@ -1,5 +1,6 @@
 ﻿namespace QuanLyBanHangOnline
 {   using Microsoft.Extensions.Configuration;
+    using QLBH;
     using System;
     using System.Data;
     using System.Data.SqlClient;
@@ -287,6 +288,8 @@
 
                 private void xemThôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ProfileUser f = new ProfileUser();
+            f.ShowDialog();
         }
     }
 }
