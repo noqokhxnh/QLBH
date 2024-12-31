@@ -21,10 +21,12 @@ namespace QLBH
                                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};" +
                                           $"Trusted_Connection=true;";
         public event Action OnClose;
-        public GioHang(List<CartItem> cartItems)
+        private readonly int userId;
+        public GioHang(List<CartItem> cartItems, int userid)
         {
             InitializeComponent();
             this.cartItems = cartItems;
+            this.userId = userId;
         }
 
         private void GioHang_Load(object sender, EventArgs e)
