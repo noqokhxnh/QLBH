@@ -17,10 +17,10 @@ namespace QLBH
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                            $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                            $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
-                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};" +
-                           $"Trusted_Connection=true;";
+                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};";
 
-      
+
+
 
 
         public frmsignup()

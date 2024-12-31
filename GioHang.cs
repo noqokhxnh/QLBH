@@ -15,11 +15,11 @@ namespace QLBH
     public partial class GioHang : Form
     {
         private List<CartItem> cartItems;
-        private string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-                                          $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-                                          $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
-                                          $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};" +
-                                          $"Trusted_Connection=true;";
+        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                           $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                           $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
+                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};";
+
         public event Action OnClose;
         private readonly int userId;
         public GioHang(List<CartItem> cartItems)
