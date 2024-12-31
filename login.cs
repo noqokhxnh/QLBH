@@ -72,6 +72,8 @@ namespace QuanLyBanHangOnline
                         }
                         else
                         {
+
+
                             frmUserform userForm = new frmUserform();
                             userForm.Show();
                         }

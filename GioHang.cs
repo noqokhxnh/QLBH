@@ -22,11 +22,11 @@ namespace QLBH
                                           $"Trusted_Connection=true;";
         public event Action OnClose;
         private readonly int userId;
-        public GioHang(List<CartItem> cartItems, int userid)
+        public GioHang(List<CartItem> cartItems)
         {
             InitializeComponent();
             this.cartItems = cartItems;
-            this.userId = userId;
+            
         }
 
         private void GioHang_Load(object sender, EventArgs e)
