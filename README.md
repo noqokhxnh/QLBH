@@ -2,18 +2,20 @@
 
 ## Hướng dẫn sử dụng
 
-1. Tải Git tại `
-    https://git-scm.com/downloads
-   ` 
-
-3. Mở CMD
-4. Nhập
-   ``` 
-    git clone https://github.com/noqokhxnh/QLBH.git
-   ```
+1. Cài đặt Git
+Tải Git tại ```
+https://git-scm.com/downloads ```và cài đặt.
+2. Clone mã nguồn
+	Mở CMD hoặc Terminal, sau đó nhập:
+```
+git clone https://github.com/noqokhxnh/QLBH.git
 
 
-6. Khôi phục dữ liệu
+cd QLBH
+```
+
+
+3. Khôi phục dữ liệu SQL
 
 
 Bước 1: Mở SQL Server  chọn File > Open > File…
@@ -44,15 +46,27 @@ Bước 4: Chọn tất cả câu lệnh và nhấn Execute. Kết quả thành 
 
 Chạy lệnh để hoàn tất quá trình khôi phục
 
-5. Mở dự án trong Visual Studio.
-6. Cập nhật chuỗi kết nối trong mã nguồn nếu cần:
+4. Mở dự án trong Visual Studio.
+5. Cập nhật chuỗi kết nối trong mã nguồn nếu cần:
    - Mở `.env` và thay đổi chuỗi kết nối:
      ```env
      DB_SERVER=LAPTOP-B6DMUJM1 thành tên SQL của bạn
      ```
-7. Chạy ứng dụng và đăng nhập bằng tài khoản mẫu:
+6. Chạy ứng dụng và đăng nhập bằng tài khoản mẫu:
    - ADMIN: admin, 123
    - USER: user, 123
 
+7. Xử lý lỗi không chạy được
 
-	
+
+
+	![image](https://github.com/user-attachments/assets/fdd52e0d-e720-42df-af76-0c4b86eec454)
+
+	`
+dotnet add package dotenv.net
+`
+
+8. Hỗ trợ
+
+   
+    Nếu vẫn gặp lỗi hoặc cần trợ giúp, hãy cầu trời khấn phật vì thằng code không biết fix
