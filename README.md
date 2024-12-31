@@ -67,4 +67,6 @@ dotnet add package dotenv.net
 `
 
 8. Hỗ trợ
+
+   
     Nếu vẫn gặp lỗi hoặc cần trợ giúp, hãy cầu trời khấn phật vì thằng code không biết fix
