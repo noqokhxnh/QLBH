@@ -3,16 +3,21 @@
 ## Hướng dẫn sử dụng
 
 1. Cài đặt Git
-Tải Git tại `https://git-scm.com/downloads` và cài đặt.
-2. Clone mã nguồn
+Tải Git tại ```
+https://git-scm.com/downloads ```
+
+và cài đặt.
+3. Clone mã nguồn
 	Mở CMD hoặc Terminal, sau đó nhập:
-`
+```
 git clone https://github.com/noqokhxnh/QLBH.git
+
+
 cd QLBH
-`
+```
 
 
-3. Khôi phục dữ liệu SQL
+4. Khôi phục dữ liệu SQL
 
 
 Bước 1: Mở SQL Server  chọn File > Open > File…
