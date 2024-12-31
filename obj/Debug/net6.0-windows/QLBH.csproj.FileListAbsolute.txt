@@ -118,3 +118,5 @@ C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\refint\QLBH.dll
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.pdb
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.genruntimeconfig.cache
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\ref\QLBH.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\dotenv.net.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.Properties.Resources.resources

@@ -64,9 +64,9 @@
             btnThem.Location = new Point(699, 225);
             btnThem.Margin = new Padding(3, 4, 3, 4);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(75, 29);
+            btnThem.Size = new Size(175, 29);
             btnThem.TabIndex = 1;
-            btnThem.Text = "Mua";
+            btnThem.Text = "Thêm vào giỏ hàng";
             btnThem.UseVisualStyleBackColor = true;
             btnThem.Click += btnThem_Click;
             // 
@@ -166,6 +166,7 @@
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(224, 26);
+            toolStripMenuItem1.Text = "Đánh giá sản phẩm";
             // 
             // frmUserform
             // 

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4JktKlyRAUY=",
+  "dgSpecHash": "okqLxNfwRx8=",
   "success": true,
   "projectFilePath": "C:\\Users\\noqok\\OneDrive\\Máy tính\\QLBH\\QLBH.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\noqok\\.nuget\\packages\\dotenv.net\\3.2.1\\dotenv.net.3.2.1.nupkg.sha512",
     "C:\\Users\\noqok\\.nuget\\packages\\dotnetenv\\3.1.1\\dotnetenv.3.1.1.nupkg.sha512",
     "C:\\Users\\noqok\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.0\\microsoft.entityframeworkcore.tools.9.0.0.nupkg.sha512",
     "C:\\Users\\noqok\\.nuget\\packages\\microsoft.extensions.configuration\\1.1.2\\microsoft.extensions.configuration.1.1.2.nupkg.sha512",
