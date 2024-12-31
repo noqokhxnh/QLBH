@@ -29,34 +29,97 @@
         private void InitializeComponent()
         {
             dgvCart = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
+            btnThanhToan = new Button();
+            txtGiamGia = new TextBox();
+            txtTien = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
             SuspendLayout();
             // 
             // dgvCart
             // 
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCart.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCart.Location = new Point(160, 158);
+            dgvCart.Location = new Point(12, 12);
             dgvCart.Name = "dgvCart";
             dgvCart.RowHeadersWidth = 51;
             dgvCart.RowTemplate.Height = 29;
-            dgvCart.Size = new Size(300, 188);
+            dgvCart.Size = new Size(776, 292);
             dgvCart.TabIndex = 0;
+            dgvCart.CellContentClick += dgvCart_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(16, 314);
+            label1.Name = "label1";
+            label1.Size = new Size(91, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Tổng số tiền";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(427, 317);
+            label2.Name = "label2";
+            label2.Size = new Size(133, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Nhập mã giảm giá";
+            // 
+            // btnThanhToan
+            // 
+            btnThanhToan.Location = new Point(484, 408);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(94, 29);
+            btnThanhToan.TabIndex = 3;
+            btnThanhToan.Text = "Thanh Toán";
+            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Click += btnThanhToan_Click;
+            // 
+            // txtGiamGia
+            // 
+            txtGiamGia.Location = new Point(566, 314);
+            txtGiamGia.Name = "txtGiamGia";
+            txtGiamGia.Size = new Size(125, 27);
+            txtGiamGia.TabIndex = 4;
+            // 
+            // txtTien
+            // 
+            txtTien.Location = new Point(123, 310);
+            txtTien.Name = "txtTien";
+            txtTien.ReadOnly = true;
+            txtTien.Size = new Size(125, 27);
+            txtTien.TabIndex = 5;
             // 
             // GioHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtTien);
+            Controls.Add(txtGiamGia);
+            Controls.Add(btnThanhToan);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(dgvCart);
             Name = "GioHang";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GioHang";
             Load += GioHang_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCart).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dgvCart;
+        private Label label1;
+        private Label label2;
+        private Button btnThanhToan;
+        private TextBox txtGiamGia;
+        private TextBox txtTien;
     }
 }

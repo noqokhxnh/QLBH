@@ -289,7 +289,8 @@
                 private void xemThôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProfileUser f = new ProfileUser();
-            f.ShowDialog();
+            f.Show();
+            this.Close();
         }
     }
 }

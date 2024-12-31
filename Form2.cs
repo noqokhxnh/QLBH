@@ -1,16 +1,4 @@
 
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Extensions.Configuration;
-
 
 ﻿namespace QuanLyBanHangOnline
 
@@ -66,7 +54,7 @@ using Microsoft.Extensions.Configuration;
                     if (rowsAffected > 0)
                     {
                         dgvHIenThi.DataSource = dataTable;
-                        dgvHIenThi.Columns["Price"].DefaultCellStyle.Format = "C";
+                        dgvHIenThi.Columns["Price"].DefaultCellStyle.Format = "###,### VND";
                         cbxSanPham.DataSource = dataTable;
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
@@ -189,7 +177,16 @@ using Microsoft.Extensions.Configuration;
         private void GioHang_Click(object sender, EventArgs e)
         {
             GioHang f = new GioHang(cartItems);
+            f.OnClose += GioHangForm_OnClose;
             f.ShowDialog();
+            
         }
+
+        private void GioHangForm_OnClose()
+        {
+            
+            LoadProductData();
+        }
+
     }
 }

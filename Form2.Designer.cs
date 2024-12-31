@@ -56,12 +56,12 @@
             dgvHIenThi.Name = "dgvHIenThi";
             dgvHIenThi.RowHeadersWidth = 51;
             dgvHIenThi.RowTemplate.Height = 24;
-            dgvHIenThi.Size = new Size(681, 322);
+            dgvHIenThi.Size = new Size(952, 322);
             dgvHIenThi.TabIndex = 0;
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(699, 225);
+            btnThem.Location = new Point(998, 225);
             btnThem.Margin = new Padding(3, 4, 3, 4);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(175, 29);
@@ -76,7 +76,7 @@
             cbxSanPham.Location = new Point(188, 89);
             cbxSanPham.Margin = new Padding(3, 4, 3, 4);
             cbxSanPham.Name = "cbxSanPham";
-            cbxSanPham.Size = new Size(121, 28);
+            cbxSanPham.Size = new Size(227, 28);
             cbxSanPham.TabIndex = 2;
             // 
             // label1
@@ -108,7 +108,7 @@
             // 
             // btnDanhGia
             // 
-            btnDanhGia.Location = new Point(699, 275);
+            btnDanhGia.Location = new Point(998, 275);
             btnDanhGia.Name = "btnDanhGia";
             btnDanhGia.Size = new Size(175, 29);
             btnDanhGia.TabIndex = 7;
@@ -158,15 +158,16 @@
             // 
             // GioHang
             // 
+            GioHang.AccessibleName = "GioHang";
             GioHang.Name = "GioHang";
-            GioHang.Size = new Size(224, 26);
+            GioHang.Size = new Size(220, 26);
             GioHang.Text = "Giỏ Hàng";
             GioHang.Click += GioHang_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(224, 26);
+            toolStripMenuItem1.Size = new Size(220, 26);
             toolStripMenuItem1.Text = "Đánh giá sản phẩm";
             // 
             // frmUserform

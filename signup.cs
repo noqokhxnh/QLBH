@@ -13,19 +13,16 @@ namespace QLBH
 {
     public partial class frmsignup : Form
     {
-<<<<<<< HEAD
+
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                            $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                            $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
                            $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};" +
                            $"Trusted_Connection=true;";
-=======
-       internal string connectionString = 
-    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
->>>>>>> f0782d609b80053f09201386a8d856f328b1d56d
+      
+
+
         public frmsignup()
         {
             InitializeComponent();
