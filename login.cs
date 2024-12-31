@@ -9,12 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
+
 using Microsoft.Extensions.Configuration;
-=======
+
 using DotNetEnv;
 
->>>>>>> ebcc5c37b7fb852372aeefbb5cf75294a508a47d
+
 namespace QuanLyBanHangOnline
 {
     public partial class frmLogin : Form
