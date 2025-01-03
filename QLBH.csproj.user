@@ -10,10 +10,22 @@
     <Compile Update="frmDanhGia.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GiamGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GioHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ProfileUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

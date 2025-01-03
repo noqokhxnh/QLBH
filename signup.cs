@@ -13,10 +13,14 @@ namespace QLBH
 {
     public partial class frmsignup : Form
     {
-       internal string connectionString = 
-    $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-    $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+
+
+        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                                 $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                                $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+
+
+
 
         public frmsignup()
         {
@@ -64,7 +68,7 @@ namespace QLBH
                     int rowsAffected = insertCmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                     }
                     else

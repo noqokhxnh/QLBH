@@ -1,41 +1,53 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Extensions.Configuration;
-namespace QuanLyBanHangOnline
-=======
+
+
 ﻿namespace QuanLyBanHangOnline
->>>>>>> ebcc5c37b7fb852372aeefbb5cf75294a508a47d
+
 {
     using QLBH;
     using System;
     using System.Data;
     using System.Data.SqlClient;
     using System.Windows.Forms;
+    using static QuanLyBanHangOnline.frmUserform;
 
     public partial class frmUserform : Form
     {
-         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" + $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" + $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
+        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                                 $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                                $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+
+
+        private readonly int userId;
         public frmUserform()
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
+
         }
+        public frmUserform(int userId)
+        {
+            DotNetEnv.Env.Load();
+            InitializeComponent();
+            this.userId = userId;
+        }
+
+
+        public class CartItem
+        {
+            public int ProductID { get; set; }
+            public string ProductName { get; set; }
+            public int Stock { get; set; }
+            public decimal Price { get; set; }
+
+        }
+
 
         private void LoadProductData()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT ProductID, ProductName, Stock FROM tbl_product";
+                string query = "SELECT ProductID, ProductName, Stock, Price FROM tbl_product";
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
@@ -48,6 +60,7 @@ namespace QuanLyBanHangOnline
                     if (rowsAffected > 0)
                     {
                         dgvHIenThi.DataSource = dataTable;
+                        dgvHIenThi.Columns["Price"].DefaultCellStyle.Format = "###,### VND";
                         cbxSanPham.DataSource = dataTable;
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
@@ -56,7 +69,7 @@ namespace QuanLyBanHangOnline
                     else
                     {
                         dgvHIenThi.DataSource = null;
-                        MessageBox.Show("Không tìm thấy sản phẩm nào trong cơ sở dữ liệu!");
+                        MessageBox.Show("Không tìm thấy sản phẩm nào trong cơ sở dữ liệu");
                     }
                 }
                 catch (Exception ex)
@@ -79,7 +92,7 @@ namespace QuanLyBanHangOnline
         {
             if (cbxSanPham.SelectedValue == null)
             {
-                MessageBox.Show("Không có sản phẩm nào được chọn!");
+                MessageBox.Show("Không có sản phẩm nào được chọn");
                 return;
             }
 
@@ -93,65 +106,69 @@ namespace QuanLyBanHangOnline
             int requestedStock;
             if (!int.TryParse(txtsoluong.Text, out requestedStock) || requestedStock <= 0)
             {
-                MessageBox.Show("Số lượng không hợp lệ!");
+                MessageBox.Show("Số lượng không hợp lệ");
                 return;
             }
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string getStockQuery = "SELECT Stock FROM tbl_product WHERE ProductID = @ProductID";
-                SqlCommand getStockCmd = new SqlCommand(getStockQuery, conn);
-                getStockCmd.Parameters.AddWithValue("@ProductID", productId);
+                string getProductQuery = "SELECT ProductName, Price FROM tbl_product WHERE ProductID = @ProductID";
+                string addGioHang = "INSERT INTO tbl_giohang (ProductName, Price, Stock) VALUES (@ProductName, @Price, @Stock)";
+
+                SqlCommand getProductCmd = new SqlCommand(getProductQuery, conn);
+                getProductCmd.Parameters.AddWithValue("@ProductID", productId);
 
                 try
                 {
                     conn.Open();
-                    int currentStock = Convert.ToInt32(getStockCmd.ExecuteScalar());
+                    SqlDataReader reader = getProductCmd.ExecuteReader();
 
-                    if (requestedStock > currentStock)
+                    if (reader.Read())
                     {
-                        MessageBox.Show("Số lượng yêu cầu vượt quá số lượng trong kho!");
-                        return;
-                    }
+                        string productName = reader["ProductName"].ToString();
+                        decimal price = Convert.ToDecimal(reader["Price"]);
 
-                    string updateStockQuery = "UPDATE tbl_product SET Stock = Stock - @RequestedStock WHERE ProductID = @ProductID";
-                    SqlCommand updateStockCmd = new SqlCommand(updateStockQuery, conn);
-                    updateStockCmd.Parameters.AddWithValue("@RequestedStock", requestedStock);
-                    updateStockCmd.Parameters.AddWithValue("@ProductID", productId);
+                        reader.Close();
 
-                    int result = updateStockCmd.ExecuteNonQuery();
+                        SqlCommand addGioHangCmd = new SqlCommand(addGioHang, conn);
+                        addGioHangCmd.Parameters.AddWithValue("@ProductName", productName);
+                        addGioHangCmd.Parameters.AddWithValue("@Price", price);
+                        addGioHangCmd.Parameters.AddWithValue("@Stock", requestedStock);
 
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Mua sản phẩm thành công!");
-                        LoadProductData(); 
-
-                        btnDanhGia.Visible = true;
+                        int rowsInserted = addGioHangCmd.ExecuteNonQuery();
+                        if (rowsInserted > 0)
+                        {
+                            MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng thành công!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể thêm sản phẩm vào giỏ hàng.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không thể cập nhật số lượng sản phẩm!");
+                        MessageBox.Show("Không tìm thấy sản phẩm trong cơ sở dữ liệu");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thực hiện giao dịch: " + ex.Message);
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi khi thêm sản phẩm vào giỏ hàng: " + ex.Message);
                 }
             }
         }
+
 
         private void btnDanhGia_Click(object sender, EventArgs e)
         {
             if (cbxSanPham.SelectedValue == null)
             {
-                MessageBox.Show("Không có sản phẩm nào được chọn để đánh giá!");
+                MessageBox.Show("Không có sản phẩm nào được chọn để đánh giá");
                 return;
             }
 
             int productId = Convert.ToInt32(cbxSanPham.SelectedValue);
-            frmDanhGia frm = new frmDanhGia(productId); 
-            frm.ShowDialog(); 
+            frmDanhGia frm = new frmDanhGia(productId);
+            frm.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -165,8 +182,29 @@ namespace QuanLyBanHangOnline
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
-            MessageBox.Show("Đăng xuất thành công!");
+            MessageBox.Show("Đăng xuất thành công");
             frmLogin.Show();
+            this.Close();
+        }
+
+        private void GioHang_Click(object sender, EventArgs e)
+        {
+            GioHang f = new GioHang();
+            f.OnClose += GioHangForm_OnClose;
+            f.ShowDialog();
+
+        }
+
+        private void GioHangForm_OnClose()
+        {
+
+            LoadProductData();
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProfileUser f = new ProfileUser(this.userId);
+            f.Show();
             this.Close();
         }
     }

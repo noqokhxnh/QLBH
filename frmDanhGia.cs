@@ -15,7 +15,10 @@ namespace QLBH
     public partial class frmDanhGia : Form
     {
 
-         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +  $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +  $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
+
+        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                                 $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                                $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         private int productId;
         public frmDanhGia(int productId)
@@ -31,13 +34,13 @@ namespace QLBH
 
             if (rating == 0)
             {
-                MessageBox.Show("Vui lòng chọn mức đánh giá!");
+                MessageBox.Show("Vui lòng chọn mức đánh giá");
                 return;
             }
 
             if (string.IsNullOrEmpty(comment))
             {
-                MessageBox.Show("Vui lòng nhập nhận xét!");
+                MessageBox.Show("Vui lòng nhập nhận xét");
                 return;
             }
 
@@ -56,12 +59,12 @@ namespace QLBH
                     int result = insertReviewCmd.ExecuteNonQuery();
                     if (result > 0)
                     {
-                        MessageBox.Show("Đánh giá của bạn đã được gửi thành công!");
+                        MessageBox.Show("Đánh giá của bạn đã được gửi thành công");
                         this.Close(); // Đóng form sau khi gửi đánh giá
                     }
                     else
                     {
-                        MessageBox.Show("Có lỗi khi gửi đánh giá!");
+                        MessageBox.Show("Có lỗi khi gửi đánh giá");
                     }
                 }
                 catch (Exception ex)

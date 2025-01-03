@@ -49,6 +49,7 @@
             thôngTinSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             thốngKêSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             xemĐánhGiáToolStripMenuItem = new ToolStripMenuItem();
+            thêmMãGiảmGiáToolStripMenuItem = new ToolStripMenuItem();
             txtId = new TextBox();
             label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
@@ -220,7 +221,7 @@
             // 
             // thôngTinSảnPhẩmToolStripMenuItem
             // 
-            thôngTinSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thốngKêSảnPhẩmToolStripMenuItem, xemĐánhGiáToolStripMenuItem });
+            thôngTinSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thốngKêSảnPhẩmToolStripMenuItem, xemĐánhGiáToolStripMenuItem, thêmMãGiảmGiáToolStripMenuItem });
             thôngTinSảnPhẩmToolStripMenuItem.Name = "thôngTinSảnPhẩmToolStripMenuItem";
             thôngTinSảnPhẩmToolStripMenuItem.Size = new Size(154, 24);
             thôngTinSảnPhẩmToolStripMenuItem.Text = "Thông tin sản phẩm";
@@ -228,14 +229,22 @@
             // thốngKêSảnPhẩmToolStripMenuItem
             // 
             thốngKêSảnPhẩmToolStripMenuItem.Name = "thốngKêSảnPhẩmToolStripMenuItem";
-            thốngKêSảnPhẩmToolStripMenuItem.Size = new Size(221, 26);
+            thốngKêSảnPhẩmToolStripMenuItem.Size = new Size(224, 26);
             thốngKêSảnPhẩmToolStripMenuItem.Text = "Thống kê sản phẩm";
+            thốngKêSảnPhẩmToolStripMenuItem.Click += thốngKêSảnPhẩmToolStripMenuItem_Click;
             // 
             // xemĐánhGiáToolStripMenuItem
             // 
             xemĐánhGiáToolStripMenuItem.Name = "xemĐánhGiáToolStripMenuItem";
-            xemĐánhGiáToolStripMenuItem.Size = new Size(221, 26);
+            xemĐánhGiáToolStripMenuItem.Size = new Size(224, 26);
             xemĐánhGiáToolStripMenuItem.Text = "Xem đánh giá";
+            // 
+            // thêmMãGiảmGiáToolStripMenuItem
+            // 
+            thêmMãGiảmGiáToolStripMenuItem.Name = "thêmMãGiảmGiáToolStripMenuItem";
+            thêmMãGiảmGiáToolStripMenuItem.Size = new Size(224, 26);
+            thêmMãGiảmGiáToolStripMenuItem.Text = "Thêm mã giảm giá";
+            thêmMãGiảmGiáToolStripMenuItem.Click += thêmMãGiảmGiáToolStripMenuItem_Click;
             // 
             // txtId
             // 
@@ -314,5 +323,6 @@
         private TextBox txtId;
         private Label label4;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private ToolStripMenuItem thêmMãGiảmGiáToolStripMenuItem;
     }
 }
