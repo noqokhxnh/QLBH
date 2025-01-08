@@ -37,11 +37,14 @@
             btnDanhGia = new Button();
             menuStrip1 = new MenuStrip();
             thôngTinTàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
+            thôngTinCáNhânToolStripMenuItem = new ToolStripMenuItem();
             đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             quảnLýSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             GioHang = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
+            phânQuyềnToolStripMenuItem = new ToolStripMenuItem();
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -119,7 +122,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, quảnLýSảnPhẩmToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, quảnLýSảnPhẩmToolStripMenuItem, phânQuyềnToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1214, 28);
@@ -128,10 +131,17 @@
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
-            thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
+            thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinCáNhânToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
             thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
             thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(88, 24);
             thôngTinTàiKhoảnToolStripMenuItem.Text = "Hệ Thống";
+            // 
+            // thôngTinCáNhânToolStripMenuItem
+            // 
+            thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            thôngTinCáNhânToolStripMenuItem.Size = new Size(228, 26);
+            thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
+            thôngTinCáNhânToolStripMenuItem.Click += thôngTinCáNhânToolStripMenuItem_Click;
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
@@ -169,6 +179,20 @@
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(220, 26);
             toolStripMenuItem1.Text = "Đánh giá sản phẩm";
+            // 
+            // phânQuyềnToolStripMenuItem
+            // 
+            phânQuyềnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { yêuCầuPhânQuyềnBánHàngToolStripMenuItem });
+            phânQuyềnToolStripMenuItem.Name = "phânQuyềnToolStripMenuItem";
+            phânQuyềnToolStripMenuItem.Size = new Size(101, 24);
+            phânQuyềnToolStripMenuItem.Text = "Phân Quyền";
+            // 
+            // yêuCầuPhânQuyềnBánHàngToolStripMenuItem
+            // 
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Name = "yêuCầuPhânQuyềnBánHàngToolStripMenuItem";
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Size = new Size(289, 26);
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Text = "Yêu cầu phân quyền bán hàng";
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Click += yêuCầuPhânQuyềnBánHàngToolStripMenuItem_Click;
             // 
             // frmUserform
             // 
@@ -212,5 +236,8 @@
         private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
         private ToolStripMenuItem GioHang;
         private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem phânQuyềnToolStripMenuItem;
+        private ToolStripMenuItem yêuCầuPhânQuyềnBánHàngToolStripMenuItem;
+        private ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
     }
 }

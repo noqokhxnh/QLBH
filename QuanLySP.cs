@@ -6,18 +6,21 @@
     using System.Data.SqlClient;
     using System.Windows.Forms;
 
-    public partial class frmAdminform : Form
+    public partial class frmProduct : Form
     {
+
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-                           $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-                           $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
-                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};";
+                               $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                              $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
 
-        public frmAdminform()
+        private readonly int userId;
+
+        public frmProduct(int userId)
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
+            this.userId = userId;   
         }
 
         private void LoadProductData()
@@ -288,16 +291,20 @@
 
         private void xemThôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProfileUser f = new ProfileUser();
-            f.Show();
-            this.Close();
+
         }
 
         private void thêmMãGiảmGiáToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GiamGia f = new GiamGia();
             f.ShowDialog();
-          
+
+        }
+
+        private void thốngKêSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThongKe f = new frmThongKe();
+            f.ShowDialog();
         }
     }
 }

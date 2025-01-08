@@ -12,36 +12,31 @@
 
     public partial class frmUserform : Form
     {
+
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                           $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-                          $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
-                          $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};";
+                         $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
-        List<CartItem> cartItems = new List<CartItem>();
 
-        public frmUserform()
+
+
+
+        private readonly int userId;
+       
+        public frmUserform(int userId)
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
-
+            this.userId = userId;
         }
 
-
-        public class CartItem
-        {
-            public int ProductID { get; set; }
-            public string ProductName { get; set; }
-            public int Stock { get; set; }
-            public decimal Price { get; set; }
-
-        }
 
 
         private void LoadProductData()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT ProductID, ProductName, Stock, Price FROM tbl_product";
+                string query = "SELECT ProductId, ProductName, Stock, Price FROM tbl_product";
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
@@ -104,10 +99,11 @@
                 return;
             }
 
-            // Lấy thông tin sản phẩm từ cơ sở dữ liệu
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string getProductQuery = "SELECT ProductName, Price FROM tbl_product WHERE ProductID = @ProductID";
+                string addGioHang = "INSERT INTO tbl_giohang (ProductName, Price, Stock) VALUES (@ProductName, @Price, @Stock)";
+
                 SqlCommand getProductCmd = new SqlCommand(getProductQuery, conn);
                 getProductCmd.Parameters.AddWithValue("@ProductID", productId);
 
@@ -121,17 +117,22 @@
                         string productName = reader["ProductName"].ToString();
                         decimal price = Convert.ToDecimal(reader["Price"]);
 
-                        // Thêm sản phẩm vào giỏ hàng
-                        CartItem newItem = new CartItem
-                        {
-                            ProductID = productId,
-                            ProductName = productName,
-                            Stock = requestedStock,
-                            Price = price
-                        };
+                        reader.Close();
 
-                        cartItems.Add(newItem);
-                        MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng");
+                        SqlCommand addGioHangCmd = new SqlCommand(addGioHang, conn);
+                        addGioHangCmd.Parameters.AddWithValue("@ProductName", productName);
+                        addGioHangCmd.Parameters.AddWithValue("@Price", price);
+                        addGioHangCmd.Parameters.AddWithValue("@Stock", requestedStock);
+
+                        int rowsInserted = addGioHangCmd.ExecuteNonQuery();
+                        if (rowsInserted > 0)
+                        {
+                            MessageBox.Show("Sản phẩm đã được thêm vào giỏ hàng thành công!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể thêm sản phẩm vào giỏ hàng.");
+                        }
                     }
                     else
                     {
@@ -144,6 +145,7 @@
                 }
             }
         }
+
 
         private void btnDanhGia_Click(object sender, EventArgs e)
         {
@@ -176,17 +178,42 @@
 
         private void GioHang_Click(object sender, EventArgs e)
         {
-            GioHang f = new GioHang(cartItems);
+            GioHang f = new GioHang();
             f.OnClose += GioHangForm_OnClose;
             f.ShowDialog();
-            
+
         }
 
         private void GioHangForm_OnClose()
         {
-            
+
             LoadProductData();
         }
 
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProfileUser f = new ProfileUser(this.userId);
+            f.ShowDialog();
+            
+        }
+
+        private void yêuCầuPhânQuyềnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"INSERT INTO tbl_role_request (UserId) VALUES (@userId)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@userId", userId); 
+                try { 
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Yêu cầu nâng cấp lên Seller đã được gửi!");
+                }
+                catch (Exception ex) 
+                { MessageBox.Show($"Lỗi khi gửi yêu cầu: {ex.Message}");
+                }
+            }
+        }
     }
 }

@@ -42,9 +42,9 @@
             btnLogin.Location = new Point(103, 236);
             btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 29);
+            btnLogin.Size = new Size(102, 29);
             btnLogin.TabIndex = 2;
-            btnLogin.Text = "Login";
+            btnLogin.Text = "Đăng nhập";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
@@ -53,9 +53,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(108, 104);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(97, 20);
             label1.TabIndex = 1;
-            label1.Text = "Username";
+            label1.Text = "Tên tài khoản";
             // 
             // label2
             // 
@@ -64,7 +64,7 @@
             label2.Name = "label2";
             label2.Size = new Size(70, 20);
             label2.TabIndex = 2;
-            label2.Text = "Password";
+            label2.Text = "Mật khẩu";
             // 
             // txtUsername
             // 
@@ -90,18 +90,18 @@
             btnDangki.Name = "btnDangki";
             btnDangki.Size = new Size(94, 29);
             btnDangki.TabIndex = 3;
-            btnDangki.Text = "Sign Up";
+            btnDangki.Text = "Đăng kí";
             btnDangki.UseVisualStyleBackColor = true;
             btnDangki.Click += btnDangki_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(204, 33);
+            label4.Location = new Point(183, 38);
             label4.Name = "label4";
-            label4.Size = new Size(85, 20);
+            label4.Size = new Size(130, 20);
             label4.TabIndex = 5;
-            label4.Text = "Đăng Nhập";
+            label4.Text = "Quản Lý Bán Hàng";
             // 
             // frmLogin
             // 

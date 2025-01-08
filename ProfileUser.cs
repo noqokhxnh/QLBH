@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using QuanLyBanHangOnline;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLBH
 {
@@ -15,21 +20,131 @@ namespace QLBH
     {
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                            $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-                           $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
-                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};";
+                          $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
-        public ProfileUser()
+
+
+
+        private int CustomerId;
+        private int UserId;
+        public ProfileUser(int CustomerId)
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
+            this.CustomerId = CustomerId;
+            LoadUserProfile();
+            
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public ProfileUser()
+        {
+            InitializeComponent();
+          
+        }
+        private void LoadUserProfile()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Name, Phone, Address FROM tbl_customer WHERE CustomerId = @CustomerId AND UserId = @UserId";
 
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CustomerId", CustomerId);
+                        cmd.Parameters.AddWithValue("@UserId", UserId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtName.Text = reader["Name"].ToString();
+                                txtPhone.Text = reader["Phone"].ToString();
+                                txtDiaChi.Text = reader["Address"].ToString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải thông tin người dùng: " + ex.Message,
+                                  "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+
+            string Name = txtName.Text.Trim();
+            string Phone = txtPhone.Text.Trim();
+            string Address = txtDiaChi.Text.Trim();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Kiểm tra nếu thông tin đã tồn tại cho UserId và CustomerId
+                    string query = "SELECT COUNT(*) FROM tbl_customer WHERE CustomerId = @CustomerId AND UserId = @UserId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CustomerId", CustomerId);
+                        cmd.Parameters.AddWithValue("@UserId", UserId);
+
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count == 0)
+                        {
+                            // Nếu thông tin chưa tồn tại, thực hiện INSERT
+                            string insertQuery = @"INSERT INTO tbl_customer (CustomerId, UserId, Name, Phone, Address) 
+                                           VALUES (@CustomerId, @UserId, @Name, @Phone, @Address)";
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                            {
+                                insertCmd.Parameters.AddWithValue("@CustomerId", CustomerId);
+                                insertCmd.Parameters.AddWithValue("@UserId", UserId);
+                                insertCmd.Parameters.AddWithValue("@Name", Name);
+                                insertCmd.Parameters.AddWithValue("@Phone", Phone);
+                                insertCmd.Parameters.AddWithValue("@Address", Address);
+                                insertCmd.ExecuteNonQuery();
+                                MessageBox.Show("Thêm thông tin thành công!");
+                            }
+                        }
+                        else
+                        {
+                            // Nếu thông tin đã tồn tại, thực hiện UPDATE
+                            string updateQuery = @"UPDATE tbl_customer 
+                                           SET Name = @Name, Phone = @Phone, Address = @Address 
+                                           WHERE CustomerId = @CustomerId AND UserId = @UserId";
+                            using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                            {
+                                updateCmd.Parameters.AddWithValue("@CustomerId", CustomerId);
+                                updateCmd.Parameters.AddWithValue("@UserId", UserId);
+                                updateCmd.Parameters.AddWithValue("@Name", Name);
+                                updateCmd.Parameters.AddWithValue("@Phone", Phone);
+                                updateCmd.Parameters.AddWithValue("@Address", Address);
+                                updateCmd.ExecuteNonQuery();
+                                MessageBox.Show("Cập nhật thông tin thành công!");
+                            }
+                        }
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}\nCustomerId: {CustomerId}, UserId: {UserId}");
+            }
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmUserform f = new frmUserform(this.CustomerId);
+            f.Show();
+            this.Close();
         }
     }
 }
+

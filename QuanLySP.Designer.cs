@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHangOnline
 {
-    partial class frmAdminform
+    partial class frmProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -49,9 +49,9 @@
             thôngTinSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             thốngKêSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             xemĐánhGiáToolStripMenuItem = new ToolStripMenuItem();
+            thêmMãGiảmGiáToolStripMenuItem = new ToolStripMenuItem();
             txtId = new TextBox();
             label4 = new Label();
-            thêmMãGiảmGiáToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -229,14 +229,22 @@
             // thốngKêSảnPhẩmToolStripMenuItem
             // 
             thốngKêSảnPhẩmToolStripMenuItem.Name = "thốngKêSảnPhẩmToolStripMenuItem";
-            thốngKêSảnPhẩmToolStripMenuItem.Size = new Size(224, 26);
+            thốngKêSảnPhẩmToolStripMenuItem.Size = new Size(221, 26);
             thốngKêSảnPhẩmToolStripMenuItem.Text = "Thống kê sản phẩm";
+            thốngKêSảnPhẩmToolStripMenuItem.Click += thốngKêSảnPhẩmToolStripMenuItem_Click;
             // 
             // xemĐánhGiáToolStripMenuItem
             // 
             xemĐánhGiáToolStripMenuItem.Name = "xemĐánhGiáToolStripMenuItem";
-            xemĐánhGiáToolStripMenuItem.Size = new Size(224, 26);
+            xemĐánhGiáToolStripMenuItem.Size = new Size(221, 26);
             xemĐánhGiáToolStripMenuItem.Text = "Xem đánh giá";
+            // 
+            // thêmMãGiảmGiáToolStripMenuItem
+            // 
+            thêmMãGiảmGiáToolStripMenuItem.Name = "thêmMãGiảmGiáToolStripMenuItem";
+            thêmMãGiảmGiáToolStripMenuItem.Size = new Size(221, 26);
+            thêmMãGiảmGiáToolStripMenuItem.Text = "Thêm mã giảm giá";
+            thêmMãGiảmGiáToolStripMenuItem.Click += thêmMãGiảmGiáToolStripMenuItem_Click;
             // 
             // txtId
             // 
@@ -255,14 +263,7 @@
             label4.TabIndex = 10;
             label4.Text = "Id";
             // 
-            // thêmMãGiảmGiáToolStripMenuItem
-            // 
-            thêmMãGiảmGiáToolStripMenuItem.Name = "thêmMãGiảmGiáToolStripMenuItem";
-            thêmMãGiảmGiáToolStripMenuItem.Size = new Size(224, 26);
-            thêmMãGiảmGiáToolStripMenuItem.Text = "Thêm mã giảm giá";
-            thêmMãGiảmGiáToolStripMenuItem.Click += thêmMãGiảmGiáToolStripMenuItem_Click;
-            // 
-            // frmAdminform
+            // frmProduct
             // 
             AccessibleRole = AccessibleRole.None;
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -286,9 +287,9 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
-            Name = "frmAdminform";
+            Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "frmSanPham";
             Load += frmAdminform_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).EndInit();
             menuStrip1.ResumeLayout(false);
