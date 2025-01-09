@@ -26,7 +26,13 @@ namespace QLBH
 
         private void yêuCầuPhânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          Requests f = new Requests(this.userId);
+            Requests f = new Requests(this.userId);
+            f.ShowDialog();
+        }
+
+        private void thôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllUser f = new AllUser();
             f.ShowDialog();
         }
     }

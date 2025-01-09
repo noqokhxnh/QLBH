@@ -45,6 +45,9 @@
             toolStripMenuItem1 = new ToolStripMenuItem();
             phânQuyềnToolStripMenuItem = new ToolStripMenuItem();
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem = new ToolStripMenuItem();
+            lable4 = new Label();
+            txtTimKiem = new TextBox();
+            btnTim = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -54,7 +57,7 @@
             dgvHIenThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHIenThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHIenThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHIenThi.Location = new Point(12, 225);
+            dgvHIenThi.Location = new Point(12, 186);
             dgvHIenThi.Margin = new Padding(3, 4, 3, 4);
             dgvHIenThi.Name = "dgvHIenThi";
             dgvHIenThi.RowHeadersWidth = 51;
@@ -139,23 +142,24 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            thôngTinCáNhânToolStripMenuItem.Size = new Size(228, 26);
+            thôngTinCáNhânToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
+            thôngTinCáNhânToolStripMenuItem.Size = new Size(263, 26);
             thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             thôngTinCáNhânToolStripMenuItem.Click += thôngTinCáNhânToolStripMenuItem_Click;
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            đổiMậtKhẩuToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.C;
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(228, 26);
+            đổiMậtKhẩuToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(263, 26);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.A;
-            đăngXuấtToolStripMenuItem.Size = new Size(228, 26);
+            đăngXuấtToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
+            đăngXuấtToolStripMenuItem.Size = new Size(263, 26);
             đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
@@ -170,14 +174,14 @@
             // 
             GioHang.AccessibleName = "GioHang";
             GioHang.Name = "GioHang";
-            GioHang.Size = new Size(220, 26);
+            GioHang.Size = new Size(224, 26);
             GioHang.Text = "Giỏ Hàng";
             GioHang.Click += GioHang_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(220, 26);
+            toolStripMenuItem1.Size = new Size(224, 26);
             toolStripMenuItem1.Text = "Đánh giá sản phẩm";
             // 
             // phânQuyềnToolStripMenuItem
@@ -194,11 +198,41 @@
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Text = "Yêu cầu phân quyền bán hàng";
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Click += yêuCầuPhânQuyềnBánHàngToolStripMenuItem_Click;
             // 
+            // lable4
+            // 
+            lable4.AutoSize = true;
+            lable4.Location = new Point(600, 97);
+            lable4.Name = "lable4";
+            lable4.Size = new Size(141, 20);
+            lable4.TabIndex = 10;
+            lable4.Text = "Tim Kiếm Sản Phẩm";
+            lable4.Click += lable4_Click;
+            // 
+            // txtTimKiem
+            // 
+            txtTimKiem.Location = new Point(774, 94);
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Size = new Size(236, 27);
+            txtTimKiem.TabIndex = 11;
+            // 
+            // btnTim
+            // 
+            btnTim.Location = new Point(1041, 92);
+            btnTim.Name = "btnTim";
+            btnTim.Size = new Size(94, 29);
+            btnTim.TabIndex = 12;
+            btnTim.Text = "Tìm Kiếm";
+            btnTim.UseVisualStyleBackColor = true;
+            btnTim.Click += btnTim_Click;
+            // 
             // frmUserform
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1214, 562);
+            Controls.Add(btnTim);
+            Controls.Add(txtTimKiem);
+            Controls.Add(lable4);
             Controls.Add(btnDanhGia);
             Controls.Add(txtsoluong);
             Controls.Add(label2);
@@ -229,7 +263,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtsoluong;
         private Button btnDanhGia;
-        private MenuStrip menuStrip1;
+        private MenuStrip menuStrip1;   
         private ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
         private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
@@ -239,5 +273,8 @@
         private ToolStripMenuItem phânQuyềnToolStripMenuItem;
         private ToolStripMenuItem yêuCầuPhânQuyềnBánHàngToolStripMenuItem;
         private ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
+        private Label lable4;
+        private TextBox txtTimKiem;
+        private Button btnTim;
     }
 }

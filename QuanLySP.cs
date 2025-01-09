@@ -15,12 +15,13 @@
 
 
         private readonly int userId;
+        private int productId;
 
         public frmProduct(int userId)
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
-            this.userId = userId;   
+            this.userId = userId;
         }
 
         private void LoadProductData()
@@ -44,7 +45,7 @@
                     if (rowsAffected > 0)
                     {
                         dgvHienThi.DataSource = dataTable;
-
+                        dgvHienThi.Columns["ProductID"].Visible = false;
                     }
                 }
                 catch (Exception ex)
@@ -274,7 +275,7 @@
                 DataGridViewRow row = dgvHienThi.Rows[e.RowIndex];
 
 
-                txtId.Text = row.Cells["ProductID"].Value.ToString();
+               
                 txtProductName.Text = row.Cells["ProductName"].Value.ToString();
                 txtPrice.Text = row.Cells["Price"].Value.ToString();
                 txtStock.Text = row.Cells["Stock"].Value.ToString();
@@ -289,10 +290,7 @@
             this.Close();
         }
 
-        private void xemThôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void thêmMãGiảmGiáToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -304,6 +302,18 @@
         private void thốngKêSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThongKe f = new frmThongKe();
+            f.ShowDialog();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau mkform = new DoiMatKhau(this.userId);
+            mkform.ShowDialog();
+        }
+
+        private void xemĐánhGiáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            xemDanhGia f = new xemDanhGia(this.productId);
             f.ShowDialog();
         }
     }

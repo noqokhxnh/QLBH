@@ -1,6 +1,6 @@
 
 
-﻿namespace QuanLyBanHangOnline
+namespace QuanLyBanHangOnline
 
 {
     using QLBH;
@@ -22,7 +22,7 @@
 
 
         private readonly int userId;
-       
+
         public frmUserform(int userId)
         {
             DotNetEnv.Env.Load();
@@ -166,6 +166,9 @@
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            DoiMatKhau f = new DoiMatKhau(this.userId);
+            f.ShowDialog();
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,7 +197,7 @@
         {
             ProfileUser f = new ProfileUser(this.userId);
             f.ShowDialog();
-            
+
         }
 
         private void yêuCầuPhânQuyềnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,16 +207,69 @@
             {
                 string query = @"INSERT INTO tbl_role_request (UserId) VALUES (@userId)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userId", userId); 
-                try { 
+                cmd.Parameters.AddWithValue("@userId", userId);
+                try
+                {
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Yêu cầu nâng cấp lên Seller đã được gửi!");
                 }
-                catch (Exception ex) 
-                { MessageBox.Show($"Lỗi khi gửi yêu cầu: {ex.Message}");
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi gửi yêu cầu: {ex.Message}");
                 }
             }
         }
-    }
-}
+
+        private void lable4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void TimKiem(String keyword) {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT ProductID, ProductName, Price, Stock FROM tbl_product " +
+                               "WHERE ProductName LIKE @Keyword";
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = dataAdapter.Fill(dataTable);
+
+                    if (rowsAffected > 0)
+                    {
+                        dgvHIenThi.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy sản phẩm nào phù hợp.");
+                        dgvHIenThi.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                }
+            }
+
+        }
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm");
+                return;
+            }
+
+            TimKiem(keyword);
+        }
+
+    } }

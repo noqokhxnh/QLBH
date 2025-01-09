@@ -4,13 +4,16 @@
     <Compile Update="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AllUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="QuanLySP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MuaSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmDanhGia.cs">
@@ -41,6 +44,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="xemDanhGia.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

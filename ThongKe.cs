@@ -1,31 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace QLBH
+﻿namespace QLBH
 {
+    using ClosedXML.Excel;
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using System.Windows.Forms;
+
     public partial class frmThongKe : Form
     {
-
-        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-                           $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-                          $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
-
-
+        internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                   $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                  $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
         public frmThongKe()
         {
             InitializeComponent();
             LoadThongKe();
         }
-
 
         private void LoadThongKe()
         {
@@ -74,24 +66,31 @@ namespace QLBH
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "Excel files (*.xlsx)|*.xlsx",
-                FileName = $"ThongKeSanPham_{DateTime.Now:yyyyMMdd}.xlsx"
+                FileName = $"ThongKeSanPham_{DateTime.Now:HHmmss_ddMMyyyy}.xlsx"
             };
-
-
-
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                try { 
-                
+                try
+                {
+                    using (XLWorkbook workbook = new XLWorkbook())
+                    {
+                        DataTable dataTable = (DataTable)dgvThongKe.DataSource;
+                        var worksheet = workbook.Worksheets.Add(dataTable, "ThongKe");
+                        var column = worksheet.Column("D");
+                        column.Style.NumberFormat.Format = "#,##0 \"VND\"";
+                        workbook.SaveAs(saveFileDialog.FileName);
+                    }
                     MessageBox.Show("Xuất file thành công!");
                 }
                 catch (Exception ex)
                 {
-               
+
                     MessageBox.Show($"Lỗi khi xuất file: {ex.Message}");
                 }
             }
         }
+
+       
     }
-}
+    }

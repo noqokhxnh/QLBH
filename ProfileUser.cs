@@ -1,54 +1,41 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using QuanLyBanHangOnline;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
-namespace QLBH
+﻿namespace QLBH
 {
-    public partial class ProfileUser : Form
+    using QuanLyBanHangOnline;
+    using System;
+    using System.Data.SqlClient;
+    using System.Windows.Forms;
+
+        public partial class ProfileUser : Form
     {
-        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                            $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                           $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
+                private int CustomerId;
 
+                private int UserId;
 
-
-        private int CustomerId;
-        private int UserId;
-        public ProfileUser(int CustomerId)
+                public ProfileUser(int userID)
         {
             DotNetEnv.Env.Load();
             InitializeComponent();
-            this.CustomerId = CustomerId;
+            this.UserId = userID;
             LoadUserProfile();
-            
         }
 
-        public ProfileUser()
+                public ProfileUser()
         {
             InitializeComponent();
-          
         }
-        private void LoadUserProfile()
+
+                private void LoadUserProfile()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Name, Phone, Address FROM tbl_customer WHERE CustomerId = @CustomerId AND UserId = @UserId";
+                    string query = "SELECT Name, Phone, Address FROM tbl_customer WHERE UserId = @UserId";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -73,9 +60,9 @@ namespace QLBH
                 }
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
 
+                private void btnSave_Click(object sender, EventArgs e)
+        {
 
             string Name = txtName.Text.Trim();
             string Phone = txtPhone.Text.Trim();
@@ -87,8 +74,7 @@ namespace QLBH
                 {
                     conn.Open();
 
-                    // Kiểm tra nếu thông tin đã tồn tại cho UserId và CustomerId
-                    string query = "SELECT COUNT(*) FROM tbl_customer WHERE CustomerId = @CustomerId AND UserId = @UserId";
+                    string query = "SELECT COUNT(*) FROM tbl_customer WHERE UserId = @UserId";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@CustomerId", CustomerId);
@@ -98,8 +84,8 @@ namespace QLBH
                         if (count == 0)
                         {
                             // Nếu thông tin chưa tồn tại, thực hiện INSERT
-                            string insertQuery = @"INSERT INTO tbl_customer (CustomerId, UserId, Name, Phone, Address) 
-                                           VALUES (@CustomerId, @UserId, @Name, @Phone, @Address)";
+                            string insertQuery = @"INSERT INTO tbl_customer ( UserId, Name, Phone, Address) 
+                                           VALUES ( @UserId, @Name, @Phone, @Address) ";
                             using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                             {
                                 insertCmd.Parameters.AddWithValue("@CustomerId", CustomerId);
@@ -116,7 +102,7 @@ namespace QLBH
                             // Nếu thông tin đã tồn tại, thực hiện UPDATE
                             string updateQuery = @"UPDATE tbl_customer 
                                            SET Name = @Name, Phone = @Phone, Address = @Address 
-                                           WHERE CustomerId = @CustomerId AND UserId = @UserId";
+                                           WHERE UserId = @UserId";
                             using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
                             {
                                 updateCmd.Parameters.AddWithValue("@CustomerId", CustomerId);
@@ -136,10 +122,9 @@ namespace QLBH
             {
                 MessageBox.Show($"Lỗi: {ex.Message}\nCustomerId: {CustomerId}, UserId: {UserId}");
             }
-
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+                private void btnBack_Click(object sender, EventArgs e)
         {
             frmUserform f = new frmUserform(this.CustomerId);
             f.Show();
@@ -147,4 +132,3 @@ namespace QLBH
         }
     }
 }
-

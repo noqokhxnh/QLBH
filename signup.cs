@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.Configuration;
+using QuanLyBanHangOnline;
 namespace QLBH
 {
     public partial class frmsignup : Form
@@ -16,12 +17,8 @@ namespace QLBH
 
 
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-                         $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
-                         $"User Id={Environment.GetEnvironmentVariable("DB_USER")};" +
-                         $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};";
-
-
-
+                               $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                              $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
 
 
@@ -61,6 +58,7 @@ namespace QLBH
 
 
                 // Thêm tài khoản mới
+
                 string insertQuery = "INSERT INTO tbl_user (Username, Password, Role) VALUES (@username, @password, @role)";
                 using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                 {
@@ -73,6 +71,8 @@ namespace QLBH
                     {
                         MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
+                        frmLogin f = new frmLogin();
+                        f.ShowDialog();
                     }
                     else
                     {

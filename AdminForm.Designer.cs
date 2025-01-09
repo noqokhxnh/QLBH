@@ -33,13 +33,15 @@
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             phânQuyềnToolStripMenuItem = new ToolStripMenuItem();
             yêuCầuPhânQuyềnToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            thôngTinNgườiDùngToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, phânQuyềnToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, phânQuyềnToolStripMenuItem, viewToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -56,7 +58,7 @@
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(162, 26);
+            đăngXuấtToolStripMenuItem.Size = new Size(224, 26);
             đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             // 
             // phânQuyềnToolStripMenuItem
@@ -72,6 +74,20 @@
             yêuCầuPhânQuyềnToolStripMenuItem.Size = new Size(257, 26);
             yêuCầuPhânQuyềnToolStripMenuItem.Text = "Xem yêu cầu phân quyền";
             yêuCầuPhânQuyềnToolStripMenuItem.Click += yêuCầuPhânQuyềnToolStripMenuItem_Click;
+            // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinNgườiDùngToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(55, 24);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // thôngTinNgườiDùngToolStripMenuItem
+            // 
+            thôngTinNgườiDùngToolStripMenuItem.Name = "thôngTinNgườiDùngToolStripMenuItem";
+            thôngTinNgườiDùngToolStripMenuItem.Size = new Size(236, 26);
+            thôngTinNgườiDùngToolStripMenuItem.Text = "Thông tin người dùng";
+            thôngTinNgườiDùngToolStripMenuItem.Click += thôngTinNgườiDùngToolStripMenuItem_Click;
             // 
             // AdminForm
             // 
@@ -94,5 +110,7 @@
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private ToolStripMenuItem phânQuyềnToolStripMenuItem;
         private ToolStripMenuItem yêuCầuPhânQuyềnToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem thôngTinNgườiDùngToolStripMenuItem;
     }
 }

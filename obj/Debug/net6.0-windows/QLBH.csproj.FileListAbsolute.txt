@@ -104,7 +104,6 @@ C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\runtimes\unix\l
 C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Data.SqlClient.dll
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.csproj.AssemblyReference.cache
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.AdminForm.resources
-C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmAdmin.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmDanhGia.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmUser.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.GiamGia.resources
@@ -129,3 +128,14 @@ C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\refint\QLBH.dll
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.pdb
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.genruntimeconfig.cache
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\ref\QLBH.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.DoiMatKhau.resources
+C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.AllUser.resources
+C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.xemDanhGia.resources
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\ClosedXML.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\ClosedXML.Parser.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.Framework.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\ExcelNumberFormat.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\RBush.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\System.IO.Packaging.dll
