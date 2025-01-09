@@ -30,7 +30,6 @@
         {
             dgvDanhGia = new DataGridView();
             btnXoa = new Button();
-            btnSua = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDanhGia).BeginInit();
             SuspendLayout();
             // 
@@ -40,17 +39,17 @@
             dgvDanhGia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvDanhGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDanhGia.Location = new Point(18, 17);
-            dgvDanhGia.Margin = new Padding(4, 4, 4, 4);
+            dgvDanhGia.Margin = new Padding(4);
             dgvDanhGia.Name = "dgvDanhGia";
             dgvDanhGia.RowHeadersWidth = 51;
             dgvDanhGia.RowTemplate.Height = 29;
-            dgvDanhGia.Size = new Size(892, 263);
+            dgvDanhGia.Size = new Size(612, 364);
             dgvDanhGia.TabIndex = 0;
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(162, 365);
-            btnXoa.Margin = new Padding(4, 4, 4, 4);
+            btnXoa.Location = new Point(235, 411);
+            btnXoa.Margin = new Padding(4);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(141, 41);
             btnXoa.TabIndex = 1;
@@ -58,29 +57,18 @@
             btnXoa.UseVisualStyleBackColor = true;
             btnXoa.Click += btnXoa_Click;
             // 
-            // btnSua
-            // 
-            btnSua.Location = new Point(591, 365);
-            btnSua.Margin = new Padding(4, 4, 4, 4);
-            btnSua.Name = "btnSua";
-            btnSua.Size = new Size(141, 41);
-            btnSua.TabIndex = 2;
-            btnSua.Text = "Huỷ";
-            btnSua.UseVisualStyleBackColor = true;
-            // 
             // xemDanhGia
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(928, 489);
-            Controls.Add(btnSua);
+            ClientSize = new Size(635, 489);
             Controls.Add(btnXoa);
             Controls.Add(dgvDanhGia);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "xemDanhGia";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "xemDanhGia";
+            Text = "Xem Đánh Giá";
             ((System.ComponentModel.ISupportInitialize)dgvDanhGia).EndInit();
             ResumeLayout(false);
         }
@@ -89,6 +77,5 @@
 
         private DataGridView dgvDanhGia;
         private Button btnXoa;
-        private Button btnSua;
     }
 }

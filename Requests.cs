@@ -48,7 +48,7 @@
                     dgvRequests.Columns["RequestId"].Visible = false;
                     dgvRequests.Columns["Userid"].Visible = false;
                 }
-                catch (Exception ex) { MessageBox.Show($"Lỗi khi tải yêu cầu: {ex.Message}"); }
+                catch (Exception ex) { MessageBox.Show($"Lỗi ", ex.Message); }
             }
         }
 
@@ -72,7 +72,7 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi xử lý yêu cầu: {ex.Message}");
+                    MessageBox.Show($"Lỗi ", ex.Message);
                 }
             }
         }
@@ -95,7 +95,7 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi xử lý yêu cầu: {ex.Message}");
+                    MessageBox.Show($"Lỗi ", ex.Message);
                 }
             }
         }

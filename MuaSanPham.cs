@@ -65,7 +65,7 @@ namespace QuanLyBanHangOnline
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi " + ex.Message);
                 }
             }
         }
@@ -143,7 +143,7 @@ namespace QuanLyBanHangOnline
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi thêm sản phẩm vào giỏ hàng: " + ex.Message);
+                    MessageBox.Show("Lỗi " + ex.Message);
                 }
             }
         }
@@ -175,9 +175,9 @@ namespace QuanLyBanHangOnline
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
+            frmLogin f = new frmLogin();
             MessageBox.Show("Đăng xuất thành công");
-            frmLogin.Show();
+            f.Show();
             this.Close();
         }
 
@@ -219,7 +219,7 @@ namespace QuanLyBanHangOnline
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi gửi yêu cầu: {ex.Message}");
+                    MessageBox.Show($"LỖi {ex.Message}");
                 }
             }
         }
@@ -257,7 +257,7 @@ namespace QuanLyBanHangOnline
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Loi " + ex.Message);
                 }
             }
 

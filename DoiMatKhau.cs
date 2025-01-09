@@ -26,13 +26,13 @@
 
             if (String.IsNullOrEmpty(oldPass) || String.IsNullOrEmpty(newPass) || String.IsNullOrEmpty(comfirmPass))
             {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK  );
                 return;
             }
             if (newPass != comfirmPass)
             {
                 {
-                    MessageBox.Show("Mật khẩu mới và xác nhận mật khẩu không khớp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                    MessageBox.Show("Mật khẩu mới và xác nhận mật khẩu không khớp.", "Thông báo", MessageBoxButtons.OK  ); return;
                 }
             }
             try
@@ -52,11 +52,11 @@
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Đổi mật khẩu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Đổi mật khẩu thành công.", "Thông báo", MessageBoxButtons.OK);
                         }
                         else
                         {
-                            MessageBox.Show("Mật khẩu cũ không đúng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Mật khẩu cũ không đúng.", "Thông báo", MessageBoxButtons.OK  );
                         }
                     }
 

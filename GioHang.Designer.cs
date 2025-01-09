@@ -35,6 +35,7 @@
             txtGiamGia = new TextBox();
             txtTien = new TextBox();
             btnApDung = new Button();
+            btnHuy = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
             SuspendLayout();
             // 
@@ -44,13 +45,12 @@
             dgvCart.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCart.Location = new Point(18, 17);
-            dgvCart.Margin = new Padding(4, 4, 4, 4);
+            dgvCart.Margin = new Padding(4);
             dgvCart.Name = "dgvCart";
             dgvCart.RowHeadersWidth = 51;
             dgvCart.RowTemplate.Height = 29;
             dgvCart.Size = new Size(1164, 409);
             dgvCart.TabIndex = 0;
-            dgvCart.CellContentClick += dgvCart_CellContentClick;
             // 
             // label1
             // 
@@ -75,7 +75,7 @@
             // btnThanhToan
             // 
             btnThanhToan.Location = new Point(726, 571);
-            btnThanhToan.Margin = new Padding(4, 4, 4, 4);
+            btnThanhToan.Margin = new Padding(4);
             btnThanhToan.Name = "btnThanhToan";
             btnThanhToan.Size = new Size(141, 41);
             btnThanhToan.TabIndex = 4;
@@ -86,7 +86,7 @@
             // txtGiamGia
             // 
             txtGiamGia.Location = new Point(849, 440);
-            txtGiamGia.Margin = new Padding(4, 4, 4, 4);
+            txtGiamGia.Margin = new Padding(4);
             txtGiamGia.Name = "txtGiamGia";
             txtGiamGia.Size = new Size(186, 34);
             txtGiamGia.TabIndex = 2;
@@ -94,7 +94,7 @@
             // txtTien
             // 
             txtTien.Location = new Point(184, 434);
-            txtTien.Margin = new Padding(4, 4, 4, 4);
+            txtTien.Margin = new Padding(4);
             txtTien.Name = "txtTien";
             txtTien.ReadOnly = true;
             txtTien.Size = new Size(186, 34);
@@ -103,7 +103,7 @@
             // btnApDung
             // 
             btnApDung.Location = new Point(1066, 440);
-            btnApDung.Margin = new Padding(4, 4, 4, 4);
+            btnApDung.Margin = new Padding(4);
             btnApDung.Name = "btnApDung";
             btnApDung.Size = new Size(141, 41);
             btnApDung.TabIndex = 3;
@@ -111,11 +111,22 @@
             btnApDung.UseVisualStyleBackColor = true;
             btnApDung.Click += btnApDung_Click;
             // 
+            // btnHuy
+            // 
+            btnHuy.Location = new Point(24, 547);
+            btnHuy.Name = "btnHuy";
+            btnHuy.Size = new Size(185, 48);
+            btnHuy.TabIndex = 5;
+            btnHuy.Text = "Huỷ Thanh Toán";
+            btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.Click += btnHuy_Click;
+            // 
             // GioHang
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1226, 630);
+            Controls.Add(btnHuy);
             Controls.Add(btnApDung);
             Controls.Add(txtTien);
             Controls.Add(txtGiamGia);
@@ -124,7 +135,7 @@
             Controls.Add(label1);
             Controls.Add(dgvCart);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "GioHang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GioHang";
@@ -143,5 +154,6 @@
         private TextBox txtGiamGia;
         private TextBox txtTien;
         private Button btnApDung;
+        private Button btnHuy;
     }
 }

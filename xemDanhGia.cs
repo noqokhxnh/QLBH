@@ -36,9 +36,10 @@
                     dgvDanhGia.DataSource = dataTable;
 
                 }
-                catch (Exception e)
+                
+               catch (Exception ex)
                 {
-                    MessageBox.Show("Loi!", e.Message);
+                    MessageBox.Show("Loi!", ex.Message);
 
                 }
 
@@ -58,20 +59,26 @@
 
                     try
                     {
-                        conn.Open(); 
+                        conn.Open();
                         deleteCmd.ExecuteNonQuery();
                         MessageBox.Show("Đánh giá đã được xóa thành công");
                         LoadReviewData();
                     }
-                    catch (Exception ex) { MessageBox.Show("Lỗi khi xóa đánh giá: " + ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xóa đánh giá: " + ex.Message);
                     }
                 }
             }
-            else {
-                MessageBox.Show("Vui lòng chọn một đánh giá để xóa"); 
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đánh giá để xóa");
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

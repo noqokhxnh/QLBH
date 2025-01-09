@@ -24,7 +24,7 @@
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK  );
                 return;
             }
 
@@ -42,7 +42,7 @@
                     {
                         int userId = reader.GetInt32(reader.GetOrdinal("UserId"));
                         string role = reader["Role"].ToString().Trim();
-                        MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK );
                         this.Hide(); if (role == "Admin")
                         {
                             AdminForm f = new AdminForm(userId); f.Show();
@@ -60,13 +60,13 @@
                     }
                     else
                     {
-                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK  );
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi kết nối: " + ex.Message, "Lỗi", MessageBoxButtons.OK  );
             }
         }
 

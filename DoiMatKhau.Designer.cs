@@ -40,7 +40,7 @@
             // btnAccept
             // 
             btnAccept.Location = new Point(284, 377);
-            btnAccept.Margin = new Padding(4, 4, 4, 4);
+            btnAccept.Margin = new Padding(4);
             btnAccept.Name = "btnAccept";
             btnAccept.Size = new Size(141, 41);
             btnAccept.TabIndex = 4;
@@ -51,7 +51,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(111, 90);
+            label1.Location = new Point(111, 85);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(130, 28);
@@ -81,7 +81,7 @@
             // txtOldPass
             // 
             txtOldPass.Location = new Point(381, 85);
-            txtOldPass.Margin = new Padding(4, 4, 4, 4);
+            txtOldPass.Margin = new Padding(4);
             txtOldPass.Name = "txtOldPass";
             txtOldPass.Size = new Size(186, 34);
             txtOldPass.TabIndex = 1;
@@ -90,7 +90,7 @@
             // txtNewPass
             // 
             txtNewPass.Location = new Point(381, 171);
-            txtNewPass.Margin = new Padding(4, 4, 4, 4);
+            txtNewPass.Margin = new Padding(4);
             txtNewPass.Name = "txtNewPass";
             txtNewPass.Size = new Size(186, 34);
             txtNewPass.TabIndex = 2;
@@ -99,7 +99,7 @@
             // txtComfirmPass
             // 
             txtComfirmPass.Location = new Point(381, 260);
-            txtComfirmPass.Margin = new Padding(4, 4, 4, 4);
+            txtComfirmPass.Margin = new Padding(4);
             txtComfirmPass.Name = "txtComfirmPass";
             txtComfirmPass.Size = new Size(186, 34);
             txtComfirmPass.TabIndex = 3;
@@ -118,10 +118,10 @@
             Controls.Add(label1);
             Controls.Add(btnAccept);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "DoiMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DoiMatKhau";
+            Text = "Đổi Mật Khẩu";
             ResumeLayout(false);
             PerformLayout();
         }

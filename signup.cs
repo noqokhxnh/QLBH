@@ -33,7 +33,7 @@ namespace QLBH
             string password = txtpassword.Text.Trim();
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK  );
                 return;
             }
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -49,7 +49,7 @@ namespace QLBH
 
                     if (count > 0)
                     {
-                        MessageBox.Show("Tên tài khoản đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tên tài khoản đã tồn tại.", "Lỗi", MessageBoxButtons.OK  );
                         return;
                     }
                 }
@@ -69,14 +69,14 @@ namespace QLBH
                     int rowsAffected = insertCmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK );
                         this.Hide();
                         frmLogin f = new frmLogin();
                         f.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Đăng ký thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Đăng ký thất bại.", "Lỗi", MessageBoxButtons.OK  );
                     }
                 }
             }
