@@ -43,37 +43,41 @@
             dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCart.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCart.Location = new Point(12, 12);
+            dgvCart.Location = new Point(18, 17);
+            dgvCart.Margin = new Padding(4, 4, 4, 4);
             dgvCart.Name = "dgvCart";
             dgvCart.RowHeadersWidth = 51;
             dgvCart.RowTemplate.Height = 29;
-            dgvCart.Size = new Size(776, 292);
+            dgvCart.Size = new Size(1164, 409);
             dgvCart.TabIndex = 0;
             dgvCart.CellContentClick += dgvCart_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 314);
+            label1.Location = new Point(24, 440);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(91, 20);
+            label1.Size = new Size(130, 28);
             label1.TabIndex = 1;
             label1.Text = "Tổng số tiền";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(427, 317);
+            label2.Location = new Point(640, 444);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(133, 20);
+            label2.Size = new Size(186, 28);
             label2.TabIndex = 2;
             label2.Text = "Nhập mã giảm giá";
             // 
             // btnThanhToan
             // 
-            btnThanhToan.Location = new Point(484, 408);
+            btnThanhToan.Location = new Point(726, 571);
+            btnThanhToan.Margin = new Padding(4, 4, 4, 4);
             btnThanhToan.Name = "btnThanhToan";
-            btnThanhToan.Size = new Size(94, 29);
+            btnThanhToan.Size = new Size(141, 41);
             btnThanhToan.TabIndex = 4;
             btnThanhToan.Text = "Thanh Toán";
             btnThanhToan.UseVisualStyleBackColor = true;
@@ -81,24 +85,27 @@
             // 
             // txtGiamGia
             // 
-            txtGiamGia.Location = new Point(566, 314);
+            txtGiamGia.Location = new Point(849, 440);
+            txtGiamGia.Margin = new Padding(4, 4, 4, 4);
             txtGiamGia.Name = "txtGiamGia";
-            txtGiamGia.Size = new Size(125, 27);
+            txtGiamGia.Size = new Size(186, 34);
             txtGiamGia.TabIndex = 2;
             // 
             // txtTien
             // 
-            txtTien.Location = new Point(123, 310);
+            txtTien.Location = new Point(184, 434);
+            txtTien.Margin = new Padding(4, 4, 4, 4);
             txtTien.Name = "txtTien";
             txtTien.ReadOnly = true;
-            txtTien.Size = new Size(125, 27);
+            txtTien.Size = new Size(186, 34);
             txtTien.TabIndex = 1;
             // 
             // btnApDung
             // 
-            btnApDung.Location = new Point(711, 314);
+            btnApDung.Location = new Point(1066, 440);
+            btnApDung.Margin = new Padding(4, 4, 4, 4);
             btnApDung.Name = "btnApDung";
-            btnApDung.Size = new Size(94, 29);
+            btnApDung.Size = new Size(141, 41);
             btnApDung.TabIndex = 3;
             btnApDung.Text = "Áp dụng";
             btnApDung.UseVisualStyleBackColor = true;
@@ -106,9 +113,9 @@
             // 
             // GioHang
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(817, 450);
+            ClientSize = new Size(1226, 630);
             Controls.Add(btnApDung);
             Controls.Add(txtTien);
             Controls.Add(txtGiamGia);
@@ -116,6 +123,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dgvCart);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "GioHang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GioHang";

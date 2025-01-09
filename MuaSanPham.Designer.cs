@@ -57,20 +57,20 @@
             dgvHIenThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHIenThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHIenThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHIenThi.Location = new Point(12, 186);
-            dgvHIenThi.Margin = new Padding(3, 4, 3, 4);
+            dgvHIenThi.Location = new Point(28, 275);
+            dgvHIenThi.Margin = new Padding(4, 6, 4, 6);
             dgvHIenThi.Name = "dgvHIenThi";
             dgvHIenThi.RowHeadersWidth = 51;
             dgvHIenThi.RowTemplate.Height = 24;
-            dgvHIenThi.Size = new Size(952, 322);
+            dgvHIenThi.Size = new Size(1083, 451);
             dgvHIenThi.TabIndex = 0;
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(998, 225);
-            btnThem.Margin = new Padding(3, 4, 3, 4);
+            btnThem.Location = new Point(1200, 359);
+            btnThem.Margin = new Padding(4, 6, 4, 6);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(175, 29);
+            btnThem.Size = new Size(262, 41);
             btnThem.TabIndex = 1;
             btnThem.Text = "Thêm vào giỏ hàng";
             btnThem.UseVisualStyleBackColor = true;
@@ -79,18 +79,19 @@
             // cbxSanPham
             // 
             cbxSanPham.FormattingEnabled = true;
-            cbxSanPham.Location = new Point(188, 89);
-            cbxSanPham.Margin = new Padding(3, 4, 3, 4);
+            cbxSanPham.Location = new Point(282, 125);
+            cbxSanPham.Margin = new Padding(4, 6, 4, 6);
             cbxSanPham.Name = "cbxSanPham";
-            cbxSanPham.Size = new Size(227, 28);
+            cbxSanPham.Size = new Size(338, 36);
             cbxSanPham.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 92);
+            label1.Location = new Point(18, 129);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(111, 20);
+            label1.Size = new Size(157, 28);
             label1.TabIndex = 3;
             label1.Text = "Chọn sản phẩm";
             label1.Click += label1_Click;
@@ -98,25 +99,27 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 158);
+            label2.Location = new Point(36, 221);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 20);
+            label2.Size = new Size(101, 28);
             label2.TabIndex = 4;
             label2.Text = "Số Lượng";
             // 
             // txtsoluong
             // 
-            txtsoluong.Location = new Point(188, 151);
-            txtsoluong.Margin = new Padding(3, 4, 3, 4);
+            txtsoluong.Location = new Point(282, 211);
+            txtsoluong.Margin = new Padding(4, 6, 4, 6);
             txtsoluong.Name = "txtsoluong";
-            txtsoluong.Size = new Size(100, 27);
+            txtsoluong.Size = new Size(148, 34);
             txtsoluong.TabIndex = 5;
             // 
             // btnDanhGia
             // 
-            btnDanhGia.Location = new Point(998, 275);
+            btnDanhGia.Location = new Point(1200, 429);
+            btnDanhGia.Margin = new Padding(4);
             btnDanhGia.Name = "btnDanhGia";
-            btnDanhGia.Size = new Size(175, 29);
+            btnDanhGia.Size = new Size(262, 41);
             btnDanhGia.TabIndex = 7;
             btnDanhGia.Text = "Đánh giá sản phẩm";
             btnDanhGia.UseVisualStyleBackColor = true;
@@ -124,11 +127,13 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, quảnLýSảnPhẩmToolStripMenuItem, phânQuyềnToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1214, 28);
+            menuStrip1.Padding = new Padding(9, 3, 0, 3);
+            menuStrip1.Size = new Size(1515, 38);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -136,30 +141,33 @@
             // 
             thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinCáNhânToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
             thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(88, 24);
+            thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(118, 32);
             thôngTinTàiKhoảnToolStripMenuItem.Text = "Hệ Thống";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
+            thôngTinCáNhânToolStripMenuItem.Image = QLBH.Properties.Resources.user_regular;
             thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
             thôngTinCáNhânToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
-            thôngTinCáNhânToolStripMenuItem.Size = new Size(263, 26);
+            thôngTinCáNhânToolStripMenuItem.Size = new Size(345, 32);
             thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             thôngTinCáNhânToolStripMenuItem.Click += thôngTinCáNhânToolStripMenuItem_Click;
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
+            đổiMậtKhẩuToolStripMenuItem.Image = QLBH.Properties.Resources.key_solid;
             đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             đổiMậtKhẩuToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(263, 26);
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(345, 32);
             đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
             // đăngXuấtToolStripMenuItem
             // 
+            đăngXuấtToolStripMenuItem.Image = QLBH.Properties.Resources.arrow_right_from_bracket_solid;
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
-            đăngXuấtToolStripMenuItem.Size = new Size(263, 26);
+            đăngXuấtToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.W;
+            đăngXuấtToolStripMenuItem.Size = new Size(345, 32);
             đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
@@ -167,59 +175,65 @@
             // 
             quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { GioHang, toolStripMenuItem1 });
             quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
-            quảnLýSảnPhẩmToolStripMenuItem.Size = new Size(144, 24);
+            quảnLýSảnPhẩmToolStripMenuItem.Size = new Size(201, 32);
             quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản Lý Sản Phẩm";
             // 
             // GioHang
             // 
             GioHang.AccessibleName = "GioHang";
+            GioHang.Image = QLBH.Properties.Resources.cart_shopping_solid;
             GioHang.Name = "GioHang";
-            GioHang.Size = new Size(224, 26);
+            GioHang.Size = new Size(280, 32);
             GioHang.Text = "Giỏ Hàng";
             GioHang.Click += GioHang_Click;
             // 
             // toolStripMenuItem1
             // 
+            toolStripMenuItem1.Image = QLBH.Properties.Resources.comment_regular;
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(224, 26);
+            toolStripMenuItem1.Size = new Size(280, 32);
             toolStripMenuItem1.Text = "Đánh giá sản phẩm";
             // 
             // phânQuyềnToolStripMenuItem
             // 
             phânQuyềnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { yêuCầuPhânQuyềnBánHàngToolStripMenuItem });
             phânQuyềnToolStripMenuItem.Name = "phânQuyềnToolStripMenuItem";
-            phânQuyềnToolStripMenuItem.Size = new Size(101, 24);
+            phânQuyềnToolStripMenuItem.Size = new Size(140, 32);
             phânQuyềnToolStripMenuItem.Text = "Phân Quyền";
             // 
             // yêuCầuPhânQuyềnBánHàngToolStripMenuItem
             // 
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Image = QLBH.Properties.Resources.person_solid;
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Name = "yêuCầuPhânQuyềnBánHàngToolStripMenuItem";
-            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Size = new Size(289, 26);
+            yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Size = new Size(381, 32);
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Text = "Yêu cầu phân quyền bán hàng";
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem.Click += yêuCầuPhânQuyềnBánHàngToolStripMenuItem_Click;
             // 
             // lable4
             // 
             lable4.AutoSize = true;
-            lable4.Location = new Point(600, 97);
+            lable4.Location = new Point(765, 133);
+            lable4.Margin = new Padding(4, 0, 4, 0);
             lable4.Name = "lable4";
-            lable4.Size = new Size(141, 20);
+            lable4.Size = new Size(201, 28);
             lable4.TabIndex = 10;
             lable4.Text = "Tim Kiếm Sản Phẩm";
             lable4.Click += lable4_Click;
             // 
             // txtTimKiem
             // 
-            txtTimKiem.Location = new Point(774, 94);
+            txtTimKiem.Location = new Point(999, 133);
+            txtTimKiem.Margin = new Padding(4);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(236, 27);
+            txtTimKiem.Size = new Size(352, 34);
             txtTimKiem.TabIndex = 11;
             // 
             // btnTim
             // 
-            btnTim.Location = new Point(1041, 92);
+            btnTim.Location = new Point(1200, 275);
+            btnTim.Margin = new Padding(4);
             btnTim.Name = "btnTim";
-            btnTim.Size = new Size(94, 29);
+            btnTim.Size = new Size(141, 41);
             btnTim.TabIndex = 12;
             btnTim.Text = "Tìm Kiếm";
             btnTim.UseVisualStyleBackColor = true;
@@ -227,9 +241,9 @@
             // 
             // frmUserform
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1214, 562);
+            ClientSize = new Size(1515, 787);
             Controls.Add(btnTim);
             Controls.Add(txtTimKiem);
             Controls.Add(lable4);
@@ -241,11 +255,13 @@
             Controls.Add(btnThem);
             Controls.Add(dgvHIenThi);
             Controls.Add(menuStrip1);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "frmUserform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            WindowState = FormWindowState.Maximized;
             Load += frmUserform_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).EndInit();
             menuStrip1.ResumeLayout(false);

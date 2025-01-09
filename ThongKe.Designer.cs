@@ -40,36 +40,40 @@
             dgvThongKe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvThongKe.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvThongKe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvThongKe.Location = new Point(23, 12);
+            dgvThongKe.Location = new Point(34, 17);
+            dgvThongKe.Margin = new Padding(4, 4, 4, 4);
             dgvThongKe.Name = "dgvThongKe";
             dgvThongKe.RowHeadersWidth = 51;
             dgvThongKe.RowTemplate.Height = 29;
-            dgvThongKe.Size = new Size(739, 321);
+            dgvThongKe.Size = new Size(1108, 449);
             dgvThongKe.TabIndex = 0;
             // 
             // lblTongdoanhThu
             // 
             lblTongdoanhThu.AutoSize = true;
-            lblTongdoanhThu.Location = new Point(23, 357);
+            lblTongdoanhThu.Location = new Point(34, 500);
+            lblTongdoanhThu.Margin = new Padding(4, 0, 4, 0);
             lblTongdoanhThu.Name = "lblTongdoanhThu";
-            lblTongdoanhThu.Size = new Size(119, 20);
+            lblTongdoanhThu.Size = new Size(170, 28);
             lblTongdoanhThu.TabIndex = 1;
             lblTongdoanhThu.Text = "Tổng Doanh Thu";
             // 
             // lblSoLuongban
             // 
             lblSoLuongban.AutoSize = true;
-            lblSoLuongban.Location = new Point(23, 401);
+            lblSoLuongban.Location = new Point(34, 561);
+            lblSoLuongban.Margin = new Padding(4, 0, 4, 0);
             lblSoLuongban.Name = "lblSoLuongban";
-            lblSoLuongban.Size = new Size(101, 20);
+            lblSoLuongban.Size = new Size(143, 28);
             lblSoLuongban.TabIndex = 2;
             lblSoLuongban.Text = "Số Lượng Bán";
             // 
             // btnXuat
             // 
-            btnXuat.Location = new Point(618, 366);
+            btnXuat.Location = new Point(927, 512);
+            btnXuat.Margin = new Padding(4, 4, 4, 4);
             btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(109, 29);
+            btnXuat.Size = new Size(164, 41);
             btnXuat.TabIndex = 3;
             btnXuat.Text = "Xuất Báo Cáo";
             btnXuat.UseVisualStyleBackColor = true;
@@ -77,13 +81,15 @@
             // 
             // frmThongKe
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1200, 630);
             Controls.Add(btnXuat);
             Controls.Add(lblSoLuongban);
             Controls.Add(lblTongdoanhThu);
             Controls.Add(dgvThongKe);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "frmThongKe";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ThongKe";

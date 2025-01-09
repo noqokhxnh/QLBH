@@ -36,6 +36,7 @@
 
                 DataTable dataTable = new DataTable();
 
+
                 try
                 {
 
@@ -46,6 +47,7 @@
                     {
                         dgvHienThi.DataSource = dataTable;
                         dgvHienThi.Columns["ProductID"].Visible = false;
+
                     }
                 }
                 catch (Exception ex)

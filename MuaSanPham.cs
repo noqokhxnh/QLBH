@@ -21,7 +21,7 @@ namespace QuanLyBanHangOnline
 
 
 
-        private readonly int userId;
+        private  int userId;
 
         public frmUserform(int userId)
         {
@@ -53,6 +53,8 @@ namespace QuanLyBanHangOnline
                         cbxSanPham.DataSource = dataTable;
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
+                        dgvHIenThi.Columns["ProductID"].Visible = false;
+
 
                     }
                     else
@@ -205,6 +207,7 @@ namespace QuanLyBanHangOnline
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
+               
                 string query = @"INSERT INTO tbl_role_request (UserId) VALUES (@userId)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@userId", userId);

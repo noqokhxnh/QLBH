@@ -105,7 +105,6 @@ C:\Users\noqok\OneDrive\Máy tính\QLBH\bin\Debug\net6.0-windows\runtimes\win\li
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.csproj.AssemblyReference.cache
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.AdminForm.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmDanhGia.resources
-C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmUser.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.GiamGia.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.GioHang.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QuanLyBanHangOnline.frmLogin.resources

@@ -40,9 +40,10 @@
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(659, 16);
+            btnThem.Location = new Point(988, 22);
+            btnThem.Margin = new Padding(4, 4, 4, 4);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(94, 29);
+            btnThem.Size = new Size(141, 41);
             btnThem.TabIndex = 3;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(59, 20);
+            label1.Location = new Point(88, 28);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(95, 20);
+            label1.Size = new Size(134, 28);
             label1.TabIndex = 1;
             label1.Text = "Mã Giảm Giá";
             // 
@@ -62,25 +64,28 @@
             dgvMaGiamGia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMaGiamGia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMaGiamGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMaGiamGia.Location = new Point(12, 134);
+            dgvMaGiamGia.Location = new Point(18, 188);
+            dgvMaGiamGia.Margin = new Padding(4, 4, 4, 4);
             dgvMaGiamGia.Name = "dgvMaGiamGia";
             dgvMaGiamGia.RowHeadersWidth = 51;
             dgvMaGiamGia.RowTemplate.Height = 29;
-            dgvMaGiamGia.Size = new Size(751, 313);
+            dgvMaGiamGia.Size = new Size(1126, 438);
             dgvMaGiamGia.TabIndex = 2;
             // 
             // txtCode
             // 
-            txtCode.Location = new Point(176, 20);
+            txtCode.Location = new Point(264, 28);
+            txtCode.Margin = new Padding(4, 4, 4, 4);
             txtCode.Name = "txtCode";
-            txtCode.Size = new Size(125, 27);
+            txtCode.Size = new Size(186, 34);
             txtCode.TabIndex = 1;
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(659, 80);
+            btnXoa.Location = new Point(988, 112);
+            btnXoa.Margin = new Padding(4, 4, 4, 4);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(94, 29);
+            btnXoa.Size = new Size(141, 41);
             btnXoa.TabIndex = 4;
             btnXoa.Text = "Xoá";
             btnXoa.UseVisualStyleBackColor = true;
@@ -88,25 +93,27 @@
             // 
             // txtGiam
             // 
-            txtGiam.Location = new Point(176, 70);
+            txtGiam.Location = new Point(264, 98);
+            txtGiam.Margin = new Padding(4, 4, 4, 4);
             txtGiam.Name = "txtGiam";
-            txtGiam.Size = new Size(125, 27);
+            txtGiam.Size = new Size(186, 34);
             txtGiam.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(48, 70);
+            label2.Location = new Point(72, 98);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(122, 20);
+            label2.Size = new Size(177, 28);
             label2.TabIndex = 5;
             label2.Text = "Phần trăm ưu đãi";
             // 
             // GiamGia
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(776, 459);
+            ClientSize = new Size(1164, 643);
             Controls.Add(txtGiam);
             Controls.Add(label2);
             Controls.Add(btnXoa);
@@ -114,6 +121,8 @@
             Controls.Add(dgvMaGiamGia);
             Controls.Add(label1);
             Controls.Add(btnThem);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "GiamGia";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GiamGia";

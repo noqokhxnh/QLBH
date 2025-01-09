@@ -40,6 +40,7 @@ namespace QLBH
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
                         dgvHienThi.DataSource = dataTable;
+
                     }
                 }
             }

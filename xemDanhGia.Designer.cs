@@ -39,18 +39,20 @@
             dgvDanhGia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDanhGia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvDanhGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDanhGia.Location = new Point(12, 12);
+            dgvDanhGia.Location = new Point(18, 17);
+            dgvDanhGia.Margin = new Padding(4, 4, 4, 4);
             dgvDanhGia.Name = "dgvDanhGia";
             dgvDanhGia.RowHeadersWidth = 51;
             dgvDanhGia.RowTemplate.Height = 29;
-            dgvDanhGia.Size = new Size(595, 188);
+            dgvDanhGia.Size = new Size(892, 263);
             dgvDanhGia.TabIndex = 0;
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(108, 261);
+            btnXoa.Location = new Point(162, 365);
+            btnXoa.Margin = new Padding(4, 4, 4, 4);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(94, 29);
+            btnXoa.Size = new Size(141, 41);
             btnXoa.TabIndex = 1;
             btnXoa.Text = "Xoá";
             btnXoa.UseVisualStyleBackColor = true;
@@ -58,21 +60,24 @@
             // 
             // btnSua
             // 
-            btnSua.Location = new Point(394, 261);
+            btnSua.Location = new Point(591, 365);
+            btnSua.Margin = new Padding(4, 4, 4, 4);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(94, 29);
+            btnSua.Size = new Size(141, 41);
             btnSua.TabIndex = 2;
             btnSua.Text = "Huỷ";
             btnSua.UseVisualStyleBackColor = true;
             // 
             // xemDanhGia
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(619, 349);
+            ClientSize = new Size(928, 489);
             Controls.Add(btnSua);
             Controls.Add(btnXoa);
             Controls.Add(dgvDanhGia);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "xemDanhGia";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "xemDanhGia";

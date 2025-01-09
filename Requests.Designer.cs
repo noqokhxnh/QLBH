@@ -44,6 +44,7 @@
             pnlDetails.Controls.Add(txtUsername);
             pnlDetails.Controls.Add(btnApprove);
             pnlDetails.Controls.Add(btnReject);
+            pnlDetails.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             pnlDetails.Location = new Point(0, 0);
             pnlDetails.Margin = new Padding(4, 5, 4, 5);
             pnlDetails.Name = "pnlDetails";
@@ -74,17 +75,17 @@
             lblUserId.Location = new Point(27, 31);
             lblUserId.Margin = new Padding(4, 0, 4, 0);
             lblUserId.Name = "lblUserId";
-            lblUserId.Size = new Size(113, 20);
+            lblUserId.Size = new Size(161, 28);
             lblUserId.TabIndex = 0;
             lblUserId.Text = "ID Người Dùng:";
             // 
             // txtUserId
             // 
-            txtUserId.Location = new Point(160, 31);
+            txtUserId.Location = new Point(196, 33);
             txtUserId.Margin = new Padding(4, 5, 4, 5);
             txtUserId.Name = "txtUserId";
             txtUserId.ReadOnly = true;
-            txtUserId.Size = new Size(265, 27);
+            txtUserId.Size = new Size(265, 34);
             txtUserId.TabIndex = 1;
             // 
             // lblUsername
@@ -93,18 +94,19 @@
             lblUsername.Location = new Point(27, 77);
             lblUsername.Margin = new Padding(4, 0, 4, 0);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(115, 20);
+            lblUsername.Size = new Size(163, 28);
             lblUsername.TabIndex = 2;
             lblUsername.Text = "Tên Đăng Nhập:";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(160, 77);
+            txtUsername.Location = new Point(196, 71);
             txtUsername.Margin = new Padding(4, 5, 4, 5);
             txtUsername.Name = "txtUsername";
             txtUsername.ReadOnly = true;
-            txtUsername.Size = new Size(265, 27);
+            txtUsername.Size = new Size(265, 34);
             txtUsername.TabIndex = 3;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // btnApprove
             // 
@@ -114,6 +116,7 @@
             btnApprove.Size = new Size(133, 35);
             btnApprove.TabIndex = 6;
             btnApprove.Text = "Chấp Nhận";
+            btnApprove.Click += btnApprove_Click_1;
             // 
             // btnReject
             // 
