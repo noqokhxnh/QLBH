@@ -45,7 +45,7 @@
                 {
                     conn.Open(); adapter.Fill(dt);
                     dgvRequests.DataSource = dt;
-                    //dgvRequests.Columns["RequestId"].Visible = false;
+                    dgvRequests.Columns["RequestId"].Visible = false;
                 }
                 catch (Exception ex) { MessageBox.Show($"Lỗi khi tải yêu cầu: {ex.Message}"); }
             }

@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -43,7 +43,7 @@
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\muasanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\muasanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:muasanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -51,7 +51,7 @@
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:rolerequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|c:\\users\\noqok\\onedrive\\m\u00E1y t\u00EDnh\\qlbh\\rolerequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\rolerequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DC06F477-D655-4AAF-8C76-3BB03480BF46}|QLBH.csproj|solutionrelative:rolerequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -82,9 +82,9 @@
               "Title": "login.cs",
               "DocumentMoniker": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\login.cs",
               "RelativeDocumentMoniker": "login.cs",
-              "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\login.cs*",
-              "RelativeToolTip": "login.cs*",
-              "ViewState": "AgIAADMAAAAAAAAAAAAwwFIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\login.cs",
+              "RelativeToolTip": "login.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAwwD0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-04T13:55:28.052Z",
               "IsPinned": true,
@@ -129,8 +129,7 @@
               "ViewState": "AgIAAA0BAAAAAAAAAIA+wB0BAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-07T06:41:48.333Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -163,8 +162,7 @@
               "RelativeToolTip": "GiamGia.cs",
               "ViewState": "AgIAAJ8AAAAAAAAAAAA4wK8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T13:58:54.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T13:58:54.587Z"
             },
             {
               "$type": "Document",
@@ -176,8 +174,7 @@
               "RelativeToolTip": "frmAdmin.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAnwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T14:21:25.615Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T14:21:25.615Z"
             },
             {
               "$type": "Document",
@@ -189,8 +186,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAQwBMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T06:59:23.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T06:59:23.649Z"
             },
             {
               "$type": "Document",
@@ -201,8 +197,7 @@
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\Requests.cs [Design]",
               "RelativeToolTip": "Requests.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T14:06:02.96Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-08T14:06:02.96Z"
             },
             {
               "$type": "Document",
@@ -213,8 +208,7 @@
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\AdminForm.cs [Design]",
               "RelativeToolTip": "AdminForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T07:09:57.243Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-08T07:09:57.243Z"
             },
             {
               "$type": "Document",
@@ -225,8 +219,7 @@
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\MuaSanPham.cs [Design]",
               "RelativeToolTip": "MuaSanPham.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T12:41:25.189Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-08T12:41:25.189Z"
             },
             {
               "$type": "Document",
@@ -250,8 +243,7 @@
               "ToolTip": "C:\\Users\\noqok\\OneDrive\\M\u00E1y t\u00EDnh\\QLBH\\RoleRequests.cs [Design]",
               "RelativeToolTip": "RoleRequests.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T12:28:01.026Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-08T12:28:01.026Z"
             },
             {
               "$type": "Document",
