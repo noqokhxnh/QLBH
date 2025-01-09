@@ -19,9 +19,6 @@
     <Compile Update="frmDanhGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="GiamGia.cs">
       <SubType>Form</SubType>
     </Compile>

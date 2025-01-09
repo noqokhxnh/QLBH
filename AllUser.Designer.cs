@@ -37,19 +37,22 @@
             dgvHienThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHienThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHienThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHienThi.Location = new Point(2, 2);
+            dgvHienThi.Location = new Point(3, 3);
+            dgvHienThi.Margin = new Padding(4, 4, 4, 4);
             dgvHienThi.Name = "dgvHienThi";
             dgvHienThi.RowHeadersWidth = 51;
             dgvHienThi.RowTemplate.Height = 29;
-            dgvHienThi.Size = new Size(868, 262);
+            dgvHienThi.Size = new Size(1552, 589);
             dgvHienThi.TabIndex = 0;
             // 
             // AllUser
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(870, 261);
+            ClientSize = new Size(1557, 588);
             Controls.Add(dgvHienThi);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "AllUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AllUser";

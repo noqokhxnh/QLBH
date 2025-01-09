@@ -39,9 +39,10 @@
             // 
             // btnGuidanhgia
             // 
-            btnGuidanhgia.Location = new Point(36, 200);
+            btnGuidanhgia.Location = new Point(54, 280);
+            btnGuidanhgia.Margin = new Padding(4, 4, 4, 4);
             btnGuidanhgia.Name = "btnGuidanhgia";
-            btnGuidanhgia.Size = new Size(153, 29);
+            btnGuidanhgia.Size = new Size(230, 41);
             btnGuidanhgia.TabIndex = 0;
             btnGuidanhgia.Text = "Gửi Đánh Giá";
             btnGuidanhgia.UseVisualStyleBackColor = true;
@@ -50,27 +51,30 @@
             // lblProductName
             // 
             lblProductName.AutoSize = true;
-            lblProductName.Location = new Point(36, 36);
+            lblProductName.Location = new Point(54, 50);
+            lblProductName.Margin = new Padding(4, 0, 4, 0);
             lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(101, 20);
+            lblProductName.Size = new Size(144, 28);
             lblProductName.TabIndex = 1;
             lblProductName.Text = "Tên Sản Phẩm";
             // 
             // lblRating
             // 
             lblRating.AutoSize = true;
-            lblRating.Location = new Point(36, 87);
+            lblRating.Location = new Point(54, 122);
+            lblRating.Margin = new Padding(4, 0, 4, 0);
             lblRating.Name = "lblRating";
-            lblRating.Size = new Size(52, 20);
+            lblRating.Size = new Size(74, 28);
             lblRating.TabIndex = 2;
             lblRating.Text = "Rating";
             // 
             // lblComment
             // 
             lblComment.AutoSize = true;
-            lblComment.Location = new Point(36, 143);
+            lblComment.Location = new Point(54, 200);
+            lblComment.Margin = new Padding(4, 0, 4, 0);
             lblComment.Name = "lblComment";
-            lblComment.Size = new Size(74, 20);
+            lblComment.Size = new Size(103, 28);
             lblComment.TabIndex = 3;
             lblComment.Text = "Comment";
             // 
@@ -78,32 +82,35 @@
             // 
             cbxRating.FormattingEnabled = true;
             cbxRating.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
-            cbxRating.Location = new Point(145, 87);
+            cbxRating.Location = new Point(218, 122);
+            cbxRating.Margin = new Padding(4, 4, 4, 4);
             cbxRating.Name = "cbxRating";
-            cbxRating.Size = new Size(151, 28);
+            cbxRating.Size = new Size(224, 36);
             cbxRating.TabIndex = 4;
             // 
             // txtComment
             // 
-            txtComment.Location = new Point(145, 140);
+            txtComment.Location = new Point(218, 196);
+            txtComment.Margin = new Padding(4, 4, 4, 4);
             txtComment.Name = "txtComment";
-            txtComment.Size = new Size(151, 27);
+            txtComment.Size = new Size(224, 34);
             txtComment.TabIndex = 5;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(271, 200);
+            btnCancel.Location = new Point(406, 280);
+            btnCancel.Margin = new Padding(4, 4, 4, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 29);
+            btnCancel.Size = new Size(141, 41);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Huỷ";
             btnCancel.UseVisualStyleBackColor = true;
             // 
             // frmDanhGia
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(496, 309);
+            ClientSize = new Size(744, 433);
             Controls.Add(btnCancel);
             Controls.Add(txtComment);
             Controls.Add(cbxRating);
@@ -111,6 +118,8 @@
             Controls.Add(lblRating);
             Controls.Add(lblProductName);
             Controls.Add(btnGuidanhgia);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "frmDanhGia";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDanhGia";

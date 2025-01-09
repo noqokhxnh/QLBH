@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHangOnline;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,12 @@ namespace QLBH
         private void thôngTinNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AllUser f = new AllUser();
+            f.ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin f = new frmLogin();
             f.ShowDialog();
         }
     }

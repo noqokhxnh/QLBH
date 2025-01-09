@@ -39,9 +39,10 @@
             // 
             // btnAccept
             // 
-            btnAccept.Location = new Point(189, 269);
+            btnAccept.Location = new Point(284, 377);
+            btnAccept.Margin = new Padding(4, 4, 4, 4);
             btnAccept.Name = "btnAccept";
-            btnAccept.Size = new Size(94, 29);
+            btnAccept.Size = new Size(141, 41);
             btnAccept.TabIndex = 4;
             btnAccept.Text = "Xác nhận";
             btnAccept.UseVisualStyleBackColor = true;
@@ -50,59 +51,65 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(74, 64);
+            label1.Location = new Point(111, 90);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(89, 20);
+            label1.Size = new Size(130, 28);
             label1.TabIndex = 2;
             label1.Text = "Mật khẩu cũ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(74, 122);
+            label2.Location = new Point(111, 171);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(100, 20);
+            label2.Size = new Size(145, 28);
             label2.TabIndex = 3;
             label2.Text = "Mật khẩu mới";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(74, 186);
+            label3.Location = new Point(111, 260);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(160, 20);
+            label3.Size = new Size(230, 28);
             label3.TabIndex = 4;
             label3.Text = "Nhập lại mật khẩu mới";
             // 
             // txtOldPass
             // 
-            txtOldPass.Location = new Point(254, 61);
+            txtOldPass.Location = new Point(381, 85);
+            txtOldPass.Margin = new Padding(4, 4, 4, 4);
             txtOldPass.Name = "txtOldPass";
-            txtOldPass.Size = new Size(125, 27);
+            txtOldPass.Size = new Size(186, 34);
             txtOldPass.TabIndex = 1;
             txtOldPass.UseSystemPasswordChar = true;
             // 
             // txtNewPass
             // 
-            txtNewPass.Location = new Point(254, 122);
+            txtNewPass.Location = new Point(381, 171);
+            txtNewPass.Margin = new Padding(4, 4, 4, 4);
             txtNewPass.Name = "txtNewPass";
-            txtNewPass.Size = new Size(125, 27);
+            txtNewPass.Size = new Size(186, 34);
             txtNewPass.TabIndex = 2;
             txtNewPass.UseSystemPasswordChar = true;
             // 
             // txtComfirmPass
             // 
-            txtComfirmPass.Location = new Point(254, 186);
+            txtComfirmPass.Location = new Point(381, 260);
+            txtComfirmPass.Margin = new Padding(4, 4, 4, 4);
             txtComfirmPass.Name = "txtComfirmPass";
-            txtComfirmPass.Size = new Size(125, 27);
+            txtComfirmPass.Size = new Size(186, 34);
             txtComfirmPass.TabIndex = 3;
             txtComfirmPass.UseSystemPasswordChar = true;
             // 
             // DoiMatKhau
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 360);
+            ClientSize = new Size(723, 504);
             Controls.Add(txtComfirmPass);
             Controls.Add(txtNewPass);
             Controls.Add(txtOldPass);
@@ -110,6 +117,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnAccept);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "DoiMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DoiMatKhau";

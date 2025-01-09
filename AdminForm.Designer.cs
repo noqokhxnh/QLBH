@@ -40,11 +40,12 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, phânQuyềnToolStripMenuItem, viewToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(800, 36);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -52,26 +53,28 @@
             // 
             hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đăngXuấtToolStripMenuItem });
             hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            hệThốngToolStripMenuItem.Size = new Size(88, 24);
+            hệThốngToolStripMenuItem.Size = new Size(118, 32);
             hệThốngToolStripMenuItem.Text = "Hệ Thống";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(224, 26);
+            đăngXuấtToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.W;
+            đăngXuấtToolStripMenuItem.Size = new Size(278, 32);
             đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
             // phânQuyềnToolStripMenuItem
             // 
             phânQuyềnToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { yêuCầuPhânQuyềnToolStripMenuItem });
             phânQuyềnToolStripMenuItem.Name = "phânQuyềnToolStripMenuItem";
-            phânQuyềnToolStripMenuItem.Size = new Size(101, 24);
+            phânQuyềnToolStripMenuItem.Size = new Size(140, 32);
             phânQuyềnToolStripMenuItem.Text = "Phân Quyền";
             // 
             // yêuCầuPhânQuyềnToolStripMenuItem
             // 
             yêuCầuPhânQuyềnToolStripMenuItem.Name = "yêuCầuPhânQuyềnToolStripMenuItem";
-            yêuCầuPhânQuyềnToolStripMenuItem.Size = new Size(257, 26);
+            yêuCầuPhânQuyềnToolStripMenuItem.Size = new Size(336, 32);
             yêuCầuPhânQuyềnToolStripMenuItem.Text = "Xem yêu cầu phân quyền";
             yêuCầuPhânQuyềnToolStripMenuItem.Click += yêuCầuPhânQuyềnToolStripMenuItem_Click;
             // 
@@ -79,13 +82,13 @@
             // 
             viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinNgườiDùngToolStripMenuItem });
             viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            viewToolStripMenuItem.Size = new Size(55, 24);
+            viewToolStripMenuItem.Size = new Size(72, 32);
             viewToolStripMenuItem.Text = "View";
             // 
             // thôngTinNgườiDùngToolStripMenuItem
             // 
             thôngTinNgườiDùngToolStripMenuItem.Name = "thôngTinNgườiDùngToolStripMenuItem";
-            thôngTinNgườiDùngToolStripMenuItem.Size = new Size(236, 26);
+            thôngTinNgườiDùngToolStripMenuItem.Size = new Size(306, 32);
             thôngTinNgườiDùngToolStripMenuItem.Text = "Thông tin người dùng";
             thôngTinNgườiDùngToolStripMenuItem.Click += thôngTinNgườiDùngToolStripMenuItem_Click;
             // 
@@ -98,6 +101,7 @@
             MainMenuStrip = menuStrip1;
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

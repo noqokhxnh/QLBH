@@ -73,10 +73,10 @@
                 private void btnDangki_Click(object sender, EventArgs e)
         {
 
-            frmsignup Signupform = new frmsignup();
-
-            Signupform.Show();
-            this.Hide();
+            frmsignup f = new frmsignup();
+            f.ShowDialog();
+        
+          
         }
     }
 }
