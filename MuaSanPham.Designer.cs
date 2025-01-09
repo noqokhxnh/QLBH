@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserform));
             dgvHIenThi = new DataGridView();
             btnThem = new Button();
             cbxSanPham = new ComboBox();
@@ -57,17 +58,19 @@
             dgvHIenThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHIenThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHIenThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHIenThi.Location = new Point(28, 275);
+            dgvHIenThi.Location = new Point(13, 275);
             dgvHIenThi.Margin = new Padding(4, 6, 4, 6);
             dgvHIenThi.Name = "dgvHIenThi";
             dgvHIenThi.RowHeadersWidth = 51;
             dgvHIenThi.RowTemplate.Height = 24;
-            dgvHIenThi.Size = new Size(1083, 451);
+            dgvHIenThi.Size = new Size(1083, 516);
             dgvHIenThi.TabIndex = 0;
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(1200, 359);
+            btnThem.Image = QLBH.Properties.Resources.bx_cart_add;
+            btnThem.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThem.Location = new Point(1114, 275);
             btnThem.Margin = new Padding(4, 6, 4, 6);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(262, 41);
@@ -79,7 +82,7 @@
             // cbxSanPham
             // 
             cbxSanPham.FormattingEnabled = true;
-            cbxSanPham.Location = new Point(282, 125);
+            cbxSanPham.Location = new Point(277, 57);
             cbxSanPham.Margin = new Padding(4, 6, 4, 6);
             cbxSanPham.Name = "cbxSanPham";
             cbxSanPham.Size = new Size(338, 36);
@@ -88,7 +91,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 129);
+            label1.Location = new Point(13, 61);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(157, 28);
@@ -99,7 +102,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 221);
+            label2.Location = new Point(13, 133);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(101, 28);
@@ -108,7 +111,7 @@
             // 
             // txtsoluong
             // 
-            txtsoluong.Location = new Point(282, 211);
+            txtsoluong.Location = new Point(277, 118);
             txtsoluong.Margin = new Padding(4, 6, 4, 6);
             txtsoluong.Name = "txtsoluong";
             txtsoluong.Size = new Size(148, 34);
@@ -116,7 +119,9 @@
             // 
             // btnDanhGia
             // 
-            btnDanhGia.Location = new Point(1200, 429);
+            btnDanhGia.Image = QLBH.Properties.Resources.bxs_comment_detail;
+            btnDanhGia.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDanhGia.Location = new Point(1114, 344);
             btnDanhGia.Margin = new Padding(4);
             btnDanhGia.Name = "btnDanhGia";
             btnDanhGia.Size = new Size(262, 41);
@@ -133,7 +138,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 3, 0, 3);
-            menuStrip1.Size = new Size(1515, 38);
+            menuStrip1.Size = new Size(1389, 38);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -212,7 +217,7 @@
             // lable4
             // 
             lable4.AutoSize = true;
-            lable4.Location = new Point(765, 133);
+            lable4.Location = new Point(13, 209);
             lable4.Margin = new Padding(4, 0, 4, 0);
             lable4.Name = "lable4";
             lable4.Size = new Size(201, 28);
@@ -222,7 +227,7 @@
             // 
             // txtTimKiem
             // 
-            txtTimKiem.Location = new Point(999, 133);
+            txtTimKiem.Location = new Point(277, 209);
             txtTimKiem.Margin = new Padding(4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.Size = new Size(352, 34);
@@ -230,12 +235,15 @@
             // 
             // btnTim
             // 
-            btnTim.Location = new Point(1200, 275);
+            btnTim.Image = QLBH.Properties.Resources.bx_search;
+            btnTim.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTim.Location = new Point(722, 209);
             btnTim.Margin = new Padding(4);
             btnTim.Name = "btnTim";
             btnTim.Size = new Size(141, 41);
             btnTim.TabIndex = 12;
             btnTim.Text = "Tìm Kiếm";
+            btnTim.TextAlign = ContentAlignment.MiddleRight;
             btnTim.UseVisualStyleBackColor = true;
             btnTim.Click += btnTim_Click;
             // 
@@ -243,7 +251,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1515, 787);
+            ClientSize = new Size(1389, 787);
             Controls.Add(btnTim);
             Controls.Add(txtTimKiem);
             Controls.Add(lable4);
@@ -256,11 +264,12 @@
             Controls.Add(dgvHIenThi);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 6, 4, 6);
             Name = "frmUserform";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "Mua hàng";
             WindowState = FormWindowState.Maximized;
             Load += frmUserform_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHIenThi).EndInit();

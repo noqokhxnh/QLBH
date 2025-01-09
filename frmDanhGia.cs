@@ -63,7 +63,7 @@ namespace QLBH
                     if (result > 0)
                     {
                         MessageBox.Show("Đánh giá của bạn đã được gửi thành công");
-                        this.Close(); // Đóng form sau khi gửi đánh giá
+                        this.Close(); 
                     }
                     else
                     {
@@ -72,7 +72,7 @@ namespace QLBH
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi  " + ex.Message);
                 }
             }
         }

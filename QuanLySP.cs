@@ -53,7 +53,7 @@
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi " + ex.Message);
                 }
             }
         }
@@ -91,8 +91,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại");
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi ", ex.Message);
+                    
                 }
             }
         }
@@ -126,8 +126,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại");
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi ", ex.Message);
+                   
                 }
             }
         }
@@ -158,8 +158,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại");
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi ", ex.Message);
+                 
                 }
             }
         }
@@ -193,7 +193,7 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi " , ex.Message);
                 }
             }
         }
@@ -286,9 +286,9 @@
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
+            frmLogin f = new frmLogin();
             MessageBox.Show("Đăng xuất thành công");
-            frmLogin.Show();
+            f.Show();
             this.Close();
         }
 

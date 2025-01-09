@@ -41,7 +41,7 @@
             // btnThem
             // 
             btnThem.Location = new Point(988, 22);
-            btnThem.Margin = new Padding(4, 4, 4, 4);
+            btnThem.Margin = new Padding(4);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(141, 41);
             btnThem.TabIndex = 3;
@@ -65,7 +65,7 @@
             dgvMaGiamGia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMaGiamGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMaGiamGia.Location = new Point(18, 188);
-            dgvMaGiamGia.Margin = new Padding(4, 4, 4, 4);
+            dgvMaGiamGia.Margin = new Padding(4);
             dgvMaGiamGia.Name = "dgvMaGiamGia";
             dgvMaGiamGia.RowHeadersWidth = 51;
             dgvMaGiamGia.RowTemplate.Height = 29;
@@ -75,7 +75,7 @@
             // txtCode
             // 
             txtCode.Location = new Point(264, 28);
-            txtCode.Margin = new Padding(4, 4, 4, 4);
+            txtCode.Margin = new Padding(4);
             txtCode.Name = "txtCode";
             txtCode.Size = new Size(186, 34);
             txtCode.TabIndex = 1;
@@ -83,7 +83,7 @@
             // btnXoa
             // 
             btnXoa.Location = new Point(988, 112);
-            btnXoa.Margin = new Padding(4, 4, 4, 4);
+            btnXoa.Margin = new Padding(4);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(141, 41);
             btnXoa.TabIndex = 4;
@@ -94,7 +94,7 @@
             // txtGiam
             // 
             txtGiam.Location = new Point(264, 98);
-            txtGiam.Margin = new Padding(4, 4, 4, 4);
+            txtGiam.Margin = new Padding(4);
             txtGiam.Name = "txtGiam";
             txtGiam.Size = new Size(186, 34);
             txtGiam.TabIndex = 2;
@@ -122,10 +122,10 @@
             Controls.Add(label1);
             Controls.Add(btnThem);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "GiamGia";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "GiamGia";
+            Text = "Tạo mã giảm giá";
             Load += GiamGia_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMaGiamGia).EndInit();
             ResumeLayout(false);

@@ -113,7 +113,6 @@ C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.ProfileUse
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.Properties.Resources.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QuanLyBanHangOnline.frmProduct.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.Requests.resources
-C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.RoleRequests.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmsignup.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.frmThongKe.resources
 C:\Users\noqok\OneDrive\Máy tính\QLBH\obj\Debug\net6.0-windows\QLBH.csproj.GenerateResource.cache

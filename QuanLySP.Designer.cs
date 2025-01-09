@@ -69,6 +69,8 @@
             // 
             // btnAdd
             // 
+            btnAdd.Image = QLBH.Properties.Resources.bx_plus;
+            btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
             btnAdd.Location = new Point(1202, 246);
             btnAdd.Margin = new Padding(4, 6, 4, 6);
             btnAdd.Name = "btnAdd";
@@ -80,6 +82,8 @@
             // 
             // btnEdit
             // 
+            btnEdit.Image = QLBH.Properties.Resources.bx_edit;
+            btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
             btnEdit.Location = new Point(1202, 332);
             btnEdit.Margin = new Padding(4, 6, 4, 6);
             btnEdit.Name = "btnEdit";
@@ -91,6 +95,8 @@
             // 
             // btnRemove
             // 
+            btnRemove.Image = QLBH.Properties.Resources.bx_message_square_x;
+            btnRemove.ImageAlign = ContentAlignment.MiddleLeft;
             btnRemove.Location = new Point(1202, 410);
             btnRemove.Margin = new Padding(4, 6, 4, 6);
             btnRemove.Name = "btnRemove";
@@ -113,7 +119,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(475, 132);
+            label2.Location = new Point(475, 170);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(142, 28);
@@ -140,7 +146,7 @@
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(652, 132);
+            txtPrice.Location = new Point(652, 170);
             txtPrice.Margin = new Padding(4, 6, 4, 6);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(182, 34);
@@ -157,7 +163,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(1202, 505);
+            label5.Location = new Point(475, 38);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(186, 28);
@@ -166,7 +172,7 @@
             // 
             // txtFind
             // 
-            txtFind.Location = new Point(1200, 561);
+            txtFind.Location = new Point(475, 99);
             txtFind.Margin = new Padding(4);
             txtFind.Name = "txtFind";
             txtFind.Size = new Size(186, 34);
@@ -174,7 +180,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1200, 624);
+            button1.Image = QLBH.Properties.Resources.bx_search1;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(704, 93);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(141, 41);
@@ -190,7 +198,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 3, 0, 3);
-            menuStrip1.Size = new Size(1472, 38);
+            menuStrip1.Size = new Size(1346, 38);
             menuStrip1.TabIndex = 15;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -257,7 +265,7 @@
             AccessibleRole = AccessibleRole.None;
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1472, 787);
+            ClientSize = new Size(1346, 787);
             Controls.Add(button1);
             Controls.Add(txtFind);
             Controls.Add(label5);
@@ -277,7 +285,7 @@
             Margin = new Padding(4, 6, 4, 6);
             Name = "frmProduct";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmSanPham";
+            Text = "Quản ly sản phẩm";
             WindowState = FormWindowState.Maximized;
             Load += frmAdminform_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).EndInit();

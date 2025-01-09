@@ -40,7 +40,9 @@ namespace QLBH
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLogin f = new frmLogin();
-            f.ShowDialog();
+            this.Close();
+            MessageBox.Show("Đăng xuất thành công");
+            f.Show();
         }
     }
 }

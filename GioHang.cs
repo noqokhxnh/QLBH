@@ -5,7 +5,7 @@
     using System.Data.SqlClient;
     using System.Windows.Forms;
 
-        public partial class GioHang : Form
+    public partial class GioHang : Form
     {
         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                            $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
@@ -15,18 +15,18 @@
 
         public event Action OnClose;
 
-                private readonly int userId;
+        private readonly int userId;
 
-                public GioHang()
+        public GioHang()
         {
             InitializeComponent();
         }
 
-                private void LoadGioHang()
+        private void LoadGioHang()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM tbl_giohang";
+                string query = "SELECT ProductId, ProductName, Stock, Price FROM tbl_giohang\r\n";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
 
@@ -34,26 +34,19 @@
                 {
                     adapter.Fill(dt);
                     dgvCart.DataSource = dt;
-
-                    if (!dgvCart.Columns.Contains("Delete"))
-                    {
-                        DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-                        btnDelete.Name = "Delete";
-                        btnDelete.Text = "Xóa";
-                        btnDelete.UseColumnTextForButtonValue = true;
-                        dgvCart.Columns.Add(btnDelete);
-                    }
+                    dgvCart.Columns["ProductID"].Visible = false;
 
                     UpdateTotalPrice();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi tải giỏ hàng: " + ex.Message);
+                    MessageBox.Show($"Lỗi ", ex.Message);
+
                 }
             }
         }
 
-                private void UpdateTotalPrice()
+        private void UpdateTotalPrice()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -69,17 +62,18 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi tính tổng tiền: " + ex.Message);
+                    MessageBox.Show($"Lỗi ", ex.Message);
+
                 }
             }
         }
 
-                private void GioHang_Load(object sender, EventArgs e)
+        private void GioHang_Load(object sender, EventArgs e)
         {
             LoadGioHang();
         }
 
-                private void btnThanhToan_Click(object sender, EventArgs e)
+        private void btnThanhToan_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -92,7 +86,7 @@
                 historyCmd.ExecuteNonQuery();
                 try
                 {
-                    // Cập nhật số lượng trong kho
+
                     string updateStockQuery = @"
                     UPDATE p 
                     SET p.Stock = p.Stock - g.Stock 
@@ -102,10 +96,6 @@
                     SqlCommand updateCmd = new SqlCommand(updateStockQuery, conn, transaction);
                     updateCmd.ExecuteNonQuery();
 
-                    // Xóa giỏ hàng
-                    string clearCartQuery = "DELETE FROM tbl_giohang";
-                    SqlCommand clearCmd = new SqlCommand(clearCartQuery, conn, transaction);
-                    clearCmd.ExecuteNonQuery();
 
                     transaction.Commit();
                     MessageBox.Show($"Thanh toán thành công! Tổng tiền: {txtTien.Text}");
@@ -115,44 +105,18 @@
                 catch (Exception ex)
                 {
                     transaction.Rollback();
-                    MessageBox.Show($"Lỗi khi thanh toán: {ex.Message}");
+                    MessageBox.Show($"Lỗi ",ex.Message);
                 }
             }
         }
 
-                private void GioHang_FormClosing(object sender, FormClosingEventArgs e)
+        private void GioHang_FormClosing(object sender, FormClosingEventArgs e)
         {
 
             OnClose?.Invoke();
         }
 
-                private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dgvCart.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-                int ProductId = Convert.ToInt32(dgvCart.Rows[e.RowIndex].Cells["ProductId"].Value);
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string query = "DELETE FROM tbl_giohang WHERE ProductId = @ProductId";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@ProductId", ProductId);
-
-                    try
-                    {
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        LoadGioHang();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message);
-                    }
-                }
-            }
-        }
-
-                private decimal CalculateTotalPrice()
+        private decimal CalculateTotalPrice()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -167,13 +131,13 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi tính tổng tiền: " + ex.Message);
+                    MessageBox.Show("Lỗi : " + ex.Message);
                     return 0;
                 }
             }
         }
 
-                private void btnApDung_Click(object sender, EventArgs e)
+        private void btnApDung_Click(object sender, EventArgs e)
         {
             string maGiamGia = txtGiamGia.Text.Trim();
 
@@ -220,8 +184,47 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi áp dụng mã giảm giá: {ex.Message}");
+                    MessageBox.Show($"Lỗi", ex.Message);
                 }
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs ex)
+        {
+            if (dgvCart.SelectedRows.Count > 0)
+            {
+            
+                int productId = Convert.ToInt32(dgvCart.SelectedRows[0].Cells["ProductId"].Value);
+
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?",
+                                                      "Xác nhận", MessageBoxButtons.YesNo  );
+
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        string query = "DELETE FROM tbl_giohang WHERE ProductId = @ProductId";
+
+                        try
+                        {
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@ProductId", productId);
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Đã xóa sản phẩm khỏi giỏ hàng.");
+                            LoadGioHang(); 
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show("Lỗi  ", e.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.");
             }
         }
     }

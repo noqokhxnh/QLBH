@@ -56,7 +56,7 @@ namespace QLBH
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
+                    MessageBox.Show("Lỗi " + ex.Message);
                 }
             }
         }
@@ -89,8 +89,8 @@ namespace QLBH
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại");
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi ", ex.Message);
+                  
                 }
 
 
@@ -115,6 +115,7 @@ namespace QLBH
                     return;
                 }
                 ThemMa(maGiamGia, giamGia);
+                LoadMaGiamGia();    
             }
             else
             {
@@ -150,8 +151,8 @@ namespace QLBH
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. Vui lòng thử lại");
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Lỗi ", ex.Message);
+                  
                 }
 
             }
@@ -163,6 +164,7 @@ namespace QLBH
             {
                 string ma = dgvMaGiamGia.SelectedRows[0].Cells["MaGiamGia"].Value.ToString();
                 Delete(ma);
+                LoadMaGiamGia();
             }
             else
             {

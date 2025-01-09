@@ -55,8 +55,9 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi tải thông tin người dùng: " + ex.Message,
-                                  "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi " , ex.Message);
+                              
+                                
                 }
             }
         }
@@ -120,7 +121,7 @@
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}\nCustomerId: {CustomerId}, UserId: {UserId}");
+                MessageBox.Show($"Lỗi", ex.Message);
             }
         }
 

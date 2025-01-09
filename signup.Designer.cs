@@ -38,7 +38,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(105, 112);
+            label1.Location = new Point(105, 102);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(144, 28);
@@ -48,7 +48,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(105, 189);
+            label2.Location = new Point(105, 179);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(104, 28);
@@ -58,7 +58,7 @@
             // txtusername
             // 
             txtusername.Location = new Point(288, 102);
-            txtusername.Margin = new Padding(4, 4, 4, 4);
+            txtusername.Margin = new Padding(4);
             txtusername.Name = "txtusername";
             txtusername.Size = new Size(186, 34);
             txtusername.TabIndex = 2;
@@ -66,15 +66,16 @@
             // txtpassword
             // 
             txtpassword.Location = new Point(288, 179);
-            txtpassword.Margin = new Padding(4, 4, 4, 4);
+            txtpassword.Margin = new Padding(4);
             txtpassword.Name = "txtpassword";
             txtpassword.Size = new Size(186, 34);
             txtpassword.TabIndex = 3;
+            txtpassword.UseSystemPasswordChar = true;
             // 
             // btndangki
             // 
             btndangki.Location = new Point(240, 272);
-            btndangki.Margin = new Padding(4, 4, 4, 4);
+            btndangki.Margin = new Padding(4);
             btndangki.Name = "btndangki";
             btndangki.Size = new Size(141, 41);
             btndangki.TabIndex = 4;
@@ -93,7 +94,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "frmsignup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Kí";

@@ -40,12 +40,12 @@
             dgvThongKe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvThongKe.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvThongKe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvThongKe.Location = new Point(34, 17);
-            dgvThongKe.Margin = new Padding(4, 4, 4, 4);
+            dgvThongKe.Location = new Point(13, 5);
+            dgvThongKe.Margin = new Padding(4);
             dgvThongKe.Name = "dgvThongKe";
             dgvThongKe.RowHeadersWidth = 51;
             dgvThongKe.RowTemplate.Height = 29;
-            dgvThongKe.Size = new Size(1108, 449);
+            dgvThongKe.Size = new Size(1174, 461);
             dgvThongKe.TabIndex = 0;
             // 
             // lblTongdoanhThu
@@ -70,10 +70,12 @@
             // 
             // btnXuat
             // 
-            btnXuat.Location = new Point(927, 512);
-            btnXuat.Margin = new Padding(4, 4, 4, 4);
+            btnXuat.Image = Properties.Resources.bxs_file_export;
+            btnXuat.ImageAlign = ContentAlignment.MiddleLeft;
+            btnXuat.Location = new Point(890, 512);
+            btnXuat.Margin = new Padding(4);
             btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(164, 41);
+            btnXuat.Size = new Size(201, 41);
             btnXuat.TabIndex = 3;
             btnXuat.Text = "Xuất Báo Cáo";
             btnXuat.UseVisualStyleBackColor = true;
@@ -89,7 +91,7 @@
             Controls.Add(lblTongdoanhThu);
             Controls.Add(dgvThongKe);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "frmThongKe";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ThongKe";

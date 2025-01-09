@@ -56,7 +56,8 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi tải dữ liệu thống kê: {ex.Message}");
+                    MessageBox.Show($"Lỗi ", ex.Message);
+
                 }
             }
         }
@@ -86,7 +87,8 @@
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show($"Lỗi khi xuất file: {ex.Message}");
+                    MessageBox.Show($"Lỗi ", ex.Message);
+
                 }
             }
         }

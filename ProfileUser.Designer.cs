@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileUser));
             btnSave = new Button();
             btnBack = new Button();
             label1 = new Label();
@@ -41,7 +42,7 @@
             // btnSave
             // 
             btnSave.Location = new Point(201, 328);
-            btnSave.Margin = new Padding(4, 4, 4, 4);
+            btnSave.Margin = new Padding(4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(141, 41);
             btnSave.TabIndex = 4;
@@ -52,7 +53,7 @@
             // btnBack
             // 
             btnBack.Location = new Point(435, 328);
-            btnBack.Margin = new Padding(4, 4, 4, 4);
+            btnBack.Margin = new Padding(4);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(141, 41);
             btnBack.TabIndex = 6;
@@ -93,7 +94,7 @@
             // txtName
             // 
             txtName.Location = new Point(302, 87);
-            txtName.Margin = new Padding(4, 4, 4, 4);
+            txtName.Margin = new Padding(4);
             txtName.Name = "txtName";
             txtName.Size = new Size(373, 34);
             txtName.TabIndex = 1;
@@ -101,7 +102,7 @@
             // txtPhone
             // 
             txtPhone.Location = new Point(302, 150);
-            txtPhone.Margin = new Padding(4, 4, 4, 4);
+            txtPhone.Margin = new Padding(4);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(373, 34);
             txtPhone.TabIndex = 2;
@@ -109,7 +110,7 @@
             // txtDiaChi
             // 
             txtDiaChi.Location = new Point(302, 217);
-            txtDiaChi.Margin = new Padding(4, 4, 4, 4);
+            txtDiaChi.Margin = new Padding(4);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(373, 34);
             txtDiaChi.TabIndex = 3;
@@ -128,10 +129,11 @@
             Controls.Add(btnBack);
             Controls.Add(btnSave);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4);
             Name = "ProfileUser";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ProfileUser";
+            Text = "Nhập thông tin cá nhân";
             ResumeLayout(false);
             PerformLayout();
         }

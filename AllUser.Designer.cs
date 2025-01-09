@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllUser));
             dgvHienThi = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).BeginInit();
             SuspendLayout();
@@ -38,7 +39,7 @@
             dgvHienThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHienThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHienThi.Location = new Point(3, 3);
-            dgvHienThi.Margin = new Padding(4, 4, 4, 4);
+            dgvHienThi.Margin = new Padding(4);
             dgvHienThi.Name = "dgvHienThi";
             dgvHienThi.RowHeadersWidth = 51;
             dgvHienThi.RowTemplate.Height = 29;
@@ -52,10 +53,11 @@
             ClientSize = new Size(1557, 588);
             Controls.Add(dgvHienThi);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4);
             Name = "AllUser";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AllUser";
+            Text = "Xem thông tin người dùng";
             ((System.ComponentModel.ISupportInitialize)dgvHienThi).EndInit();
             ResumeLayout(false);
         }

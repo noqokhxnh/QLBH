@@ -40,7 +40,7 @@
             // btnGuidanhgia
             // 
             btnGuidanhgia.Location = new Point(54, 280);
-            btnGuidanhgia.Margin = new Padding(4, 4, 4, 4);
+            btnGuidanhgia.Margin = new Padding(4);
             btnGuidanhgia.Name = "btnGuidanhgia";
             btnGuidanhgia.Size = new Size(230, 41);
             btnGuidanhgia.TabIndex = 0;
@@ -81,9 +81,9 @@
             // cbxRating
             // 
             cbxRating.FormattingEnabled = true;
-            cbxRating.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            cbxRating.Items.AddRange(new object[] { "1*", "2*", "3*", "4*", "5*" });
             cbxRating.Location = new Point(218, 122);
-            cbxRating.Margin = new Padding(4, 4, 4, 4);
+            cbxRating.Margin = new Padding(4);
             cbxRating.Name = "cbxRating";
             cbxRating.Size = new Size(224, 36);
             cbxRating.TabIndex = 4;
@@ -91,7 +91,7 @@
             // txtComment
             // 
             txtComment.Location = new Point(218, 196);
-            txtComment.Margin = new Padding(4, 4, 4, 4);
+            txtComment.Margin = new Padding(4);
             txtComment.Name = "txtComment";
             txtComment.Size = new Size(224, 34);
             txtComment.TabIndex = 5;
@@ -99,7 +99,7 @@
             // btnCancel
             // 
             btnCancel.Location = new Point(406, 280);
-            btnCancel.Margin = new Padding(4, 4, 4, 4);
+            btnCancel.Margin = new Padding(4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(141, 41);
             btnCancel.TabIndex = 6;
@@ -119,10 +119,10 @@
             Controls.Add(lblProductName);
             Controls.Add(btnGuidanhgia);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "frmDanhGia";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmDanhGia";
+            Text = "Đánh Giá Sản Phẩm";
             Load += frmDanhGia_Load;
             ResumeLayout(false);
             PerformLayout();

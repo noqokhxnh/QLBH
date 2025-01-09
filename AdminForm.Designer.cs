@@ -101,6 +101,7 @@
             MainMenuStrip = menuStrip1;
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "Quản Lí Bán Hàng";
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
