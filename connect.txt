@@ -13,7 +13,16 @@
 
 
 
+String connectionString = @"Server = LAPTOP-B6DMUJM1; Initial Catalog = QLBH; User = khxnh; Password = 123";
+
+
 
 DB_SERVER=LAPTOP-B6DMUJM1
 DB_DATABASE=QuanLyBanHang
 DB_INTEGRATED_SECURITY=True
+
+
+DB_SERVER=LAPTOP-B6DMUJM1
+DB_DATABASE=QuanLyBanHang
+DB_USER=khxnh
+DB_PASSWORD=1234
