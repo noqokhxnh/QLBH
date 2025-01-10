@@ -43,7 +43,6 @@
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             quảnLýSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             GioHang = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripMenuItem();
             phânQuyềnToolStripMenuItem = new ToolStripMenuItem();
             yêuCầuPhânQuyềnBánHàngToolStripMenuItem = new ToolStripMenuItem();
             lable4 = new Label();
@@ -178,7 +177,7 @@
             // 
             // quảnLýSảnPhẩmToolStripMenuItem
             // 
-            quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { GioHang, toolStripMenuItem1 });
+            quảnLýSảnPhẩmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { GioHang });
             quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
             quảnLýSảnPhẩmToolStripMenuItem.Size = new Size(201, 32);
             quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản Lý Sản Phẩm";
@@ -188,16 +187,9 @@
             GioHang.AccessibleName = "GioHang";
             GioHang.Image = QLBH.Properties.Resources.cart_shopping_solid;
             GioHang.Name = "GioHang";
-            GioHang.Size = new Size(280, 32);
+            GioHang.Size = new Size(224, 32);
             GioHang.Text = "Giỏ Hàng";
             GioHang.Click += GioHang_Click;
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Image = QLBH.Properties.Resources.comment_regular;
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(280, 32);
-            toolStripMenuItem1.Text = "Đánh giá sản phẩm";
             // 
             // phânQuyềnToolStripMenuItem
             // 
@@ -294,7 +286,6 @@
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
         private ToolStripMenuItem GioHang;
-        private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem phânQuyềnToolStripMenuItem;
         private ToolStripMenuItem yêuCầuPhânQuyềnBánHàngToolStripMenuItem;
         private ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;

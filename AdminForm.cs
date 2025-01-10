@@ -44,5 +44,11 @@ namespace QLBH
             MessageBox.Show("Đăng xuất thành công");
             f.Show();
         }
+
+        private void thốngKêSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThongKe f = new frmThongKe();
+            f.ShowDialog();
+        }
     }
 }

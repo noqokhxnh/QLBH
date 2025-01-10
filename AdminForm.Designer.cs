@@ -35,6 +35,7 @@
             yêuCầuPhânQuyềnToolStripMenuItem = new ToolStripMenuItem();
             viewToolStripMenuItem = new ToolStripMenuItem();
             thôngTinNgườiDùngToolStripMenuItem = new ToolStripMenuItem();
+            thốngKêSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, phânQuyềnToolStripMenuItem, viewToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 36);
+            menuStrip1.Size = new Size(634, 36);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -80,7 +81,7 @@
             // 
             // viewToolStripMenuItem
             // 
-            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinNgườiDùngToolStripMenuItem });
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thôngTinNgườiDùngToolStripMenuItem, thốngKêSảnPhẩmToolStripMenuItem });
             viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             viewToolStripMenuItem.Size = new Size(72, 32);
             viewToolStripMenuItem.Text = "View";
@@ -92,17 +93,23 @@
             thôngTinNgườiDùngToolStripMenuItem.Text = "Thông tin người dùng";
             thôngTinNgườiDùngToolStripMenuItem.Click += thôngTinNgườiDùngToolStripMenuItem_Click;
             // 
+            // thốngKêSảnPhẩmToolStripMenuItem
+            // 
+            thốngKêSảnPhẩmToolStripMenuItem.Name = "thốngKêSảnPhẩmToolStripMenuItem";
+            thốngKêSảnPhẩmToolStripMenuItem.Size = new Size(306, 32);
+            thốngKêSảnPhẩmToolStripMenuItem.Text = "Thống Kê Sản Phẩm";
+            thốngKêSảnPhẩmToolStripMenuItem.Click += thốngKêSảnPhẩmToolStripMenuItem_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(634, 425);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lí Bán Hàng";
-            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -117,5 +124,6 @@
         private ToolStripMenuItem yêuCầuPhânQuyềnToolStripMenuItem;
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem thôngTinNgườiDùngToolStripMenuItem;
+        private ToolStripMenuItem thốngKêSảnPhẩmToolStripMenuItem;
     }
 }

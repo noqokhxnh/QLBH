@@ -53,6 +53,7 @@ namespace QuanLyBanHangOnline
                         cbxSanPham.DataSource = dataTable;
                         cbxSanPham.DisplayMember = "ProductName";
                         cbxSanPham.ValueMember = "ProductID";
+                        txtsoluong.Text= "1";
                         dgvHIenThi.Columns["ProductID"].Visible = false;
 
 
@@ -90,7 +91,7 @@ namespace QuanLyBanHangOnline
             int productId;
             if (!int.TryParse(cbxSanPham.SelectedValue?.ToString(), out productId))
             {
-                MessageBox.Show("Lỗi khi lấy thông tin sản phẩm! Kiểm tra lại dữ liệu.");
+                MessageBox.Show("Lỗi khi lấy thông tin sản phẩm. Kiểm tra lại dữ liệu.");
                 return;
             }
 
@@ -219,7 +220,7 @@ namespace QuanLyBanHangOnline
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"LỖi {ex.Message}");
+                    MessageBox.Show($"Yêu cầu đã được gửi trước đó. Hãy đợi Admin xác nhận" );
                 }
             }
         }

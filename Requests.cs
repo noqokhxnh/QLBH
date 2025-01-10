@@ -7,7 +7,7 @@
 
     public partial class Requests : Form
     {
-        internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+        string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                   $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                  $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
@@ -40,7 +40,9 @@
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @" SELECT r.RequestId, r.UserId, u.Username FROM tbl_role_request r JOIN tbl_user u ON r.UserId = u.UserId";
+                string query = @" SELECT r.RequestId, r.UserId, u.Username
+                                FROM tbl_role_request r 
+                                JOIN tbl_user u ON r.UserId = u.UserId";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn); DataTable dt = new DataTable(); try
                 {
                     conn.Open(); adapter.Fill(dt);
@@ -53,19 +55,38 @@
         }
 
         private void btnApprove_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtUserId.Text)) { MessageBox.Show("Vui lòng chọn một yêu cầu để xử lý.");
+        {   
+               
+            if (string.IsNullOrEmpty(txtUserId.Text))
+            { 
+                MessageBox.Show("Vui lòng chọn một yêu cầu để xử lý.");
                 return;
             }
             int selectedUserId = Convert.ToInt32(txtUserId.Text);
+            int requestId = Convert.ToInt32(dgvRequests.SelectedRows[0].Cells["RequestId"].Value);
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @"UPDATE tbl_user SET Role = 'Seller' WHERE UserId = @UserId;";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@UserId", selectedUserId);
+                string ụpdatequery = @"UPDATE tbl_user SET Role = 'Seller' WHERE UserId = @UserId;";
+                string deletequery = "DELETE FROM tbl_role_request WHERE RequestId = @RequestId;";
+
+                SqlCommand updateCmd = new SqlCommand(ụpdatequery, conn);
+                SqlCommand deleteCmd = new SqlCommand(deletequery, conn);
+
+                updateCmd.Parameters.AddWithValue("@UserId", selectedUserId); 
+                deleteCmd.Parameters.AddWithValue("@RequestId", requestId);
+                SqlTransaction transaction;
                 try
                 {
-                    conn.Open(); cmd.ExecuteNonQuery();
+                    conn.Open();
+                    transaction = conn.BeginTransaction();
+
+                    updateCmd.Transaction = transaction;
+                    deleteCmd.Transaction = transaction;
+
+                    updateCmd.ExecuteNonQuery();
+                    deleteCmd.ExecuteNonQuery();
+                    transaction.Commit();
                     MessageBox.Show("Yêu cầu đã được chấp thuận.");
                     LoadRequests();
                     ClearDetails();
@@ -76,10 +97,13 @@
                 }
             }
         }
-
         private void btnReject_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUserId.Text)) { MessageBox.Show("Vui lòng chọn một yêu cầu để xử lý."); return; }
+            if (string.IsNullOrEmpty(txtUserId.Text)) 
+            {
+                MessageBox.Show("Vui lòng chọn một yêu cầu để xử lý."); 
+                return; 
+            }
             int requestId = Convert.ToInt32(dgvRequests.SelectedRows[0].Cells["RequestId"].Value);
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
