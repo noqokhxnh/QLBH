@@ -38,19 +38,19 @@
             dgvHienThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHienThi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHienThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvHienThi.Location = new Point(3, 3);
+            dgvHienThi.Location = new Point(0, 1);
             dgvHienThi.Margin = new Padding(4);
             dgvHienThi.Name = "dgvHienThi";
             dgvHienThi.RowHeadersWidth = 51;
             dgvHienThi.RowTemplate.Height = 29;
-            dgvHienThi.Size = new Size(1552, 589);
+            dgvHienThi.Size = new Size(852, 399);
             dgvHienThi.TabIndex = 0;
             // 
             // AllUser
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1557, 588);
+            ClientSize = new Size(853, 398);
             Controls.Add(dgvHienThi);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");

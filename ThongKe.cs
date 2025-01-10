@@ -9,7 +9,7 @@
 
     public partial class frmThongKe : Form
     {
-        internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                    $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                   $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
@@ -43,11 +43,11 @@
                     adapter.Fill(dt);
                     dgvThongKe.DataSource = dt;
 
-                    // Định dạng các cột
+
                     dgvThongKe.Columns["Price"].DefaultCellStyle.Format = "N0";
                     dgvThongKe.Columns["TongDoanhThu"].DefaultCellStyle.Format = "N0";
 
-                    // Tính tổng doanh thu và số lượng bán
+                 
                     decimal totalRevenue = dt.AsEnumerable().Sum(row => Convert.ToDecimal(row["TongDoanhThu"]));
                     int totalProductsSold = dt.AsEnumerable().Sum(row => row.Field<int>("TongDaBan"));
 
@@ -67,7 +67,7 @@
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "Excel files (*.xlsx)|*.xlsx",
-                FileName = $"ThongKeSanPham_{DateTime.Now:HHmmss_ddMMyyyy}.xlsx"
+                FileName = $"ThongKeSanPham_{DateTime.Now:HH:mm:ss_dd/MM/yyyy}.xlsx"
             };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -82,7 +82,7 @@
                         column.Style.NumberFormat.Format = "#,##0 \"VND\"";
                         workbook.SaveAs(saveFileDialog.FileName);
                     }
-                    MessageBox.Show("Xuất file thành công!");
+                    MessageBox.Show("Xuất file thành công");
                 }
                 catch (Exception ex)
                 {

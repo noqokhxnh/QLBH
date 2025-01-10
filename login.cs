@@ -7,7 +7,7 @@
 
         public partial class frmLogin : Form
     {
-                internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                      $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                     $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
@@ -24,7 +24,7 @@
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Thông báo", MessageBoxButtons.OK  );
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.");
                 return;
             }
 
@@ -42,15 +42,17 @@
                     {
                         int userId = reader.GetInt32(reader.GetOrdinal("UserId"));
                         string role = reader["Role"].ToString().Trim();
-                        MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK );
-                        this.Hide(); if (role == "Admin")
+                        MessageBox.Show("Đăng nhập thành công" );
+                        this.Hide();
+                        if (role == "Admin")
                         {
-                            AdminForm f = new AdminForm(userId); f.Show();
+                            AdminForm f = new AdminForm(userId);
+                            f.Show();
                         }
                         else if (role == "user")
                         {
-                            frmUserform userForm = new frmUserform(userId);
-                            userForm.Show();
+                            frmUserform f = new frmUserform(userId);
+                            f.Show();
                         }
                         else
                         {
@@ -60,23 +62,24 @@
                     }
                     else
                     {
-                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK  );
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng." );
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối: " + ex.Message, "Lỗi", MessageBoxButtons.OK  );
+                MessageBox.Show("Lỗi" + ex.Message );
             }
         }
 
                 private void btnDangki_Click(object sender, EventArgs e)
         {
-
+            
             frmsignup f = new frmsignup();
-            f.ShowDialog();
-        
-          
+            
+            f.Show();
+            
+
         }
     }
 }

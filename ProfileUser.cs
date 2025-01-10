@@ -7,8 +7,8 @@
 
         public partial class ProfileUser : Form
     {
-                internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
-                           $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
+                string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+                              $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                           $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
                 private int CustomerId;

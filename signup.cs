@@ -71,12 +71,11 @@ namespace QLBH
                     {
                         MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK );
                         this.Hide();
-                        frmLogin f = new frmLogin();
-                        f.ShowDialog();
+                        
                     }
                     else
                     {
-                        MessageBox.Show("Đăng ký thất bại.", "Lỗi", MessageBoxButtons.OK  );
+                        MessageBox.Show("Đăng ký thất bại.");
                     }
                 }
             }

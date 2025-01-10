@@ -30,7 +30,7 @@ namespace QLBH
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @" SELECT Name, Phone, Address FROM tbl_customer";
+                string query = @" SELECT UserId, Name, Phone, Address FROM tbl_customer";
                       
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {

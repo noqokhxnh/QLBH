@@ -6,7 +6,7 @@
 
     public partial class DoiMatKhau : Form
     {
-        internal string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
+         string connectionString = $"Server={Environment.GetEnvironmentVariable("DB_SERVER")};" +
                  $"Database={Environment.GetEnvironmentVariable("DB_DATABASE")};" +
                 $"Integrated Security={Environment.GetEnvironmentVariable("DB_INTEGRATED_SECURITY")};";
 
@@ -32,7 +32,8 @@
             if (newPass != comfirmPass)
             {
                 {
-                    MessageBox.Show("Mật khẩu mới và xác nhận mật khẩu không khớp.", "Thông báo", MessageBoxButtons.OK  ); return;
+                    MessageBox.Show("Mật khẩu mới và xác nhận mật khẩu không khớp.", "Thông báo", MessageBoxButtons.OK  );
+                    return;
                 }
             }
             try
