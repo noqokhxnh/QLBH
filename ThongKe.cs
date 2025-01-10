@@ -67,7 +67,7 @@
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "Excel files (*.xlsx)|*.xlsx",
-                FileName = $"ThongKeSanPham_{DateTime.Now:HH:mm:ss_dd/MM/yyyy}.xlsx"
+                FileName = $"ThongKeSanPham_{DateTime.Now:HHmmss_ddMMyyyy}.xlsx"
             };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)

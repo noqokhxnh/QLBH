@@ -82,6 +82,7 @@
                 string insertHistoryQuery = @"
                               INSERT INTO tbl_order_history (ProductName, Stock, Price)
                               SELECT ProductName, Stock, Price FROM tbl_giohang";
+               
                 SqlCommand historyCmd = new SqlCommand(insertHistoryQuery, conn, transaction);
                 historyCmd.ExecuteNonQuery();
                 try
@@ -96,6 +97,9 @@
                     SqlCommand updateCmd = new SqlCommand(updateStockQuery, conn, transaction);
                     updateCmd.ExecuteNonQuery();
 
+                    string deletequery = @"DELETE FROM tbl_giohang";
+                    SqlCommand deletecmd = new SqlCommand(deletequery, conn, transaction);
+                    deletecmd.ExecuteNonQuery();
 
                     transaction.Commit();
                     MessageBox.Show($"Thanh toán thành công! Tổng tiền: {txtTien.Text}");

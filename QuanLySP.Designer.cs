@@ -163,7 +163,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(475, 38);
+            label5.Location = new Point(906, 43);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(186, 28);
@@ -172,7 +172,7 @@
             // 
             // txtFind
             // 
-            txtFind.Location = new Point(475, 99);
+            txtFind.Location = new Point(1128, 37);
             txtFind.Margin = new Padding(4);
             txtFind.Name = "txtFind";
             txtFind.Size = new Size(186, 34);
@@ -182,7 +182,7 @@
             // 
             button1.Image = QLBH.Properties.Resources.bx_search1;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(704, 93);
+            button1.Location = new Point(1173, 99);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(141, 41);
